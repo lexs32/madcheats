@@ -1010,6 +1010,117 @@ document.addEventListener('DOMContentLoaded', () => {
     closeCheckoutSuccess
   };
 
+  const loaderNavBtns = document.querySelectorAll('.loader-nav-btn');
+  const loaderPanels = document.querySelectorAll('.loader-panel');
+  const loaderSubtabs = document.getElementById('loaderSubtabs');
+  const loaderCrumbParent = document.getElementById('loaderCrumbParent');
+  const loaderCrumbActive = document.getElementById('loaderCrumbActive');
+  const loaderSubtabSilent = document.getElementById('loaderSubtabSilent');
+  const loaderSubtabAimbot = document.getElementById('loaderSubtabAimbot');
+  const panelAimbot = document.getElementById('panel-aimbot');
+  const panelSilent = document.getElementById('panel-silent');
+
+  const titleMap = {
+    aimbot: 'Aimbot',
+    players: 'Players',
+    npcs: 'NPCs',
+    world: 'World',
+    oof: 'OOF Arrows',
+    exploits: 'Exploits',
+    misc: 'Misc'
+  };
+
+  if (loaderNavBtns.length > 0) {
+    loaderNavBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-tab');
+        loaderNavBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        if (tab === 'aimbot') {
+          if (loaderSubtabs) loaderSubtabs.style.display = 'flex';
+          const isSilent = loaderSubtabSilent && loaderSubtabSilent.classList.contains('active');
+          if (loaderCrumbParent) loaderCrumbParent.textContent = 'Aimbot';
+          if (loaderCrumbActive) loaderCrumbActive.textContent = isSilent ? 'Silent Aim' : 'Aimbot';
+
+          loaderPanels.forEach(p => p.classList.remove('active'));
+          if (isSilent && panelSilent) {
+            panelSilent.classList.add('active');
+          } else if (panelAimbot) {
+            panelAimbot.classList.add('active');
+          }
+        } else {
+          if (loaderSubtabs) loaderSubtabs.style.display = 'none';
+          const name = titleMap[tab] || tab;
+          if (loaderCrumbParent) loaderCrumbParent.textContent = name;
+          if (loaderCrumbActive) loaderCrumbActive.textContent = name;
+
+          loaderPanels.forEach(p => p.classList.remove('active'));
+          const target = document.getElementById(`panel-${tab}`);
+          if (target) target.classList.add('active');
+        }
+      });
+    });
+  }
+
+  if (loaderSubtabSilent && loaderSubtabAimbot) {
+    loaderSubtabSilent.addEventListener('click', () => {
+      loaderSubtabAimbot.classList.remove('active');
+      loaderSubtabSilent.classList.add('active');
+      if (loaderCrumbActive) loaderCrumbActive.textContent = 'Silent Aim';
+      if (panelAimbot) panelAimbot.classList.remove('active');
+      if (panelSilent) panelSilent.classList.add('active');
+    });
+
+    loaderSubtabAimbot.addEventListener('click', () => {
+      loaderSubtabSilent.classList.remove('active');
+      loaderSubtabAimbot.classList.add('active');
+      if (loaderCrumbActive) loaderCrumbActive.textContent = 'Aimbot';
+      if (panelSilent) panelSilent.classList.remove('active');
+      if (panelAimbot) panelAimbot.classList.add('active');
+    });
+  }
+
+  const fovSlider = document.getElementById('fovSlider');
+  const fovVal = document.getElementById('fovVal');
+  if (fovSlider && fovVal) {
+    fovSlider.addEventListener('input', () => {
+      fovVal.textContent = `${fovSlider.value}px`;
+    });
+  }
+
+  const smoothSlider = document.getElementById('smoothSlider');
+  const smoothVal = document.getElementById('smoothVal');
+  if (smoothSlider && smoothVal) {
+    smoothSlider.addEventListener('input', () => {
+      smoothVal.textContent = smoothSlider.value;
+    });
+  }
+
+  const silentFovSlider = document.getElementById('silentFovSlider');
+  const silentFovVal = document.getElementById('silentFovVal');
+  if (silentFovSlider && silentFovVal) {
+    silentFovSlider.addEventListener('input', () => {
+      silentFovVal.textContent = `${silentFovSlider.value}px`;
+    });
+  }
+
+  const silentHitSlider = document.getElementById('silentHitSlider');
+  const silentHitVal = document.getElementById('silentHitVal');
+  if (silentHitSlider && silentHitVal) {
+    silentHitSlider.addEventListener('input', () => {
+      silentHitVal.textContent = `${silentHitSlider.value}%`;
+    });
+  }
+
+  const arrowSizeSlider = document.getElementById('arrowSizeSlider');
+  const arrowSizeVal = document.getElementById('arrowSizeVal');
+  if (arrowSizeSlider && arrowSizeVal) {
+    arrowSizeSlider.addEventListener('input', () => {
+      arrowSizeVal.textContent = `${arrowSizeSlider.value}px`;
+    });
+  }
+
   if (getCart().length === 0 && !localStorage.getItem('madcheats_cart_initialized')) {
     localStorage.setItem('madcheats_cart_initialized', 'true');
     addToCart({

@@ -91,6 +91,7 @@
           </div>
         </div>
       </div>
+      <a href="#loader" class="nav-link">Loader</a>
       <a href="#bento-tech" class="nav-link">Features</a>
       <a href="#reviews" class="nav-link">Reviews</a>
       <a href="#faq" class="nav-link">FAQ</a>
@@ -385,6 +386,506 @@
             </a>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section-wrap" id="loader">
+      <div class="container">
+        <div class="sec-header">
+          <div class="sec-title-wrap">
+            <h2>
+              <i class="fa-solid fa-gamepad"></i>
+              <span>Next-Gen Private <span class="gradient-text">Client Loader.</span></span>
+            </h2>
+            <p>Streamproof, kernel-level menu engineered with sub-millisecond input response and zero detection surface.</p>
+          </div>
+        </div>
+
+        <div class="loader-showcase-wrap">
+          <div class="loader-card" id="loaderCard">
+            <aside class="loader-sidebar">
+              <div class="loader-brand">
+                <svg class="loader-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 10C33 10 22 22 22 36C22 46 26 55 32 61C28 66 22 74 22 83C22 88 28 91 34 89C40 87 45 78 47 74C49 75 51 75 53 74C55 78 60 87 66 89C72 91 78 88 78 83C78 74 72 66 68 61C74 55 78 46 78 36C78 22 67 10 50 10Z" fill="#ff4343"/>
+                  <path d="M35 34C35 30 38 26 43 26H57C62 26 65 30 65 34C65 40 60 44 54 44H46C40 44 35 40 35 34Z" fill="#07080B"/>
+                  <circle cx="50" cy="65" r="11" fill="#07080B"/>
+                  <circle cx="50" cy="65" r="6" fill="#ff4343"/>
+                </svg>
+                <div class="loader-brand-meta">
+                  <span class="loader-brand-name">MADCHEATS</span>
+                  <span class="loader-brand-sub">CLIENT</span>
+                </div>
+              </div>
+
+              <div class="loader-nav-groups">
+                <div class="loader-nav-group">
+                  <span class="loader-group-title">COMBAT</span>
+                  <button type="button" class="loader-nav-btn active" data-tab="aimbot">
+                    <i class="fa-solid fa-crosshairs"></i>
+                    <span>Aimbot</span>
+                  </button>
+                </div>
+
+                <div class="loader-nav-group">
+                  <span class="loader-group-title">VISUALS</span>
+                  <button type="button" class="loader-nav-btn" data-tab="players">
+                    <i class="fa-solid fa-user-group"></i>
+                    <span>Players</span>
+                  </button>
+                  <button type="button" class="loader-nav-btn" data-tab="npcs">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>NPCs</span>
+                  </button>
+                  <button type="button" class="loader-nav-btn" data-tab="world">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>World</span>
+                  </button>
+                </div>
+
+                <div class="loader-nav-group">
+                  <span class="loader-group-title">UTILITIES</span>
+                  <button type="button" class="loader-nav-btn" data-tab="oof">
+                    <i class="fa-solid fa-location-arrow"></i>
+                    <span>OOF Arrows</span>
+                  </button>
+                  <button type="button" class="loader-nav-btn" data-tab="exploits">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Exploits</span>
+                  </button>
+                  <button type="button" class="loader-nav-btn" data-tab="misc">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Misc</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="loader-sidebar-footer">
+                <div class="loader-pill-status">
+                  <span class="loader-live-dot"></span>
+                  <span>MadCheats v2.4</span>
+                </div>
+              </div>
+            </aside>
+
+            <div class="loader-main">
+              <div class="loader-header-bar">
+                <div class="loader-breadcrumb">
+                  <span class="loader-live-dot"></span>
+                  <span class="loader-crumb-parent" id="loaderCrumbParent">Aimbot</span>
+                  <span class="loader-crumb-sep">/</span>
+                  <span class="loader-crumb-active" id="loaderCrumbActive">Aimbot</span>
+                </div>
+
+                <div class="loader-subtabs" id="loaderSubtabs">
+                  <button type="button" class="loader-subtab-btn" id="loaderSubtabSilent" data-subtab="silent">Silent Aim</button>
+                  <button type="button" class="loader-subtab-btn active" id="loaderSubtabAimbot" data-subtab="aimbot">Aimbot</button>
+                </div>
+              </div>
+
+              <div class="loader-body">
+                <div class="loader-panel active" id="panel-aimbot">
+                  <div class="loader-panel-grid">
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Aimbot Enabled</span>
+                        <div class="loader-box-header-actions">
+                          <i class="fa-solid fa-chevron-down loader-chevron"></i>
+                          <label class="loader-switch">
+                            <input type="checkbox" checked class="loader-toggle" id="aimbotEnabledToggle">
+                            <span class="loader-slider-track"></span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="loader-control-group">
+                        <label class="loader-label">Aimbot Target Mode</label>
+                        <div class="loader-select-wrap">
+                          <select class="loader-select" id="aimbotTargetMode">
+                            <option value="crosshair">Closest to Crosshair</option>
+                            <option value="distance">Closest to Distance</option>
+                            <option value="health">Lowest Health</option>
+                          </select>
+                          <i class="fa-solid fa-ellipsis loader-select-icon"></i>
+                        </div>
+                      </div>
+
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">Aimbot FOV</span>
+                          <span class="loader-range-value" id="fovVal">52px</span>
+                        </div>
+                        <input type="range" min="0" max="360" value="52" class="loader-range-slider" id="fovSlider">
+                      </div>
+
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">Aimbot Smoothness</span>
+                          <span class="loader-range-value" id="smoothVal">1</span>
+                        </div>
+                        <input type="range" min="1" max="20" value="1" class="loader-range-slider" id="smoothSlider">
+                      </div>
+
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Aimbot Only Visible</span>
+                        <label class="loader-switch">
+                          <input type="checkbox" class="loader-toggle" id="onlyVisibleToggle">
+                          <span class="loader-slider-track"></span>
+                        </label>
+                      </div>
+
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Aimbot Prediction</span>
+                        <label class="loader-switch">
+                          <input type="checkbox" checked class="loader-toggle" id="predictionToggle">
+                          <span class="loader-slider-track"></span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="loader-card-box">
+                      <div class="loader-control-group">
+                        <label class="loader-label">Aimbot Bone</label>
+                        <div class="loader-select-wrap">
+                          <select class="loader-select" id="aimbotBone">
+                            <option value="head">Head</option>
+                            <option value="neck">Neck</option>
+                            <option value="chest">Chest</option>
+                            <option value="pelvis">Pelvis</option>
+                          </select>
+                          <i class="fa-solid fa-ellipsis loader-select-icon"></i>
+                        </div>
+                      </div>
+
+                      <div class="loader-feature-item">
+                        <div class="loader-feature-lead">
+                          <i class="fa-solid fa-chevron-right loader-feature-arrow"></i>
+                          <span>Aimbot Show FOV</span>
+                        </div>
+                        <label class="loader-switch">
+                          <input type="checkbox" checked class="loader-toggle" id="showFovToggle">
+                          <span class="loader-slider-track"></span>
+                        </label>
+                      </div>
+
+                      <div class="loader-feature-item highlighted">
+                        <div class="loader-feature-lead">
+                          <i class="fa-solid fa-chevron-right loader-feature-arrow"></i>
+                          <span>Aimbot Show Line</span>
+                        </div>
+                        <label class="loader-switch">
+                          <input type="checkbox" checked class="loader-toggle" id="showLineToggle">
+                          <span class="loader-slider-track"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="loader-panel" id="panel-silent">
+                  <div class="loader-panel-grid">
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Silent Aim Enabled</span>
+                        <div class="loader-box-header-actions">
+                          <i class="fa-solid fa-chevron-down loader-chevron"></i>
+                          <label class="loader-switch">
+                            <input type="checkbox" checked class="loader-toggle">
+                            <span class="loader-slider-track"></span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="loader-control-group">
+                        <label class="loader-label">Silent Target Priority</label>
+                        <div class="loader-select-wrap">
+                          <select class="loader-select">
+                            <option>Nearest Player to Crosshair</option>
+                            <option>Lowest Health Target</option>
+                            <option>Highest Threat / Distance</option>
+                          </select>
+                          <i class="fa-solid fa-ellipsis loader-select-icon"></i>
+                        </div>
+                      </div>
+
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">Silent Aim FOV Radius</span>
+                          <span class="loader-range-value" id="silentFovVal">40px</span>
+                        </div>
+                        <input type="range" min="0" max="360" value="40" class="loader-range-slider" id="silentFovSlider">
+                      </div>
+
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">Hit Probability / Chance</span>
+                          <span class="loader-range-value" id="silentHitVal">100%</span>
+                        </div>
+                        <input type="range" min="10" max="100" value="100" class="loader-range-slider" id="silentHitSlider">
+                      </div>
+
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Desync Bullet Redirection</span>
+                        <label class="loader-switch">
+                          <input type="checkbox" checked class="loader-toggle">
+                          <span class="loader-slider-track"></span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="loader-card-box">
+                      <div class="loader-control-group">
+                        <label class="loader-label">Target Bone Selection</label>
+                        <div class="loader-select-wrap">
+                          <select class="loader-select">
+                            <option>Head (Fatal Hit)</option>
+                            <option>Neck</option>
+                            <option>Upper Chest</option>
+                            <option>Randomize (Bypass Check)</option>
+                          </select>
+                          <i class="fa-solid fa-ellipsis loader-select-icon"></i>
+                        </div>
+                      </div>
+
+                      <div class="loader-feature-item">
+                        <div class="loader-feature-lead">
+                          <i class="fa-solid fa-chevron-right loader-feature-arrow"></i>
+                          <span>Magic Bullet / Penetration</span>
+                        </div>
+                        <label class="loader-switch">
+                          <input type="checkbox" checked class="loader-toggle">
+                          <span class="loader-slider-track"></span>
+                        </label>
+                      </div>
+
+                      <div class="loader-feature-item highlighted">
+                        <div class="loader-feature-lead">
+                          <i class="fa-solid fa-chevron-right loader-feature-arrow"></i>
+                          <span>Draw 3D Bullet Tracers</span>
+                        </div>
+                        <label class="loader-switch">
+                          <input type="checkbox" checked class="loader-toggle">
+                          <span class="loader-slider-track"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="loader-panel" id="panel-players">
+                  <div class="loader-panel-grid">
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Player ESP Overlay</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Player 2D/3D Box</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Health Bar &amp; Number</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Player Skeleton</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Distance &amp; Snaplines</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Player Distance (m)</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Snaplines to Target</span>
+                        <label class="loader-switch"><input type="checkbox" class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Weapon &amp; Ammo Display</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="loader-panel" id="panel-npcs">
+                  <div class="loader-panel-grid">
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">NPC &amp; Mob ESP</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Boss &amp; Elite ESP</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Loot Tier Filter</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Tactical Indicators</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Drop Rate Visualizer</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Aggro Proximity Ring</span>
+                        <label class="loader-switch"><input type="checkbox" class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="loader-panel" id="panel-world">
+                  <div class="loader-panel-grid">
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">World Objects</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Supply Drops &amp; Crates</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Vehicles &amp; Transports</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Waypoints &amp; Exits</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Extraction Points</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Traps &amp; Turrets</span>
+                        <label class="loader-switch"><input type="checkbox" class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="loader-panel" id="panel-oof">
+                  <div class="loader-panel-grid">
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Off-Screen Target Arrows</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">OOF Arrow Indicators</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Proximity Threat Warning</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Arrow Customization</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Behind Warning Flash</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">Indicator Size</span>
+                          <span class="loader-range-value" id="arrowSizeVal">14px</span>
+                        </div>
+                        <input type="range" min="8" max="24" value="14" class="loader-range-slider" id="arrowSizeSlider">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="loader-panel" id="panel-exploits">
+                  <div class="loader-panel-grid">
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Weapon Exploits</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">100% No Recoil Control</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Instant Hit / Magic Bullet</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Movement Exploits</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Rapid Fire Acceleration</span>
+                        <label class="loader-switch"><input type="checkbox" class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Bunnyhop Auto-Jumper</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="loader-panel" id="panel-misc">
+                  <div class="loader-panel-grid">
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">System &amp; Overlay Settings</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">External Streamproof Solution</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Custom Crosshair Overlay</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                    <div class="loader-card-box">
+                      <div class="loader-box-header">
+                        <span class="loader-box-title">Diagnostics</span>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">FPS / Latency Watermark</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-toggle-row">
+                        <span class="loader-label">Panic Key (F11 Killswitch)</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="loader-footer-bar">
+                <div class="loader-footer-left">
+                  <span class="loader-status-badge">
+                    <span class="loader-live-dot"></span>
+                    <span>UNDETECTED</span>
+                  </span>
+                  <span class="loader-footer-meta">Build: 2409.11</span>
+                </div>
+                <div class="loader-footer-right">
+                  <span class="loader-footer-meta">Ping: <strong class="text-green">24ms</strong></span>
+                  <span class="loader-footer-meta">FPS: <strong class="text-white">144</strong></span>
+                  <span class="loader-footer-key">INSERT to hide</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
