@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopping Cart | MadCheats</title>
+  <meta name="description" content="View your selected undetected cheats and proceed to secure checkout. Instant digital license key delivery and 24/7 VIP Discord setup.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff4343' d='M50 8 C32 8 20 22 20 38 C20 48 24 57 30 63 C27 68 22 75 22 84 C22 89 27 92 33 90 C39 88 44 80 46 76 C48 77 52 77 54 76 C56 80 61 88 67 90 C73 92 78 89 78 84 C78 75 73 68 70 63 C76 57 80 48 80 38 C80 22 68 8 50 8 Z M50 20 C62 20 70 28 70 40 C70 45 66 50 62 52 C58 48 54 46 50 46 C46 46 42 48 38 52 C34 50 30 45 30 40 C30 28 38 20 50 20 Z M50 54 C58 54 64 60 64 68 C64 76 58 82 50 82 C42 82 36 76 36 68 C36 60 42 54 50 54 Z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg class="film-grain" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <filter id="grain-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+  </svg>
+
+  <header class="site-header is-home" id="navbar">
+    <div class="header-lead sf-rsz2">
+      <a href="index.html" class="site-logo" aria-label="MadCheats home">
+        <svg class="site-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 10C33 10 22 22 22 36C22 46 26 55 32 61C28 66 22 74 22 83C22 88 28 91 34 89C40 87 45 78 47 74C49 75 51 75 53 74C55 78 60 87 66 89C72 91 78 88 78 83C78 74 72 66 68 61C74 55 78 46 78 36C78 22 67 10 50 10Z" fill="#ff4343"/>
+          <path d="M35 34C35 30 38 26 43 26H57C62 26 65 30 65 34C65 40 60 44 54 44H46C40 44 35 40 35 34Z" fill="#07080B"/>
+          <circle cx="50" cy="65" r="11" fill="#07080B"/>
+          <circle cx="50" cy="65" r="6" fill="#ff4343"/>
+        </svg>
+        <span>MADCHEATS<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="online-now" aria-label="1,482 members online now" title="1,482 members online now">
+        <span class="online-now-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#onlineNowGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+              <linearGradient id="onlineNowGrad" x1="0" y1="0" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#cc1818"></stop>
+                <stop offset="0.5" stop-color="#ff4343"></stop>
+                <stop offset="1" stop-color="#cc1818"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span class="online-now-meta">
+          <span class="online-now-count">1,482</span>
+          <span class="online-now-label">members online</span>
+        </span>
+      </div>
+    </div>
+
+    <nav class="nav-menu" aria-label="Main Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#popular-cheats" class="nav-link">Cheats</a>
+      <a href="index.html#bento-tech" class="nav-link">Features</a>
+      <a href="index.html#reviews" class="nav-link">Reviews</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="header-search-btn" id="searchTriggerBtn" type="button" aria-label="Search software">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path>
+        </svg>
+      </button>
+
+      <button type="button" class="prefs-button" aria-label="Change language or currency">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3a13.5 13.5 0 0 1 0 18a13.5 13.5 0 0 1 0-18"></path>
+        </svg>
+        <span class="prefs-lang">EN</span>
+        <span class="prefs-dot" aria-hidden="true">&middot;</span>
+        <span class="prefs-cur">$</span>
+      </button>
+
+      <a href="cart.html" class="cart-button active" id="cartToggleBtn" aria-label="Shopping Cart">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="bc-page-container">
+      <div class="bc-top-bar">
+        <div class="bc-breadcrumbs">
+          <a href="index.html" class="bc-crumb-link"><i class="fa-solid fa-house"></i> Home</a>
+          <span class="bc-sep">/</span>
+          <a href="index.html#popular-cheats" class="bc-crumb-link">Store</a>
+          <span class="bc-sep">/</span>
+          <span class="bc-crumb-current">Shopping Cart</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-page-wrap">
+      <div id="cartActiveState">
+        <div class="cart-page-title-row">
+          <h1 class="cart-page-heading">
+            <span>Shopping Cart</span>
+            <span class="cart-count-badge" id="cartCountHeader">0 items</span>
+          </h1>
+          <a href="index.html#popular-cheats" class="cart-continue-link">
+            <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+          </a>
+        </div>
+
+        <div class="cart-page-grid">
+          <div class="cart-items-container" id="cartPageList"></div>
+
+          <aside class="cart-summary-card">
+            <h2 class="cart-summary-title">Order Summary</h2>
+
+            <div class="cart-summary-row">
+              <span>Subtotal</span>
+              <span class="cart-summary-val" id="summarySubtotal">$0.00</span>
+            </div>
+
+            <div class="cart-coupon-wrap">
+              <div class="cart-coupon-form">
+                <input type="text" id="cartCouponInput" class="cart-coupon-input" placeholder="Promo code (e.g. MAD10)" autocomplete="off">
+                <button type="button" id="cartCouponBtn" class="cart-coupon-btn">Apply</button>
+              </div>
+              <div id="cartCouponMsg" class="cart-coupon-msg"></div>
+            </div>
+
+            <div class="cart-summary-row" id="summaryDiscountRow" style="display: none;">
+              <span>Discount</span>
+              <span class="cart-summary-val discount" id="summaryDiscount">-$0.00</span>
+            </div>
+
+            <div class="cart-summary-row">
+              <span>Estimated Tax</span>
+              <span class="cart-summary-val">$0.00</span>
+            </div>
+
+            <div class="cart-total-row">
+              <span class="cart-total-lbl">Total</span>
+              <span class="cart-total-amount" id="summaryTotal">$0.00</span>
+            </div>
+
+            <button type="button" class="cart-checkout-btn" id="cartPageCheckoutBtn">
+              <i class="fa-solid fa-lock"></i> Proceed to Checkout
+            </button>
+
+            <div class="cart-trust-list">
+              <div class="cart-trust-item">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Instant digital license delivery</span>
+              </div>
+              <div class="cart-trust-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Ring-0 kernel undetected architecture</span>
+              </div>
+              <div class="cart-trust-item">
+                <i class="fa-solid fa-headset"></i>
+                <span>24/7 dedicated VIP Discord support</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div id="cartEmptyState" class="cart-empty-panel" style="display: none;">
+        <div class="cart-empty-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <h2 class="cart-empty-title">Your Cart is Empty</h2>
+        <p class="cart-empty-desc">
+          You have not added any software licenses yet. Browse our selection of undetected private cheats for Rust, Arc Raiders, Rainbow Six Siege, Warzone, and more.
+        </p>
+        <a href="index.html#popular-cheats" class="theme-button__primary">
+          <i class="fa-solid fa-bolt"></i> Browse Cheats
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="site-logo">
+          <svg class="site-logo-icon" viewBox="0 0 100 100" fill="none">
+            <path d="M50 10C33 10 22 22 22 36C22 46 26 55 32 61C28 66 22 74 22 83C22 88 28 91 34 89C40 87 45 78 47 74C49 75 51 75 53 74C55 78 60 87 66 89C72 91 78 88 78 83C78 74 72 66 68 61C74 55 78 46 78 36C78 22 67 10 50 10Z" fill="#ff4343"/>
+            <path d="M35 34C35 30 38 26 43 26H57C62 26 65 30 65 34C65 40 60 44 54 44H46C40 44 35 40 35 34Z" fill="#07080B"/>
+            <circle cx="50" cy="65" r="11" fill="#07080B"/>
+            <circle cx="50" cy="65" r="6" fill="#ff4343"/>
+          </svg>
+          <span>MADCHEATS<span class="brand-dot">.</span></span>
+        </a>
+        <p class="footer-desc">
+          The pinnacle of undetected game enhancement software. Hypervisor kernel engineering, zero bans recorded, and automated instant fulfillment.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Products</div>
+        <ul class="footer-links">
+          <li><a href="arc.html">Arc Raiders</a></li>
+          <li><a href="rust.html">Rust</a></li>
+          <li><a href="r6.html">Rainbow Six Siege</a></li>
+          <li><a href="wardogs.html">Wardogs</a></li>
+          <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="fortnite.html">Fortnite</a></li>
+          <li><a href="cod.html">BO7 &amp; Warzone</a></li>
+          <li><a href="apex.html">Apex Legends</a></li>
+          <li><a href="spoofer.html">HWID Spoofer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Community</div>
+        <ul class="footer-links">
+          <li><a href="https://discord.gg/madcheats" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
+          <li><a href="index.html#reviews">Customer Reviews</a></li>
+          <li><a href="index.html#faq">Frequently Asked</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Status</div>
+        <div class="footer-status-pill">
+          <span class="dot"></span>
+          <span>All Systems Undetected</span>
+        </div>
+        <p class="footer-subtext">Automated anti-cheat scanners monitor BE, EAC, Ricochet, and Vanguard continuously.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 MadCheats. All rights reserved. Built for competitive supremacy.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Status</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="checkout-modal-overlay" id="checkoutSuccessModal" aria-hidden="true">
+    <div class="checkout-modal-backdrop" id="closeCheckoutSuccessBackdrop"></div>
+    <div class="checkout-modal-card">
+      <div class="checkout-modal-header">
+        <div class="checkout-success-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 class="checkout-success-title">Order Completed Successfully!</h3>
+        <p class="checkout-success-subtitle">Your license key has been generated and dispatched to your session.</p>
+      </div>
+
+      <div class="checkout-key-container">
+        <div class="checkout-key-label">YOUR ACTIVATION LICENSE KEY</div>
+        <div class="checkout-key-box">
+          <span class="checkout-key-text" id="generatedLicenseKey">MAD-XXXX-XXXX-XXXX-CRUSADER</span>
+          <button type="button" class="checkout-copy-btn" id="copyLicenseBtn" aria-label="Copy key to clipboard">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Key</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="checkout-instructions">
+        <div class="instruction-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Download the MadCheats Loader from your client portal or VIP Discord.</span>
+        </div>
+        <div class="instruction-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Run the loader as Administrator before launching your game client.</span>
+        </div>
+        <div class="instruction-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Paste your activation license key above and press Inject. Enjoy undetected features!</span>
+        </div>
+      </div>
+
+      <div class="checkout-modal-actions">
+        <a href="index.html#popular-cheats" class="theme-button__primary" style="width: 100%; text-align: center;">
+          Return to Store
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cartActiveState = document.getElementById('cartActiveState');
+      const cartEmptyState = document.getElementById('cartEmptyState');
+      const cartPageList = document.getElementById('cartPageList');
+      const cartCountHeader = document.getElementById('cartCountHeader');
+      const summarySubtotal = document.getElementById('summarySubtotal');
+      const summaryDiscountRow = document.getElementById('summaryDiscountRow');
+      const summaryDiscount = document.getElementById('summaryDiscount');
+      const summaryTotal = document.getElementById('summaryTotal');
+      const cartCouponInput = document.getElementById('cartCouponInput');
+      const cartCouponBtn = document.getElementById('cartCouponBtn');
+      const cartCouponMsg = document.getElementById('cartCouponMsg');
+      const cartPageCheckoutBtn = document.getElementById('cartPageCheckoutBtn');
+      const checkoutSuccessModal = document.getElementById('checkoutSuccessModal');
+      const closeCheckoutSuccessBackdrop = document.getElementById('closeCheckoutSuccessBackdrop');
+      const generatedLicenseKey = document.getElementById('generatedLicenseKey');
+      const copyLicenseBtn = document.getElementById('copyLicenseBtn');
+
+      let discountPercent = 0;
+
+      function getCart() {
+        try {
+          return JSON.parse(localStorage.getItem('madcheats_cart_items')) || [];
+        } catch {
+          return [];
+        }
+      }
+
+      function saveCart(cart) {
+        localStorage.setItem('madcheats_cart_items', JSON.stringify(cart));
+        renderCart();
+        if (window.MadCheatsCart && window.MadCheatsCart.updateCartUI) {
+          window.MadCheatsCart.updateCartUI();
+        }
+      }
+
+      function renderCart() {
+        const cart = getCart();
+        const totalItemsCount = cart.reduce((acc, it) => acc + (it.qty || 1), 0);
+
+        if (cart.length === 0) {
+          cartActiveState.style.display = 'none';
+          cartEmptyState.style.display = 'flex';
+          cartCountHeader.textContent = '0 items';
+          return;
+        }
+
+        cartActiveState.style.display = 'block';
+        cartEmptyState.style.display = 'none';
+        cartCountHeader.textContent = `${totalItemsCount} ${totalItemsCount === 1 ? 'item' : 'items'}`;
+
+        cartPageList.innerHTML = '';
+        let subtotal = 0;
+
+        cart.forEach((item, index) => {
+          const itemQty = item.qty || 1;
+          const itemSub = item.price * itemQty;
+          subtotal += itemSub;
+
+          const card = document.createElement('div');
+          card.className = 'cart-card-item';
+          card.innerHTML = `
+            <img src="${item.image}" alt="${item.gameTitle}" class="cart-item-img">
+            <div class="cart-item-details">
+              <div class="cart-item-title">${item.cheatName} &bull; ${item.gameTitle}</div>
+              <div class="cart-item-variant">
+                <span class="variant-badge">${item.durationName || 'Standard'}</span>
+                <span>${item.edition || 'Ring-0 Undetected'}</span>
+              </div>
+              <div class="cart-item-unit-price">$${item.price.toFixed(2)} each</div>
+            </div>
+            <div class="cart-qty-stepper">
+              <button type="button" class="cart-qty-btn js-minus" aria-label="Decrease quantity">-</button>
+              <span class="cart-qty-count">${itemQty}</span>
+              <button type="button" class="cart-qty-btn js-plus" aria-label="Increase quantity">+</button>
+            </div>
+            <div class="cart-item-subtotal">$${itemSub.toFixed(2)}</div>
+            <button type="button" class="cart-item-remove-btn js-remove" aria-label="Remove item">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          `;
+
+          card.querySelector('.js-minus').addEventListener('click', () => {
+            if (itemQty > 1) {
+              cart[index].qty = itemQty - 1;
+              saveCart(cart);
+            } else {
+              cart.splice(index, 1);
+              saveCart(cart);
+            }
+          });
+
+          card.querySelector('.js-plus').addEventListener('click', () => {
+            if (itemQty < 50) {
+              cart[index].qty = itemQty + 1;
+              saveCart(cart);
+            }
+          });
+
+          card.querySelector('.js-remove').addEventListener('click', () => {
+            cart.splice(index, 1);
+            saveCart(cart);
+          });
+
+          cartPageList.appendChild(card);
+        });
+
+        const discountAmount = subtotal * discountPercent;
+        const finalTotal = Math.max(0, subtotal - discountAmount);
+
+        summarySubtotal.textContent = `$${subtotal.toFixed(2)}`;
+        if (discountPercent > 0) {
+          summaryDiscountRow.style.display = 'flex';
+          summaryDiscount.textContent = `-$${discountAmount.toFixed(2)}`;
+        } else {
+          summaryDiscountRow.style.display = 'none';
+        }
+        summaryTotal.textContent = `$${finalTotal.toFixed(2)}`;
+      }
+
+      if (cartCouponBtn && cartCouponInput) {
+        cartCouponBtn.addEventListener('click', () => {
+          const code = cartCouponInput.value.trim().toUpperCase();
+          if (code === 'MAD10' || code === 'ARCTIC' || code === 'PROMO') {
+            discountPercent = 0.10;
+            cartCouponMsg.className = 'cart-coupon-msg success';
+            cartCouponMsg.textContent = '10% discount applied to your order!';
+          } else if (code.length === 0) {
+            discountPercent = 0;
+            cartCouponMsg.className = 'cart-coupon-msg';
+            cartCouponMsg.textContent = '';
+          } else {
+            discountPercent = 0;
+            cartCouponMsg.className = 'cart-coupon-msg error';
+            cartCouponMsg.textContent = 'Invalid promo code. Try MAD10';
+          }
+          renderCart();
+        });
+      }
+
+      function openSuccessModal() {
+        const randomHex = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1).toUpperCase();
+        const key = `MAD-${randomHex()}-${randomHex()}-${randomHex()}-CRUSADER`;
+        if (generatedLicenseKey) generatedLicenseKey.textContent = key;
+        if (checkoutSuccessModal) {
+          checkoutSuccessModal.setAttribute('aria-hidden', 'false');
+          checkoutSuccessModal.classList.add('open');
+        }
+      }
+
+      function closeSuccessModal() {
+        if (checkoutSuccessModal) {
+          checkoutSuccessModal.setAttribute('aria-hidden', 'true');
+          checkoutSuccessModal.classList.remove('open');
+        }
+      }
+
+      if (cartPageCheckoutBtn) {
+        cartPageCheckoutBtn.addEventListener('click', () => {
+          const cart = getCart();
+          if (cart.length === 0) return;
+          openSuccessModal();
+          localStorage.removeItem('madcheats_cart_items');
+          renderCart();
+        });
+      }
+
+      if (closeCheckoutSuccessBackdrop) {
+        closeCheckoutSuccessBackdrop.addEventListener('click', closeSuccessModal);
+      }
+
+      if (copyLicenseBtn && generatedLicenseKey) {
+        copyLicenseBtn.addEventListener('click', () => {
+          const key = generatedLicenseKey.textContent;
+          navigator.clipboard.writeText(key).then(() => {
+            copyLicenseBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Copied!</span>';
+            setTimeout(() => {
+              copyLicenseBtn.innerHTML = '<i class="fa-regular fa-copy"></i> <span>Copy Key</span>';
+            }, 2000);
+          });
+        });
+      }
+
+      renderCart();
+
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('checkout') === 'true') {
+        const cart = getCart();
+        if (cart.length > 0) {
+          openSuccessModal();
+          localStorage.removeItem('madcheats_cart_items');
+          renderCart();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

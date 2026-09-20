@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HWID Spoofer — Undetected Permanent Hardware Cleaner | MadCheats</title>
+  <meta name="description" content="Bypass hardware bans with undetected kernel hardware spoofing. EAC, BattlEye, Ricochet, and Vanguard support. No Windows reinstall required. Instant delivery.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff4343' d='M50 8 C32 8 20 22 20 38 C20 48 24 57 30 63 C27 68 22 75 22 84 C22 89 27 92 33 90 C39 88 44 80 46 76 C48 77 52 77 54 76 C56 80 61 88 67 90 C73 92 78 89 78 84 C78 75 73 68 70 63 C76 57 80 48 80 38 C80 22 68 8 50 8 Z M50 20 C62 20 70 28 70 40 C70 45 66 50 62 52 C58 48 54 46 50 46 C46 46 42 48 38 52 C34 50 30 45 30 40 C30 28 38 20 50 20 Z M50 54 C58 54 64 60 64 68 C64 76 58 82 50 82 C42 82 36 76 36 68 C36 60 42 54 50 54 Z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg class="film-grain" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <filter id="grain-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+  </svg>
+
+  <header class="site-header is-home" id="navbar">
+    <div class="header-lead sf-rsz2">
+      <a href="index.html" class="site-logo" aria-label="MadCheats home">
+        <svg class="site-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 10C33 10 22 22 22 36C22 46 26 55 32 61C28 66 22 74 22 83C22 88 28 91 34 89C40 87 45 78 47 74C49 75 51 75 53 74C55 78 60 87 66 89C72 91 78 88 78 83C78 74 72 66 68 61C74 55 78 46 78 36C78 22 67 10 50 10Z" fill="#ff4343"/>
+          <path d="M35 34C35 30 38 26 43 26H57C62 26 65 30 65 34C65 40 60 44 54 44H46C40 44 35 40 35 34Z" fill="#07080B"/>
+          <circle cx="50" cy="65" r="11" fill="#07080B"/>
+          <circle cx="50" cy="65" r="6" fill="#ff4343"/>
+        </svg>
+        <span>MADCHEATS<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="online-now" aria-label="1,482 members online now" title="1,482 members online now">
+        <span class="online-now-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#onlineNowGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+              <linearGradient id="onlineNowGrad" x1="0" y1="0" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#cc1818"></stop>
+                <stop offset="0.5" stop-color="#ff4343"></stop>
+                <stop offset="1" stop-color="#cc1818"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span class="online-now-meta">
+          <span class="online-now-count">1,482</span>
+          <span class="online-now-label">members online</span>
+        </span>
+      </div>
+    </div>
+
+    <nav class="nav-menu" aria-label="Main Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#popular-cheats" class="nav-link active">Cheats</a>
+      <a href="index.html#bento-tech" class="nav-link">Features</a>
+      <a href="index.html#reviews" class="nav-link">Reviews</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="header-search-btn" id="searchTriggerBtn" type="button" aria-label="Search software">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path>
+        </svg>
+      </button>
+
+      <button type="button" class="prefs-button" aria-label="Change language or currency">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3a13.5 13.5 0 0 1 0 18a13.5 13.5 0 0 1 0-18"></path>
+        </svg>
+        <span class="prefs-lang">EN</span>
+        <span class="prefs-dot" aria-hidden="true">&middot;</span>
+        <span class="prefs-cur">$</span>
+      </button>
+
+      <a href="cart.html" class="cart-button" id="cartToggleBtn" aria-label="Shopping Cart">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="bc-page-container">
+      <div class="bc-top-bar">
+        <div class="bc-breadcrumbs">
+          <a href="index.html" class="bc-crumb-link"><i class="fa-solid fa-house"></i> Home</a>
+          <span class="bc-sep">/</span>
+          <a href="index.html#popular-cheats" class="bc-crumb-link">Store</a>
+          <span class="bc-sep">/</span>
+          <button type="button" class="bc-crumb-btn" id="bcGameCrumb">HWID SPOOFER</button>
+          <span class="bc-sep bc-crumb-cheat-sep" id="bcCrumbSep">/</span>
+          <span class="bc-crumb-current" id="bcCrumbCheatTitle">Verse - Perm Spoofer</span>
+        </div>
+        <div class="bc-top-actions">
+          <button type="button" class="bc-view-toggle-btn" id="bcViewGridBtn"><i class="fa-solid fa-border-all"></i> Spoofer (2)</button>
+          <button type="button" class="bc-view-toggle-btn active" id="bcViewProductBtn"><i class="fa-solid fa-sliders"></i> Product View</button>
+        </div>
+      </div>
+
+      <div class="bc-grid-view hidden" id="bcGridView">
+        <div class="bc-cards-grid">
+          <div class="bc-cheat-card js-card-select" data-cheat="verse">
+            <div class="bc-card-img-wrap">
+              <img src="assets/images/bearcheats/1108017.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1108017.webp'" alt="Verse - Perm Spoofer Menu" loading="lazy">
+            </div>
+            <div class="bc-card-title">Verse - Perm Spoofer</div>
+            <div class="bc-card-meta">
+              <div class="bc-from-badge">
+                <span class="bc-from-label">FROM</span>
+                <span class="bc-from-price">$24.00</span>
+              </div>
+              <div class="bc-undetected-badge">
+                <i class="fa-regular fa-circle-check"></i> UNDETECTED
+              </div>
+            </div>
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="verse">
+              <i class="fa-solid fa-bag-shopping"></i> Buy now
+            </button>
+          </div>
+
+          <div class="bc-cheat-card js-card-select" data-cheat="ancient">
+            <div class="bc-card-img-wrap">
+              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Ancient - DMA Hardware Spoofer Menu" loading="lazy">
+            </div>
+            <div class="bc-card-title">Ancient - DMA Spoofer</div>
+            <div class="bc-card-meta">
+              <div class="bc-from-badge">
+                <span class="bc-from-label">FROM</span>
+                <span class="bc-from-price">$39.99</span>
+              </div>
+              <div class="bc-undetected-badge">
+                <i class="fa-regular fa-circle-check"></i> UNDETECTED
+              </div>
+            </div>
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="ancient">
+              <i class="fa-solid fa-bag-shopping"></i> Buy now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bc-product-view" id="bcProductView">
+        <div class="bc-product-card">
+          <div class="bc-media-col">
+            <div class="bc-preview-frame">
+              <img id="bcPreviewImg" src="assets/images/bearcheats/1108017.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1108017.webp'" alt="Spoofer Preview" loading="lazy">
+              <div class="bc-page-counter">1/1</div>
+            </div>
+            <div class="bc-thumbs-row">
+              <div class="bc-thumb" id="bcThumbBox">
+                <img id="bcThumbImg" src="assets/images/bearcheats/1108017.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1108017.webp'" alt="Thumbnail">
+              </div>
+            </div>
+          </div>
+
+          <div class="bc-info-col">
+            <h1 class="bc-title" id="bcProductTitle">VERSE - PERM SPOOFER</h1>
+            <div>
+              <div class="bc-undetected-badge">
+                <i class="fa-regular fa-circle-check"></i> UNDETECTED
+              </div>
+            </div>
+
+            <div class="bc-row-total-qty">
+              <div class="bc-total-group">
+                <span class="bc-subhead">Total</span>
+                <span class="bc-total-val" id="bcTotalAmount">$24.00</span>
+              </div>
+              <div class="bc-qty-group">
+                <span class="bc-subhead">Quantity</span>
+                <div class="bc-stepper">
+                  <button type="button" class="bc-step-btn minus" id="bcQtyMinus">-</button>
+                  <span class="bc-step-num" id="bcQtyVal">1</span>
+                  <button type="button" class="bc-step-btn plus" id="bcQtyPlus">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bc-variant-group">
+              <span class="bc-subhead">Variant</span>
+              <div class="bc-variants-grid" id="bcVariantsGrid"></div>
+            </div>
+
+            <div class="bc-actions-row">
+              <button type="button" class="bc-btn-cart" id="bcAddToCartBtn">
+                <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+              </button>
+              <button type="button" class="bc-btn-buy" id="bcBuyNowBtn">
+                Buy Now &gt;&gt;
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bc-notice-box">
+          <div class="bc-notice-hdr">
+            <i class="fa-solid fa-triangle-exclamation"></i> NOTICE
+          </div>
+          <div class="bc-notice-text">
+            This product natively supports Windows 10 and Windows 11 (all versions including 24H2/25H2). Intel and AMD CPUs are fully supported. No Windows re-installation required. Completely cleans motherboard, disk, MAC, GPU, and registry traces.
+          </div>
+        </div>
+
+        <div class="bc-reqs-box">
+          <div class="bc-reqs-title">REQUIREMENTS</div>
+          <ul class="bc-dot-list" id="bcReqsList">
+            <li class="bc-dot-item"><span class="bc-dot-bullet"></span> Supported CPU: Intel &amp; AMD</li>
+            <li class="bc-dot-item"><span class="bc-dot-bullet"></span> Supported OS: Windows 10–11 (All Builds)</li>
+            <li class="bc-dot-item"><span class="bc-dot-bullet"></span> Anti-Cheat Status: UNDETECTED (EAC, BE, Ricochet, Vanguard)</li>
+          </ul>
+        </div>
+
+        <div class="bc-features-grid" id="bcFeaturesGrid"></div>
+      </div>
+    </div>
+
+    <section class="section-wrap" style="padding: 20px 0 60px;">
+      <div class="container">
+        <div class="sec-header" style="text-align: center; margin-bottom: 36px;">
+          <h2 class="sec-title" style="font-size: 28px; font-weight: 800; color: #fff;">
+            Engineered For <span class="gradient-text">Complete Hardware Cleansing</span>
+          </h2>
+          <p class="sec-subtitle" style="font-size: 14px; color: #9ca3af; max-width: 580px; margin: 8px auto 0;">
+            Every build is uniquely obfuscated per user and loaded beneath the operating system kernel.
+          </p>
+        </div>
+
+        <div class="bento-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <div class="bento-card" style="background: #13161f; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(255,67,67,0.12); color: #ff4343; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px;">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;">Ring-0 Bootloader</h3>
+            <p style="font-size: 13px; color: #94a3b8; line-height: 1.6;">Operates at the bootloader and kernel layer to generate genuine randomized OEM serials. Zero traces.</p>
+          </div>
+
+          <div class="bento-card" style="background: #13161f; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(255,67,67,0.12); color: #ff4343; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px;">
+              <i class="fa-solid fa-broom"></i>
+            </div>
+            <h3 style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;">Automated Cleaner</h3>
+            <p style="font-size: 13px; color: #94a3b8; line-height: 1.6;">Wipes tracking artifacts, USN change journals, system telemetry, and registry keys in a single click.</p>
+          </div>
+
+          <div class="bento-card" style="background: #13161f; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(255,67,67,0.12); color: #ff4343; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px;">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3 style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;">Instant Dispatch</h3>
+            <p style="font-size: 13px; color: #94a3b8; line-height: 1.6;">Automated license generation and immediate loader access. Clean your machine in under two minutes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="site-logo">
+          <svg class="site-logo-icon" viewBox="0 0 100 100" fill="none">
+            <path d="M50 10C33 10 22 22 22 36C22 46 26 55 32 61C28 66 22 74 22 83C22 88 28 91 34 89C40 87 45 78 47 74C49 75 51 75 53 74C55 78 60 87 66 89C72 91 78 88 78 83C78 74 72 66 68 61C74 55 78 46 78 36C78 22 67 10 50 10Z" fill="#ff4343"/>
+            <path d="M35 34C35 30 38 26 43 26H57C62 26 65 30 65 34C65 40 60 44 54 44H46C40 44 35 40 35 34Z" fill="#07080B"/>
+            <circle cx="50" cy="65" r="11" fill="#07080B"/>
+            <circle cx="50" cy="65" r="6" fill="#ff4343"/>
+          </svg>
+          <span>MADCHEATS<span class="brand-dot">.</span></span>
+        </a>
+        <p class="footer-desc">
+          The pinnacle of undetected game enhancement software. Hypervisor kernel engineering, zero bans recorded, and automated instant fulfillment.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Products</div>
+        <ul class="footer-links">
+          <li><a href="arc.html">Arc Raiders</a></li>
+          <li><a href="rust.html">Rust</a></li>
+          <li><a href="r6.html">Rainbow Six Siege</a></li>
+          <li><a href="wardogs.html">Wardogs</a></li>
+          <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="fortnite.html">Fortnite</a></li>
+          <li><a href="cod.html">BO7 &amp; Warzone</a></li>
+          <li><a href="apex.html">Apex Legends</a></li>
+          <li><a href="spoofer.html">HWID Spoofer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Community</div>
+        <ul class="footer-links">
+          <li><a href="https://discord.gg/madcheats" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
+          <li><a href="index.html#reviews">Customer Reviews</a></li>
+          <li><a href="index.html#faq">Frequently Asked</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Status</div>
+        <div class="footer-status-pill">
+          <span class="dot"></span>
+          <span>All Systems Undetected</span>
+        </div>
+        <p class="footer-subtext">Automated anti-cheat scanners monitor BE, EAC, Ricochet, and Vanguard continuously.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 MadCheats. All rights reserved. Built for competitive supremacy.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Status</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const SPOOFER_PRODUCTS = {
+        verse: {
+          id: 'verse-perm-spoofer',
+          key: 'verse',
+          title: 'VERSE - PERM SPOOFER',
+          shortTitle: 'Verse Perm',
+          image: 'assets/images/bearcheats/1108017.webp',
+          variants: [
+            { name: 'One Time Use', price: 24.00, stock: 'In Stock' },
+            { name: 'Lifetime Key', price: 80.00, stock: 'In Stock' }
+          ],
+          requirements: [
+            'Supported CPU: Intel & AMD',
+            'Supported OS: Windows 10–11 (All Builds)',
+            'Anti-Cheat Status: UNDETECTED (All Anti-Cheats)',
+            'Format Required: No Reinstall Needed'
+          ],
+          features: [
+            {
+              title: 'HARDWARE CLOAKING',
+              desc: 'Generates authentic OEM random serials at bootloader and kernel layer.',
+              bullets: [
+                'Motherboard & SMBIOS UUID Serial Rewrite',
+                'NVMe, SSD & HDD Disk Controller Spoofing',
+                'Network Card Physical MAC Address Cloak',
+                'GPU PCI Device ID & Monitor EDID Alteration'
+              ]
+            },
+            {
+              title: 'SYSTEM TRACE CLEANER',
+              desc: 'Deep registry, USN journal, and telemetry purging.',
+              bullets: [
+                'USN Change Journal & Prefetch Cleaner',
+                'Windows Telemetry & Tracking Shield',
+                'Anti-Cheat Residual Log Scrubber',
+                'Single-Click Instant Execution'
+              ]
+            },
+            {
+              title: 'KERNEL REPAIR & MODES',
+              desc: 'Persistent or temporary kernel boot modes with zero ban reversal record.',
+              bullets: [
+                'Ring-0 Bootloader Virtualizer',
+                'Supports EAC, BE, Ricochet & Vanguard',
+                'Zero Re-Installation Required',
+                'Instant Key Dispatch & 24/7 Support'
+              ]
+            }
+          ]
+        },
+        ancient: {
+          id: 'ancient-spoofer',
+          key: 'ancient',
+          title: 'ANCIENT - DMA SPOOFER',
+          shortTitle: 'Ancient DMA',
+          image: 'assets/images/bearcheats/1103375.webp',
+          variants: [
+            { name: '30 Days', price: 39.99, stock: 'In Stock' },
+            { name: 'Lifetime Key', price: 129.99, stock: 'In Stock' }
+          ],
+          requirements: [
+            'Supported CPU: Intel & AMD',
+            'Supported OS: Windows 10–11 (All Builds)',
+            'Anti-Cheat Status: UNDETECTED (DMA & Kernel)',
+            'Format Required: No Reinstall Needed'
+          ],
+          features: [
+            {
+              title: 'DMA & HARDWARE IDS',
+              desc: 'Specialized PCIe device spoofing and hardware-level emulation.',
+              bullets: [
+                'DMA PCIe Device ID Spoofing',
+                'Flashable Firmware Shield',
+                'Network Adapter Virtualization',
+                'Tournament Mode Support'
+              ]
+            },
+            {
+              title: 'HYPERVISOR CLOAK',
+              desc: 'Beneath-OS virtualizer cloaking TPM 2.0 and SecureBoot.',
+              bullets: [
+                'Permanent SMBIOS Rewrite',
+                'TPM 2.0 & SecureBoot Cloaking',
+                'ARP & IP Routing Table Shield',
+                'Zero In-Memory Residuals'
+              ]
+            },
+            {
+              title: 'PRIVATE SLOTS',
+              desc: 'Unique cryptographic build compiled per customer.',
+              bullets: [
+                'Private Unique Binary Build',
+                'VIP Discord Priority Setup',
+                'Permanent Ban Reversal Guarantee',
+                'Zero Ban Record Across All Games'
+              ]
+            }
+          ]
+        }
+      };
+
+      let currentCheat = SPOOFER_PRODUCTS.verse;
+      let selectedVariant = currentCheat.variants[0];
+      let currentQty = 1;
+
+      const gridView = document.getElementById('bcGridView');
+      const productView = document.getElementById('bcProductView');
+      const viewGridBtn = document.getElementById('bcViewGridBtn');
+      const viewProductBtn = document.getElementById('bcViewProductBtn');
+      const gameCrumb = document.getElementById('bcGameCrumb');
+      const crumbCheatTitle = document.getElementById('bcCrumbCheatTitle');
+      const crumbSep = document.getElementById('bcCrumbSep');
+
+      const previewImg = document.getElementById('bcPreviewImg');
+      const thumbImg = document.getElementById('bcThumbImg');
+      const productTitle = document.getElementById('bcProductTitle');
+      const totalAmount = document.getElementById('bcTotalAmount');
+      const qtyVal = document.getElementById('bcQtyVal');
+      const qtyMinus = document.getElementById('bcQtyMinus');
+      const qtyPlus = document.getElementById('bcQtyPlus');
+      const variantsGrid = document.getElementById('bcVariantsGrid');
+      const reqsList = document.getElementById('bcReqsList');
+      const featuresGrid = document.getElementById('bcFeaturesGrid');
+      const addToCartBtn = document.getElementById('bcAddToCartBtn');
+      const buyNowBtn = document.getElementById('bcBuyNowBtn');
+      const mascotBtn = document.getElementById('mascotCtaBtn');
+
+      function renderProduct(cheatKey) {
+        currentCheat = SPOOFER_PRODUCTS[cheatKey] || SPOOFER_PRODUCTS.verse;
+        selectedVariant = currentCheat.variants[0];
+        currentQty = 1;
+
+        previewImg.src = currentCheat.image;
+        previewImg.alt = currentCheat.title;
+        thumbImg.src = currentCheat.image;
+        thumbImg.alt = currentCheat.title;
+        productTitle.textContent = currentCheat.title;
+        crumbCheatTitle.textContent = currentCheat.shortTitle;
+        crumbCheatTitle.style.display = 'inline';
+        crumbSep.style.display = 'inline';
+
+        qtyVal.textContent = currentQty;
+        updateTotal();
+
+        variantsGrid.innerHTML = '';
+        currentCheat.variants.forEach((v, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = `bc-variant-btn ${idx === 0 ? 'active' : 'inactive'}`;
+          btn.innerHTML = `
+            <div class="bc-v-line">
+              <span class="bc-v-title">${v.name}</span>
+              <span class="bc-v-stock">${v.stock}</span>
+            </div>
+            <div class="bc-v-price">$${v.price.toFixed(2)}</div>
+          `;
+          btn.addEventListener('click', () => {
+            variantsGrid.querySelectorAll('.bc-variant-btn').forEach(b => {
+              b.className = 'bc-variant-btn inactive';
+            });
+            btn.className = 'bc-variant-btn active';
+            selectedVariant = v;
+            updateTotal();
+          });
+          variantsGrid.appendChild(btn);
+        });
+
+        reqsList.innerHTML = '';
+        currentCheat.requirements.forEach(req => {
+          const li = document.createElement('li');
+          li.className = 'bc-dot-item';
+          li.innerHTML = `<span class="bc-dot-bullet"></span> ${req}`;
+          reqsList.appendChild(li);
+        });
+
+        featuresGrid.innerHTML = '';
+        currentCheat.features.forEach(f => {
+          const col = document.createElement('div');
+          col.className = 'bc-feat-card';
+          const bulletsHtml = f.bullets.map(b => `<li class="bc-dot-item"><span class="bc-dot-bullet"></span> ${b}</li>`).join('');
+          col.innerHTML = `
+            <div class="col-title">${f.title}</div>
+            <div class="col-desc">${f.desc}</div>
+            <ul class="bc-dot-list">${bulletsHtml}</ul>
+          `;
+          featuresGrid.appendChild(col);
+        });
+
+        gridView.classList.add('hidden');
+        productView.classList.remove('hidden');
+        viewProductBtn.classList.add('active');
+        viewGridBtn.classList.remove('active');
+        gameCrumb.classList.remove('active');
+      }
+
+      function showGrid() {
+        productView.classList.add('hidden');
+        gridView.classList.remove('hidden');
+        viewGridBtn.classList.add('active');
+        viewProductBtn.classList.remove('active');
+        gameCrumb.classList.add('active');
+        crumbCheatTitle.style.display = 'none';
+        crumbSep.style.display = 'none';
+        window.location.hash = 'all';
+      }
+
+      function updateTotal() {
+        const total = (selectedVariant.price * currentQty).toFixed(2);
+        totalAmount.textContent = `$${total}`;
+      }
+
+      qtyMinus.addEventListener('click', () => {
+        if (currentQty > 1) {
+          currentQty--;
+          qtyVal.textContent = currentQty;
+          updateTotal();
+        }
+      });
+
+      qtyPlus.addEventListener('click', () => {
+        if (currentQty < 20) {
+          currentQty++;
+          qtyVal.textContent = currentQty;
+          updateTotal();
+        }
+      });
+
+      viewGridBtn.addEventListener('click', showGrid);
+      gameCrumb.addEventListener('click', showGrid);
+      if (mascotBtn) mascotBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showGrid();
+        window.scrollTo({ top: 120, behavior: 'smooth' });
+      });
+      viewProductBtn.addEventListener('click', () => {
+        renderProduct(currentCheat.key);
+      });
+
+      document.querySelectorAll('.js-card-select').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.bc-card-buy-btn')) return;
+          const cheat = card.getAttribute('data-cheat');
+          renderProduct(cheat);
+          window.location.hash = cheat;
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        });
+      });
+
+      document.querySelectorAll('.js-buy-from-grid').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const cheat = btn.getAttribute('data-cheat');
+          renderProduct(cheat);
+          window.location.hash = cheat;
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        });
+      });
+
+      function addCurrentToCart(redirectToCart = true) {
+        if (!window.MadCheatsCart) return;
+        for (let i = 0; i < currentQty; i++) {
+          window.MadCheatsCart.addToCart({
+            id: `${currentCheat.id}-${selectedVariant.name.replace(/\s+/g, '-').toLowerCase()}`,
+            gameKey: 'spoofer',
+            gameTitle: 'HWID Spoofer',
+            cheatName: currentCheat.shortTitle,
+            edition: 'Hardware Virtualizer',
+            durationKey: selectedVariant.name,
+            durationName: selectedVariant.name,
+            price: selectedVariant.price,
+            image: currentCheat.image
+          });
+        }
+        if (redirectToCart) {
+          window.location.href = 'cart.html';
+        }
+      }
+
+      addToCartBtn.addEventListener('click', () => {
+        addCurrentToCart(true);
+      });
+
+      buyNowBtn.addEventListener('click', () => {
+        addCurrentToCart(false);
+        window.location.href = 'cart.html?checkout=true';
+      });
+
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (hash === 'all' || hash === 'category') {
+        showGrid();
+      } else if (hash === 'ancient') {
+        renderProduct('ancient');
+      } else {
+        renderProduct('verse');
+      }
+    });
+  </script>
+</body>
+</html>

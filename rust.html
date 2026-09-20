@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rust Cheats — Undetected Aimbot &amp; ESP | MadCheats</title>
+  <meta name="description" content="Dominate Rust wipe day with undetected private cheats. EAC and Cerberus bypass, silent aimbot, player skeleton ESP, ore radar, and recoil control. Instant key delivery.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff4343' d='M50 8 C32 8 20 22 20 38 C20 48 24 57 30 63 C27 68 22 75 22 84 C22 89 27 92 33 90 C39 88 44 80 46 76 C48 77 52 77 54 76 C56 80 61 88 67 90 C73 92 78 89 78 84 C78 75 73 68 70 63 C76 57 80 48 80 38 C80 22 68 8 50 8 Z M50 20 C62 20 70 28 70 40 C70 45 66 50 62 52 C58 48 54 46 50 46 C46 46 42 48 38 52 C34 50 30 45 30 40 C30 28 38 20 50 20 Z M50 54 C58 54 64 60 64 68 C64 76 58 82 50 82 C42 82 36 76 36 68 C36 60 42 54 50 54 Z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <svg class="film-grain" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <filter id="grain-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+  </svg>
+
+  <header class="site-header is-home" id="navbar">
+    <div class="header-lead sf-rsz2">
+      <a href="index.html" class="site-logo" aria-label="MadCheats home">
+        <svg class="site-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 10C33 10 22 22 22 36C22 46 26 55 32 61C28 66 22 74 22 83C22 88 28 91 34 89C40 87 45 78 47 74C49 75 51 75 53 74C55 78 60 87 66 89C72 91 78 88 78 83C78 74 72 66 68 61C74 55 78 46 78 36C78 22 67 10 50 10Z" fill="#ff4343"/>
+          <path d="M35 34C35 30 38 26 43 26H57C62 26 65 30 65 34C65 40 60 44 54 44H46C40 44 35 40 35 34Z" fill="#07080B"/>
+          <circle cx="50" cy="65" r="11" fill="#07080B"/>
+          <circle cx="50" cy="65" r="6" fill="#ff4343"/>
+        </svg>
+        <span>MADCHEATS<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="online-now" aria-label="1,482 members online now" title="1,482 members online now">
+        <span class="online-now-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#onlineNowGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+              <linearGradient id="onlineNowGrad" x1="0" y1="0" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#cc1818"></stop>
+                <stop offset="0.5" stop-color="#ff4343"></stop>
+                <stop offset="1" stop-color="#cc1818"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span class="online-now-meta">
+          <span class="online-now-count">1,482</span>
+          <span class="online-now-label">members online</span>
+        </span>
+      </div>
+    </div>
+
+    <nav class="nav-menu" aria-label="Main Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#popular-cheats" class="nav-link active">Cheats</a>
+      <a href="index.html#bento-tech" class="nav-link">Features</a>
+      <a href="index.html#reviews" class="nav-link">Reviews</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="header-search-btn" id="searchTriggerBtn" type="button" aria-label="Search software">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path>
+        </svg>
+      </button>
+
+      <button type="button" class="prefs-button" aria-label="Change language or currency">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3a13.5 13.5 0 0 1 0 18a13.5 13.5 0 0 1 0-18"></path>
+        </svg>
+        <span class="prefs-lang">EN</span>
+        <span class="prefs-dot" aria-hidden="true">&middot;</span>
+        <span class="prefs-cur">$</span>
+      </button>
+
+      <a href="cart.html" class="cart-button" id="cartToggleBtn" aria-label="Shopping Cart">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="bc-page-container">
+      <div class="bc-top-bar">
+        <div class="bc-breadcrumbs">
+          <a href="index.html" class="bc-crumb-link"><i class="fa-solid fa-house"></i> Home</a>
+          <span class="bc-sep">/</span>
+          <a href="index.html#popular-cheats" class="bc-crumb-link">Store</a>
+          <span class="bc-sep">/</span>
+          <button type="button" class="bc-crumb-btn" id="bcGameCrumb">RUST</button>
+          <span class="bc-sep bc-crumb-cheat-sep" id="bcCrumbSep">/</span>
+          <span class="bc-crumb-current" id="bcCrumbCheatTitle">Nebula - Rust Internal</span>
+        </div>
+        <div class="bc-top-actions">
+          <button type="button" class="bc-view-toggle-btn" id="bcViewGridBtn"><i class="fa-solid fa-border-all"></i> Cheats (3)</button>
+          <button type="button" class="bc-view-toggle-btn active" id="bcViewProductBtn"><i class="fa-solid fa-sliders"></i> Product View</button>
+        </div>
+      </div>
+
+      <div class="bc-grid-view hidden" id="bcGridView">
+        <div class="bc-cards-grid">
+          <div class="bc-cheat-card js-card-select" data-cheat="internal">
+            <div class="bc-card-img-wrap">
+              <img src="assets/images/bearcheats/1103385.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103385.webp'" alt="Nebula - Rust Internal Menu" loading="lazy">
+            </div>
+            <div class="bc-card-title">Nebula - Rust Internal</div>
+            <div class="bc-card-meta">
+              <div class="bc-from-badge">
+                <span class="bc-from-label">FROM</span>
+                <span class="bc-from-price">$22.00</span>
+              </div>
+              <div class="bc-undetected-badge">
+                <i class="fa-regular fa-circle-check"></i> UNDETECTED
+              </div>
+            </div>
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="internal">
+              <i class="fa-solid fa-bag-shopping"></i> Buy now
+            </button>
+          </div>
+
+          <div class="bc-cheat-card js-card-select" data-cheat="external">
+            <div class="bc-card-img-wrap">
+              <img src="assets/images/bearcheats/1103364.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103364.webp'" alt="Nebula - Rust External Menu" loading="lazy">
+            </div>
+            <div class="bc-card-title">Nebula - Rust External</div>
+            <div class="bc-card-meta">
+              <div class="bc-from-badge">
+                <span class="bc-from-label">FROM</span>
+                <span class="bc-from-price">$9.99</span>
+              </div>
+              <div class="bc-undetected-badge">
+                <i class="fa-regular fa-circle-check"></i> UNDETECTED
+              </div>
+            </div>
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="external">
+              <i class="fa-solid fa-bag-shopping"></i> Buy now
+            </button>
+          </div>
+
+          <div class="bc-cheat-card js-card-select" data-cheat="ancient">
+            <div class="bc-card-img-wrap">
+              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Ancient - Rust Cheat Menu" loading="lazy">
+            </div>
+            <div class="bc-card-title">Ancient - Rust</div>
+            <div class="bc-card-meta">
+              <div class="bc-from-badge">
+                <span class="bc-from-label">FROM</span>
+                <span class="bc-from-price">$9.99</span>
+              </div>
+              <div class="bc-undetected-badge">
+                <i class="fa-regular fa-circle-check"></i> UNDETECTED
+              </div>
+            </div>
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="ancient">
+              <i class="fa-solid fa-bag-shopping"></i> Buy now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bc-product-view" id="bcProductView">
+        <div class="bc-product-card">
+          <div class="bc-media-col">
+            <div class="bc-preview-frame">
+              <img id="bcPreviewImg" src="assets/images/bearcheats/1103385.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103385.webp'" alt="Rust Cheat Preview" loading="lazy">
+              <div class="bc-page-counter">1/1</div>
+            </div>
+            <div class="bc-thumbs-row">
+              <div class="bc-thumb" id="bcThumbBox">
+                <img id="bcThumbImg" src="assets/images/bearcheats/1103385.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103385.webp'" alt="Thumbnail">
+              </div>
+            </div>
+          </div>
+
+          <div class="bc-info-col">
+            <h1 class="bc-title" id="bcProductTitle">NEBULA - RUST INTERNAL</h1>
+            <div>
+              <div class="bc-undetected-badge">
+                <i class="fa-regular fa-circle-check"></i> UNDETECTED
+              </div>
+            </div>
+
+            <div class="bc-row-total-qty">
+              <div class="bc-total-group">
+                <span class="bc-subhead">Total</span>
+                <span class="bc-total-val" id="bcTotalAmount">$22.00</span>
+              </div>
+              <div class="bc-qty-group">
+                <span class="bc-subhead">Quantity</span>
+                <div class="bc-stepper">
+                  <button type="button" class="bc-step-btn minus" id="bcQtyMinus">-</button>
+                  <span class="bc-step-num" id="bcQtyVal">1</span>
+                  <button type="button" class="bc-step-btn plus" id="bcQtyPlus">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bc-variant-group">
+              <span class="bc-subhead">Variant</span>
+              <div class="bc-variants-grid" id="bcVariantsGrid"></div>
+            </div>
+
+            <div class="bc-actions-row">
+              <button type="button" class="bc-btn-cart" id="bcAddToCartBtn">
+                <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+              </button>
+              <button type="button" class="bc-btn-buy" id="bcBuyNowBtn">
+                Buy Now &gt;&gt;
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bc-notice-box">
+          <div class="bc-notice-hdr">
+            <i class="fa-solid fa-triangle-exclamation"></i> NOTICE
+          </div>
+          <div class="bc-notice-text">
+            This product natively supports Windows 10 and Windows 11 (all versions including 24H2/25H2). Intel and AMD CPUs are fully supported. Stream-proof and safe for continuous play on official, modded, and community wipe servers.
+          </div>
+        </div>
+
+        <div class="bc-reqs-box">
+          <div class="bc-reqs-title">REQUIREMENTS</div>
+          <ul class="bc-dot-list" id="bcReqsList">
+            <li class="bc-dot-item"><span class="bc-dot-bullet"></span> Supported CPU: Intel &amp; AMD</li>
+            <li class="bc-dot-item"><span class="bc-dot-bullet"></span> Supported OS: Windows 10–11 (All Builds)</li>
+            <li class="bc-dot-item"><span class="bc-dot-bullet"></span> Anti-Cheat Status: UNDETECTED</li>
+          </ul>
+        </div>
+
+        <div class="bc-features-grid" id="bcFeaturesGrid"></div>
+      </div>
+    </div>
+
+    <section class="section-wrap" style="padding: 20px 0 60px;">
+      <div class="container">
+        <div class="sec-header" style="text-align: center; margin-bottom: 36px;">
+          <div class="sec-title-wrap" style="margin: 0 auto;">
+            <h2>
+              <i class="fa-solid fa-circle-question" style="color: var(--red-main);"></i>
+              <span>Frequently Asked <span class="gradient-text">Questions</span></span>
+            </h2>
+            <p>Everything you need to know about our Rust undetected private cheats.</p>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-btn" type="button">
+              <span>How does MadCheats bypass Easy Anti-Cheat (EAC) &amp; Cerberus in Rust?</span>
+              <div class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="faq-body">
+              Our software utilizes a proprietary Ring-0 UEFI boot hypervisor. EAC operates in kernel mode, but our software boots beneath the Windows kernel before EAC drivers initialize. This grants memory access without detectable handles or process hooks.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" type="button">
+              <span>Is the ESP visible if I stream on Twitch or record via OBS?</span>
+              <div class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="faq-body">
+              Yes, all MadCheats suites include streamproof rendering. By rendering our overlays through DirectX swap-chain interception that excludes desktop capture hooks, you can stream on Twitch, YouTube, or Discord screenshare with zero visual markers showing on stream.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" type="button">
+              <span>Do I need to reinstall Windows or disable Secure Boot?</span>
+              <div class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="faq-body">
+              No OS reinstall is needed. Secure Boot must be disabled in BIOS to allow the custom hypervisor driver to load. Our automated one-click injector handles all kernel driver mapping seamlessly.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" type="button">
+              <span>What happens immediately after I buy a key?</span>
+              <div class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="faq-body">
+              Your alphanumeric license key is generated in under 3 seconds upon payment. You gain instant access to our private customer dashboard with loader download links, video tutorials, and direct access to 24/7 technical engineers on Discord.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="site-logo">
+          <svg class="site-logo-icon" viewBox="0 0 100 100" fill="none">
+            <path d="M50 10C33 10 22 22 22 36C22 46 26 55 32 61C28 66 22 74 22 83C22 88 28 91 34 89C40 87 45 78 47 74C49 75 51 75 53 74C55 78 60 87 66 89C72 91 78 88 78 83C78 74 72 66 68 61C74 55 78 46 78 36C78 22 67 10 50 10Z" fill="#ff4343"/>
+            <path d="M35 34C35 30 38 26 43 26H57C62 26 65 30 65 34C65 40 60 44 54 44H46C40 44 35 40 35 34Z" fill="#07080B"/>
+            <circle cx="50" cy="65" r="11" fill="#07080B"/>
+            <circle cx="50" cy="65" r="6" fill="#ff4343"/>
+          </svg>
+          <span>MADCHEATS<span class="brand-dot">.</span></span>
+        </a>
+        <p class="footer-desc">
+          The pinnacle of undetected game enhancement software. Hypervisor kernel engineering, zero bans recorded, and automated instant fulfillment.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Cheats</h4>
+        <ul>
+          <li><a href="arc.html">Arc Raiders Cheats</a></li>
+          <li><a href="rust.html">Rust Cheats</a></li>
+          <li><a href="r6.html">Rainbow Six Siege</a></li>
+          <li><a href="wardogs.html">Wardogs Cheats</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#popular-cheats">Store</a></li>
+          <li><a href="index.html#bento-tech">Bento Features</a></li>
+          <li><a href="index.html#reviews">Customer Reviews</a></li>
+          <li><a href="index.html#faq">General FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="https://discord.gg/madcheats" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
+          <li><a href="#status">Live Status Tracker</a></li>
+          <li><a href="#terms">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 MadCheats Software Group. All rights reserved.</span>
+      <div style="display: flex; gap: 16px;">
+        <a href="#terms" style="color: var(--text-dim);">Terms</a>
+        <a href="#privacy" style="color: var(--text-dim);">Privacy</a>
+        <a href="#support" style="color: var(--text-dim);">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-drawer-backdrop" id="closeCartBackdrop"></div>
+  <div class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Shopping Cart</span>
+      </div>
+      <button class="cart-drawer-close" id="closeCartDrawerBtn" type="button" aria-label="Close cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-body">
+      <div class="cart-items-count-text" id="cartItemsCountText">0 items in cart</div>
+
+      <div class="cart-empty" id="cartEmptyState" style="display: none;">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <div class="cart-empty-title">Your cart is empty</div>
+        <div class="cart-empty-desc">Explore our undetectable private software catalog and gear up.</div>
+        <button type="button" class="dshero-btn" id="cartBrowseCheatsBtn" style="font-size: 13px; padding: 10px 20px;">
+          <span>Explore Cheats</span>
+        </button>
+      </div>
+
+      <div class="cart-items-list" id="cartItemsList"></div>
+
+      <div class="cart-drawer-footer" id="cartDrawerFooter">
+        <div class="cart-promo-box">
+          <input type="text" class="cart-promo-input" id="cartPromoInput" placeholder="Promo code (e.g. MAD10)" maxlength="20">
+          <button type="button" class="cart-promo-apply-btn" id="cartApplyPromoBtn">Apply</button>
+        </div>
+        <div class="promo-feedback" id="cartPromoMsg"></div>
+
+        <div class="cart-summary-card">
+          <div class="cart-summary-line">
+            <span>Subtotal</span>
+            <span id="cartSubtotalVal">$0.00</span>
+          </div>
+          <div class="cart-summary-line" id="cartDiscountRow" style="display: none; color: #10b981;">
+            <span>Discount (10%)</span>
+            <span id="cartDiscountVal">-$0.00</span>
+          </div>
+          <div class="cart-summary-line cart-total-line">
+            <span>Total Due</span>
+            <span class="cart-total-amount" id="cartTotalVal">$0.00</span>
+          </div>
+        </div>
+
+        <button type="button" class="cart-checkout-btn" id="cartCheckoutBtn">
+          <i class="fa-solid fa-lock"></i>
+          <span>Instant Checkout</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <div class="cart-trust-footer">
+          <span><i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> 256-Bit SSL</span>
+          <span><i class="fa-solid fa-bolt" style="color: var(--red-main);"></i> Instant Key Delivery</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout-success-modal" id="checkoutSuccessModal" aria-hidden="true">
+    <div class="checkout-success-card">
+      <div class="success-icon-wrap">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3>Order Completed!</h3>
+      <p>Your license key has been generated and validated on our Ring-0 hypervisor auth servers.</p>
+      
+      <div class="key-display-box" id="successKeyDisplay">
+        MAD-RUST-99D2-W781-ALPHA
+      </div>
+
+      <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5; margin-bottom: 20px;">
+        A copy of your loader download link and activation instructions has been prepared. Keep this key secure.
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button type="button" class="dshero-btn" id="copyKeyBtn" style="font-size: 13.5px; padding: 10px 22px;">
+          <i class="fa-regular fa-copy"></i>
+          <span>Copy License Key</span>
+        </button>
+        <button type="button" class="dshero-btn-ghost" id="closeSuccessModalBtn" style="font-size: 13.5px; padding: 10px 20px;">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const CHEATS = {
+        internal: {
+          key: 'internal',
+          id: 'nebula-rust-internal',
+          title: 'NEBULA - RUST INTERNAL',
+          shortTitle: 'Nebula Internal',
+          image: 'assets/images/bearcheats/1103385.webp',
+          fallbackImage: 'https://bearcheats.net/storage/images/1103385.webp',
+          fromPrice: '$22.00',
+          variants: [
+            { name: '3 Day Key', price: 22.00, stock: 'In stock ∞' },
+            { name: '7 Day Key', price: 45.00, stock: 'In stock ∞' },
+            { name: '30 Day Key', price: 85.00, stock: 'In stock ∞' }
+          ],
+          requirements: [
+            'Supported CPU: Intel & AMD',
+            'Supported OS: Windows 10 & 11 (64-Bit)',
+            'Anti-Cheat Status: UNDETECTED (EAC Bypass)',
+            'Overlay: DirectX 11 Internal Hook'
+          ],
+          features: [
+            {
+              title: 'AIMBOT & COMBAT',
+              desc: 'Precision silent targeting with zero recoil and bullet manipulation.',
+              bullets: [
+                'Memory-Based Silent Aimbot',
+                'Magic Bullet Angle',
+                'Auto Bullet Velocity & Drop Compensation',
+                'Recoil Control System (RCS)',
+                'Sway Nullification',
+                'Thick Bullet Radius & Hitbox Extension'
+              ]
+            },
+            {
+              title: 'VISUALS & ESP',
+              desc: 'Complete situational awareness across monuments, raids and open world.',
+              bullets: [
+                'Player Skeleton, Box & Weapon ESP',
+                'Sleeper & Wounded Marker Tags',
+                'Friendly Team Marker Tags',
+                'Dropped Loot & Backpacks ESP',
+                'Corpse & Hotbar Items Display',
+                'Health & Armor Status Bars'
+              ]
+            },
+            {
+              title: 'EXPLOITS & MISC',
+              desc: 'Utility manipulation engineered to give you the ultimate edge in combat.',
+              bullets: [
+                'Fast Bow Drawing & Instant Eoka Ignition',
+                'Always Day & Debug Camera Integration',
+                'DirectX 11 Internal Hook',
+                'Sulfur, Metal & Stone Ore Node Filter',
+                'Underground Stash & Crate Radar',
+                'Streamproof & OBS Invisible'
+              ]
+            }
+          ]
+        },
+        external: {
+          key: 'external',
+          id: 'nebula-rust-external',
+          title: 'NEBULA - RUST EXTERNAL',
+          shortTitle: 'Nebula External',
+          image: 'assets/images/bearcheats/1103364.webp',
+          fallbackImage: 'https://bearcheats.net/storage/images/1103364.webp',
+          fromPrice: '$9.99',
+          variants: [
+            { name: '1 Day Key', price: 9.99, stock: 'In stock ∞' },
+            { name: '3 Day Key', price: 19.99, stock: 'In stock ∞' },
+            { name: '7 Day Key', price: 34.99, stock: 'In stock ∞' },
+            { name: '30 Day Key', price: 60.00, stock: 'In stock ∞' },
+            { name: 'Lifetime Key', price: 300.00, stock: 'In stock ∞' }
+          ],
+          requirements: [
+            'Supported CPU: Intel & AMD',
+            'Supported OS: Windows 10 & 11 (64-Bit)',
+            'Anti-Cheat Status: UNDETECTED (EAC Protected)',
+            'Streamproof: OBS & Discord Invisible'
+          ],
+          features: [
+            {
+              title: 'NON-INJECTED ESP',
+              desc: '100% external overlay powered by kernel hypervisor memory reading.',
+              bullets: [
+                'Player 2D/3D Box & Skeleton ESP',
+                'Sleeper & Wounded Entity Tags',
+                'Distance & Line of Sight Indicators',
+                'Weapon & Equipped Gear Tagging',
+                'Friendly Team Whitelist',
+                'OBS & Discord Streamproof'
+              ]
+            },
+            {
+              title: 'RESOURCE & LOOT RADAR',
+              desc: 'Locate all high-tier nodes and buried treasure in real-time.',
+              bullets: [
+                'High-Quality, Sulfur & Metal Ore Filters',
+                'Stone & Wood Node Icons',
+                'Underground Buried Stashes',
+                'Locked Crates & Elite Crates',
+                'Dropped Weapons & Ammo',
+                'Backpacks & Death Bags'
+              ]
+            },
+            {
+              title: 'SECURITY & RADAR',
+              desc: 'Zero in-process hooks for maximum longevity and stealth.',
+              bullets: [
+                'Non-Injected Kernel Memory Reader',
+                'Separate Hypervisor Driver',
+                'Zero Modifying Process Memory',
+                'Mini-Radar Display with Compass',
+                'Adjustable Render Distance (up to 400m)',
+                'Customizable Color Themes'
+              ]
+            }
+          ]
+        },
+        ancient: {
+          key: 'ancient',
+          id: 'ancient-rust',
+          title: 'ANCIENT - RUST',
+          shortTitle: 'Ancient Rust',
+          image: 'assets/images/bearcheats/1103375.webp',
+          fallbackImage: 'https://bearcheats.net/storage/images/1103375.webp',
+          fromPrice: '$9.99',
+          variants: [
+            { name: '1 Day Key', price: 9.99, stock: 'In stock ∞' },
+            { name: '7 Day Key', price: 29.99, stock: 'In stock ∞' },
+            { name: '30 Day Key', price: 59.99, stock: 'In stock ∞' }
+          ],
+          requirements: [
+            'Supported CPU: Intel & AMD',
+            'Supported OS: Windows 10 & 11 (64-Bit)',
+            'Anti-Cheat Status: UNDETECTED (EAC Bypass)',
+            'Streamproof: OBS & Discord Invisible'
+          ],
+          features: [
+            {
+              title: 'TACTICAL RAID RADAR',
+              desc: 'Automated raid warnings and projectile trajectory detection.',
+              bullets: [
+                'Raid Alert Tracker & Audio ESP',
+                'Rocket & C4 Trajectory Tracking',
+                'SAM Site & Auto-Turret Threat Cones',
+                'Shotgun Trap & Landmine Alerts',
+                'Patrol Helicopter & Bradley APC Tracking',
+                'Scientist NPC Warning Tags'
+              ]
+            },
+            {
+              title: 'BASE MANAGEMENT',
+              desc: 'Monitor your stronghold upkeep and territory boundaries.',
+              bullets: [
+                'Tool Cupboard Range Overlay',
+                'Base Upkeep Health Display',
+                'Decay Warning Timers',
+                'Door & Code Lock Status',
+                'Workbench Level Indicators',
+                'Storage Box Content Peek'
+              ]
+            },
+            {
+              title: 'KERNEL ARCHITECTURE',
+              desc: 'Ring-0 hypervisor architecture built for stability and zero detection.',
+              bullets: [
+                'Ring-0 Hypervisor Kernel Driver',
+                'Automated Patch Detection',
+                'Zero Memory Footprint',
+                'Silent Background Updates',
+                'Hardware ID Spoofer Included',
+                '24/7 VIP Discord Setup'
+              ]
+            }
+          ]
+        }
+      };
+
+      const gridView = document.getElementById('bcGridView');
+      const productView = document.getElementById('bcProductView');
+      const viewGridBtn = document.getElementById('bcViewGridBtn');
+      const viewProductBtn = document.getElementById('bcViewProductBtn');
+      const gameCrumb = document.getElementById('bcGameCrumb');
+      const crumbCheatTitle = document.getElementById('bcCrumbCheatTitle');
+      const crumbSep = document.getElementById('bcCrumbSep');
+
+      const previewImg = document.getElementById('bcPreviewImg');
+      const thumbImg = document.getElementById('bcThumbImg');
+      const productTitle = document.getElementById('bcProductTitle');
+      const totalAmount = document.getElementById('bcTotalAmount');
+      const qtyVal = document.getElementById('bcQtyVal');
+      const qtyMinus = document.getElementById('bcQtyMinus');
+      const qtyPlus = document.getElementById('bcQtyPlus');
+      const variantsGrid = document.getElementById('bcVariantsGrid');
+      const reqsList = document.getElementById('bcReqsList');
+      const featuresGrid = document.getElementById('bcFeaturesGrid');
+      const addToCartBtn = document.getElementById('bcAddToCartBtn');
+      const buyNowBtn = document.getElementById('bcBuyNowBtn');
+      const mascotBtn = document.getElementById('mascotViewCheatsBtn');
+
+      let currentCheat = CHEATS.internal;
+      let selectedVariant = currentCheat.variants[0];
+      let currentQty = 1;
+
+      function renderProduct(cheatKey) {
+        currentCheat = CHEATS[cheatKey] || CHEATS.internal;
+        selectedVariant = currentCheat.variants[0];
+        currentQty = 1;
+
+        previewImg.src = currentCheat.image;
+        previewImg.onerror = () => { previewImg.src = currentCheat.fallbackImage; };
+        thumbImg.src = currentCheat.image;
+        thumbImg.onerror = () => { thumbImg.src = currentCheat.fallbackImage; };
+
+        productTitle.textContent = currentCheat.title;
+        crumbCheatTitle.textContent = currentCheat.shortTitle;
+        crumbCheatTitle.style.display = 'inline';
+        crumbSep.style.display = 'inline';
+
+        qtyVal.textContent = currentQty;
+        updateTotal();
+
+        variantsGrid.innerHTML = '';
+        currentCheat.variants.forEach((v, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = `bc-variant-btn ${idx === 0 ? 'active' : 'inactive'}`;
+          btn.innerHTML = `
+            <div class="bc-v-line">
+              <span class="bc-v-title">${v.name}</span>
+              <span class="bc-v-stock">${v.stock}</span>
+            </div>
+            <div class="bc-v-price">$${v.price.toFixed(2)}</div>
+          `;
+          btn.addEventListener('click', () => {
+            variantsGrid.querySelectorAll('.bc-variant-btn').forEach(b => {
+              b.className = 'bc-variant-btn inactive';
+            });
+            btn.className = 'bc-variant-btn active';
+            selectedVariant = v;
+            updateTotal();
+          });
+          variantsGrid.appendChild(btn);
+        });
+
+        reqsList.innerHTML = '';
+        currentCheat.requirements.forEach(req => {
+          const li = document.createElement('li');
+          li.className = 'bc-dot-item';
+          li.innerHTML = `<span class="bc-dot-bullet"></span> ${req}`;
+          reqsList.appendChild(li);
+        });
+
+        featuresGrid.innerHTML = '';
+        currentCheat.features.forEach(f => {
+          const col = document.createElement('div');
+          col.className = 'bc-feat-card';
+          const bulletsHtml = f.bullets.map(b => `<li class="bc-dot-item"><span class="bc-dot-bullet"></span> ${b}</li>`).join('');
+          col.innerHTML = `
+            <div class="col-title">${f.title}</div>
+            <div class="col-desc">${f.desc}</div>
+            <ul class="bc-dot-list">${bulletsHtml}</ul>
+          `;
+          featuresGrid.appendChild(col);
+        });
+
+        gridView.classList.add('hidden');
+        productView.classList.remove('hidden');
+        viewProductBtn.classList.add('active');
+        viewGridBtn.classList.remove('active');
+        gameCrumb.classList.remove('active');
+      }
+
+      function showGrid() {
+        productView.classList.add('hidden');
+        gridView.classList.remove('hidden');
+        viewGridBtn.classList.add('active');
+        viewProductBtn.classList.remove('active');
+        gameCrumb.classList.add('active');
+        crumbCheatTitle.style.display = 'none';
+        crumbSep.style.display = 'none';
+        window.location.hash = 'all';
+      }
+
+      function updateTotal() {
+        const total = (selectedVariant.price * currentQty).toFixed(2);
+        totalAmount.textContent = `$${total}`;
+      }
+
+      qtyMinus.addEventListener('click', () => {
+        if (currentQty > 1) {
+          currentQty--;
+          qtyVal.textContent = currentQty;
+          updateTotal();
+        }
+      });
+
+      qtyPlus.addEventListener('click', () => {
+        if (currentQty < 20) {
+          currentQty++;
+          qtyVal.textContent = currentQty;
+          updateTotal();
+        }
+      });
+
+      viewGridBtn.addEventListener('click', showGrid);
+      gameCrumb.addEventListener('click', showGrid);
+      if (mascotBtn) mascotBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showGrid();
+        window.scrollTo({ top: 120, behavior: 'smooth' });
+      });
+      viewProductBtn.addEventListener('click', () => {
+        renderProduct(currentCheat.key);
+      });
+
+      document.querySelectorAll('.js-card-select').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.bc-card-buy-btn')) return;
+          const cheat = card.getAttribute('data-cheat');
+          renderProduct(cheat);
+          window.location.hash = cheat;
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        });
+      });
+
+      document.querySelectorAll('.js-buy-from-grid').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const cheat = btn.getAttribute('data-cheat');
+          renderProduct(cheat);
+          window.location.hash = cheat;
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        });
+      });
+
+      function addCurrentToCart(openDrawer = true) {
+        if (!window.MadCheatsCart) return;
+        for (let i = 0; i < currentQty; i++) {
+          window.MadCheatsCart.addToCart({
+            id: `${currentCheat.id}-${selectedVariant.name.replace(/\s+/g, '-').toLowerCase()}`,
+            gameKey: 'rust',
+            gameTitle: 'Rust',
+            cheatName: currentCheat.shortTitle,
+            edition: 'Undetected Ring-0',
+            durationKey: selectedVariant.name,
+            durationName: selectedVariant.name,
+            price: selectedVariant.price,
+            image: currentCheat.image
+          });
+        }
+        if (openDrawer && window.MadCheatsCart.openCart) {
+          window.MadCheatsCart.openCart();
+        }
+      }
+
+      addToCartBtn.addEventListener('click', () => {
+        addCurrentToCart(true);
+      });
+
+      buyNowBtn.addEventListener('click', () => {
+        addCurrentToCart(false);
+        window.location.href = 'cart.html?checkout=true';
+      });
+
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (hash === 'all' || hash === 'category') {
+        showGrid();
+      } else if (hash === 'external') {
+        renderProduct('external');
+      } else if (hash === 'ancient') {
+        renderProduct('ancient');
+      } else {
+        renderProduct('internal');
+      }
+    });
+  </script>
+</body>
+</html>
