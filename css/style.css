@@ -3946,6 +3946,91 @@ video.hero-game-video {
   }
 }
 
+.mascot-cta {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 50px 24px 70px;
+  position: relative;
+  z-index: 5;
+}
+
+.mascot-cta-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0f121a;
+  border: 1px solid rgba(255, 67, 67, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 40px 50px;
+  position: relative;
+  overflow: hidden;
+  gap: 40px;
+}
+
+.mascot-cta-art {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 67, 67, 0.2);
+}
+
+.mascot-cta-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 640px;
+}
+
+.mascot-cta-body h2 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.mascot-cta-body p {
+  font-size: 15px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.dshero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  background: var(--red-main);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+  width: fit-content;
+}
+
+.dshero-btn:hover {
+  background: var(--red-hover);
+}
+
+@media screen and (max-width: 860px) {
+  .mascot-cta-panel {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 24px;
+  }
+  .mascot-cta-body {
+    align-items: center;
+  }
+  .mascot-cta-art {
+    width: 170px;
+  }
+}
+
 .footer {
   width: 100%;
   background: #0b0d13;
