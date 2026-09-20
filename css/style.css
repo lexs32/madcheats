@@ -4311,6 +4311,29 @@ video.hero-game-video {
   border-color: rgba(255, 67, 67, 0.3);
 }
 
+.loader-card.is-minimized {
+  min-height: auto;
+}
+
+.loader-card.is-minimized .loader-sidebar,
+.loader-card.is-minimized .loader-main {
+  display: none !important;
+}
+
+.loader-minimized-bar {
+  display: none;
+  width: 100%;
+  padding: 18px 24px;
+  align-items: center;
+  justify-content: space-between;
+  background: #05060a;
+  cursor: pointer;
+}
+
+.loader-card.is-minimized .loader-minimized-bar {
+  display: flex;
+}
+
 .loader-sidebar {
   width: 220px;
   background: #05060a;
@@ -4670,7 +4693,15 @@ video.hero-game-video {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.loader-toggle-row:hover {
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .loader-switch {
@@ -4724,7 +4755,14 @@ video.hero-game-video {
   background: #141826;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
   transition: all 0.15s ease;
+}
+
+.loader-feature-item:hover {
+  border-color: rgba(255, 67, 67, 0.25);
+  background: rgba(255, 67, 67, 0.05);
 }
 
 .loader-feature-item.highlighted {
@@ -4859,6 +4897,9 @@ video.hero-game-video {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
+  }
+  .loader-minimized-bar {
+    padding: 14px 16px;
   }
 }
 

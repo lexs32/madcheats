@@ -78,108 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-  const dragMenu = document.getElementById('draggableMenu');
-  const dragHeader = document.getElementById('menuDragHeader');
-  const heroStage = document.getElementById('heroStage');
-
-  if (dragMenu && dragHeader && heroStage) {
-    let isDragging = false;
-    let startX = 0;
-    let startY = 0;
-    let initialLeft = 0;
-    let initialTop = 0;
-
-    const onStart = (e) => {
-      isDragging = true;
-      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-      const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
-      startX = clientX;
-      startY = clientY;
-      initialLeft = dragMenu.offsetLeft;
-      initialTop = dragMenu.offsetTop;
-      document.addEventListener('mousemove', onMove);
-      document.addEventListener('mouseup', onEnd);
-      document.addEventListener('touchmove', onMove, { passive: false });
-      document.addEventListener('touchend', onEnd);
-    };
-
-    const onMove = (e) => {
-      if (!isDragging) return;
-      if (e.cancelable) e.preventDefault();
-      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-      const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
-      const dx = clientX - startX;
-      const dy = clientY - startY;
-
-      const stageRect = heroStage.getBoundingClientRect();
-      const menuWidth = dragMenu.offsetWidth;
-      const menuHeight = dragMenu.offsetHeight;
-
-      let newLeft = initialLeft + dx;
-      let newTop = initialTop + dy;
-
-      const maxLeft = stageRect.width - menuWidth - 10;
-      const maxTop = stageRect.height - menuHeight - 10;
-
-      newLeft = Math.max(10, Math.min(newLeft, maxLeft));
-      newTop = Math.max(10, Math.min(newTop, maxTop));
-
-      dragMenu.style.left = `${newLeft}px`;
-      dragMenu.style.top = `${newTop}px`;
-      dragMenu.style.right = 'auto';
-    };
-
-    const onEnd = () => {
-      isDragging = false;
-      document.removeEventListener('mousemove', onMove);
-      document.removeEventListener('mouseup', onEnd);
-      document.removeEventListener('touchmove', onMove);
-      document.removeEventListener('touchend', onEnd);
-    };
-
-    dragHeader.addEventListener('mousedown', onStart);
-    dragHeader.addEventListener('touchstart', onStart, { passive: true });
-  }
-
-  const panelTabs = document.querySelectorAll('.panel-tab');
-  panelTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      panelTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-    });
-  });
-
-  const toggles = document.querySelectorAll('.toggle');
-  toggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-    });
-  });
-
-  const fovSlider = document.getElementById('fovSlider');
-  const fovVal = document.getElementById('fovVal');
-  const hudFov = document.getElementById('hudFov');
-
-  if (fovSlider && fovVal) {
-    fovSlider.addEventListener('input', (e) => {
-      fovVal.textContent = `${e.target.value}°`;
-      if (hudFov) {
-        const size = e.target.value * 2.2;
-        hudFov.style.width = `${size}px`;
-        hudFov.style.height = `${size}px`;
-      }
-    });
-  }
-
-  const smoothSlider = document.getElementById('smoothSlider');
-  const smoothVal = document.getElementById('smoothVal');
-  if (smoothSlider && smoothVal) {
-    smoothSlider.addEventListener('input', (e) => {
-      smoothVal.textContent = e.target.value;
-    });
-  }
-
   const starCanvas = document.getElementById('heroStars');
   if (starCanvas) {
     const ctx = starCanvas.getContext('2d');
@@ -1019,15 +917,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const loaderSubtabAimbot = document.getElementById('loaderSubtabAimbot');
   const panelAimbot = document.getElementById('panel-aimbot');
   const panelSilent = document.getElementById('panel-silent');
+  const loaderCard = document.getElementById('loaderCard');
+  const loaderFooterKey = document.querySelector('.loader-footer-key');
+  const loaderRestoreBar = document.getElementById('loaderRestoreBar');
 
-  const titleMap = {
-    aimbot: 'Aimbot',
-    players: 'Players',
-    npcs: 'NPCs',
-    world: 'World',
-    oof: 'OOF Arrows',
-    exploits: 'Exploits',
-    misc: 'Misc'
+  const categoryMap = {
+    aimbot: { cat: 'Combat', title: 'Aimbot' },
+    players: { cat: 'Visuals', title: 'Players' },
+    npcs: { cat: 'Visuals', title: 'NPCs' },
+    world: { cat: 'Visuals', title: 'World' },
+    oof: { cat: 'Utilities', title: 'OOF Arrows' },
+    exploits: { cat: 'Utilities', title: 'Exploits' },
+    misc: { cat: 'Utilities', title: 'Misc' }
   };
 
   if (loaderNavBtns.length > 0) {
@@ -1037,10 +938,16 @@ document.addEventListener('DOMContentLoaded', () => {
         loaderNavBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
+        if (window.innerWidth <= 900) {
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+
+        const meta = categoryMap[tab] || { cat: 'Combat', title: tab };
+
         if (tab === 'aimbot') {
           if (loaderSubtabs) loaderSubtabs.style.display = 'flex';
           const isSilent = loaderSubtabSilent && loaderSubtabSilent.classList.contains('active');
-          if (loaderCrumbParent) loaderCrumbParent.textContent = 'Aimbot';
+          if (loaderCrumbParent) loaderCrumbParent.textContent = meta.cat;
           if (loaderCrumbActive) loaderCrumbActive.textContent = isSilent ? 'Silent Aim' : 'Aimbot';
 
           loaderPanels.forEach(p => p.classList.remove('active'));
@@ -1051,9 +958,8 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         } else {
           if (loaderSubtabs) loaderSubtabs.style.display = 'none';
-          const name = titleMap[tab] || tab;
-          if (loaderCrumbParent) loaderCrumbParent.textContent = name;
-          if (loaderCrumbActive) loaderCrumbActive.textContent = name;
+          if (loaderCrumbParent) loaderCrumbParent.textContent = meta.cat;
+          if (loaderCrumbActive) loaderCrumbActive.textContent = meta.title;
 
           loaderPanels.forEach(p => p.classList.remove('active'));
           const target = document.getElementById(`panel-${tab}`);
@@ -1080,6 +986,44 @@ document.addEventListener('DOMContentLoaded', () => {
       if (panelAimbot) panelAimbot.classList.add('active');
     });
   }
+
+  const loaderClickRows = document.querySelectorAll('.loader-toggle-row, .loader-feature-item, .loader-box-header');
+  loaderClickRows.forEach(row => {
+    row.addEventListener('click', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.closest('.loader-switch') || e.target.tagName === 'SELECT' || e.target.closest('.loader-select-wrap')) {
+        return;
+      }
+      const cb = row.querySelector('input[type="checkbox"]');
+      if (cb) {
+        cb.checked = !cb.checked;
+        cb.dispatchEvent(new Event('change'));
+      }
+    });
+  });
+
+  const featureCheckboxes = document.querySelectorAll('.loader-feature-item input[type="checkbox"]');
+  featureCheckboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      const item = cb.closest('.loader-feature-item');
+      if (item) {
+        if (cb.checked) {
+          item.classList.add('highlighted');
+        } else {
+          item.classList.remove('highlighted');
+        }
+      }
+    });
+  });
+
+  const loaderSelects = document.querySelectorAll('.loader-select');
+  loaderSelects.forEach(sel => {
+    sel.addEventListener('change', () => {
+      sel.style.borderColor = '#ff4343';
+      setTimeout(() => {
+        sel.style.borderColor = '';
+      }, 600);
+    });
+  });
 
   const fovSlider = document.getElementById('fovSlider');
   const fovVal = document.getElementById('fovVal');
@@ -1119,6 +1063,50 @@ document.addEventListener('DOMContentLoaded', () => {
     arrowSizeSlider.addEventListener('input', () => {
       arrowSizeVal.textContent = `${arrowSizeSlider.value}px`;
     });
+  }
+
+  function toggleLoaderMinimize() {
+    if (!loaderCard) return;
+    loaderCard.classList.toggle('is-minimized');
+  }
+
+  if (loaderFooterKey) {
+    loaderFooterKey.style.cursor = 'pointer';
+    loaderFooterKey.addEventListener('click', toggleLoaderMinimize);
+  }
+
+  if (loaderRestoreBar) {
+    loaderRestoreBar.addEventListener('click', toggleLoaderMinimize);
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Insert') {
+      toggleLoaderMinimize();
+    }
+  });
+
+  const loaderPill = document.querySelector('.loader-pill-status');
+  if (loaderPill) {
+    loaderPill.style.cursor = 'pointer';
+    loaderPill.addEventListener('click', () => {
+      loaderPill.style.borderColor = '#ff4343';
+      loaderPill.style.color = '#fff';
+      setTimeout(() => {
+        loaderPill.style.borderColor = '';
+        loaderPill.style.color = '';
+      }, 700);
+    });
+  }
+
+  const pingEl = document.querySelector('.loader-footer-meta strong.text-green');
+  const fpsEl = document.querySelector('.loader-footer-meta strong.text-white');
+  if (pingEl && fpsEl) {
+    setInterval(() => {
+      const ping = Math.floor(Math.random() * 5) + 22;
+      const fps = Math.random() > 0.25 ? 144 : 143;
+      pingEl.textContent = `${ping}ms`;
+      fpsEl.textContent = `${fps}`;
+    }, 3200);
   }
 
   if (getCart().length === 0 && !localStorage.getItem('madcheats_cart_initialized')) {
