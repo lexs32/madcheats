@@ -160,36 +160,30 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'Ring-0 Hypervisor • EAC Undetected',
       products: [
         {
-          id: 'arc-crusader',
-          name: 'Crusader',
-          edition: 'Internal Combat Suite',
+          id: 'arc-ancient',
+          name: 'Ancient',
+          edition: 'Private Ring-0 Elite',
           tag: 'Most Popular',
-          features: ['Memory Aimbot & Smoothing', '3D Bone ESP & Health Bar', 'Streamproof OBS/Discord', 'Recoil Control & Spread Mod'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
+          productId: 884622,
+          features: ['Unique Polymorphic Binary', 'Custom Driver Per User', 'Humanized Aim Curve', 'Integrated HWID Spoofer'],
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 884622, variantId: 1714657 },
+            '7d': { name: '7 Days', price: 29.99, productId: 884622, variantId: 1714658 },
+            '30d': { name: '30 Days', price: 59.99, productId: 884622, variantId: 1714659 }
+          }
         },
         {
           id: 'arc-krush',
           name: 'Krush',
           edition: 'Kernel Hypervisor V2',
           tag: 'Kernel V2',
+          productId: 886600,
           features: ['Ring-0 Stealth Injection', 'Silent Aim & Bullet Prediction', 'Visible Check & Chams', '2D Radar & Threat Alert'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 27.99 }, '30d': { name: '30 Days', price: 54.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
-        },
-        {
-          id: 'arc-unnamed',
-          name: 'Unnamed',
-          edition: 'External DMA / Streamproof',
-          tag: 'DMA Ready',
-          features: ['2nd PC DMA Hardware Capable', 'Pure Read-Only Engine', 'Standalone Web Radar', 'Custom Item & Enemy ESP'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
-        },
-        {
-          id: 'arc-ancient',
-          name: 'Ancient',
-          edition: 'Private Ring-0 Elite',
-          tag: 'Private Slots',
-          features: ['Unique Polymorphic Binary', 'Custom Driver Per User', 'Humanized Aim Curve', 'Integrated HWID Spoofer'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 159.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 886600, variantId: 1727939 },
+            '7d': { name: '7 Days', price: 34.99, productId: 886600, variantId: 1727940 },
+            '30d': { name: '30 Days', price: 69.99, productId: 886600, variantId: 1727941 }
+          }
         }
       ]
     },
@@ -199,36 +193,30 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'EAC & Cerberus Undetected',
       products: [
         {
-          id: 'rust-crusader',
-          name: 'Crusader',
-          edition: 'Internal Combat Suite',
-          tag: 'Most Popular',
-          features: ['Silent Aim & Bullet Drop Assist', 'Player & Sleeper ESP', 'Ore, Node & Crate ESP', 'No Recoil & No Sway'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
-        },
-        {
           id: 'rust-krush',
           name: 'Krush',
           edition: 'Kernel Hypervisor V2',
-          tag: 'Kernel V2',
+          tag: 'Most Popular',
+          productId: 884610,
           features: ['Kernel Driver Bypass', 'Predictive Heli & Player Aim', 'Raid ESP & Tool Cupboard ESP', 'Admin Flags & Debug Camera'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 27.99 }, '30d': { name: '30 Days', price: 54.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
-        },
-        {
-          id: 'rust-unnamed',
-          name: 'Unnamed',
-          edition: 'External DMA / Streamproof',
-          tag: 'DMA Ready',
-          features: ['Full DMA Hardware Support', 'Web Map Radar on Phone', 'Loot & Monument Tracker', 'Streamproof Overlay'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 884610, variantId: 1714641 },
+            '7d': { name: '7 Days', price: 29.99, productId: 884610, variantId: 1714642 },
+            '30d': { name: '30 Days', price: 59.99, productId: 884610, variantId: 1714643 }
+          }
         },
         {
           id: 'rust-ancient',
           name: 'Ancient',
           edition: 'Private Ring-0 Elite',
           tag: 'Private Slots',
+          productId: 886602,
           features: ['Private Build (Limited Slots)', 'Always Headshot Silent Curve', 'Full Base Radar & Trap Warning', 'Built-in Hardware Spoofer'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 159.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 9.99, productId: 886602, variantId: 1727943 },
+            '7d': { name: '7 Days', price: 39.99, productId: 886602, variantId: 1727944 },
+            '30d': { name: '30 Days', price: 69.99, productId: 886602, variantId: 1727945 }
+          }
         }
       ]
     },
@@ -242,32 +230,26 @@ document.addEventListener('DOMContentLoaded', () => {
           name: 'Crusader',
           edition: 'Internal Combat Suite',
           tag: 'Most Popular',
+          productId: 884587,
           features: ['Magic Bullet & Vector Aim', 'Full Skeleton & Trap ESP', '100% Streamproof', 'No Recoil & Spread 0%'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
-        },
-        {
-          id: 'r6s-krush',
-          name: 'Krush',
-          edition: 'Kernel Hypervisor V2',
-          tag: 'Kernel V2',
-          features: ['Hypervisor Level Injection', 'Silent Aim Through Soft Walls', 'Operator & Gadget Glow ESP', 'Instant Knife & Run and Shoot'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 27.99 }, '30d': { name: '30 Days', price: 54.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
-        },
-        {
-          id: 'r6s-unnamed',
-          name: 'Unnamed',
-          edition: 'External DMA / Streamproof',
-          tag: 'DMA Ready',
-          features: ['External Memory Reading', 'Hardware DMA Compatible', 'Custom 2D Radar View', 'Zero Memory Footprint'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 884587, variantId: 1714586 },
+            '7d': { name: '7 Days', price: 29.99, productId: 884587, variantId: 1714587 },
+            '30d': { name: '30 Days', price: 59.99, productId: 884587, variantId: 1714588 }
+          }
         },
         {
           id: 'r6s-ancient',
           name: 'Ancient',
           edition: 'Private Ring-0 Elite',
           tag: 'Private Slots',
+          productId: 886184,
           features: ['Private Slot Security', 'Wallbang Prediction & Penetration', 'Enemy View Angles & Health', 'Automatic HWID Cleaner'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 159.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 886184, variantId: 1724894 },
+            '7d': { name: '7 Days', price: 29.99, productId: 886184, variantId: 1724895 },
+            '30d': { name: '30 Days', price: 59.99, productId: 886184, variantId: 1724896 }
+          }
         }
       ]
     },
@@ -277,36 +259,43 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'Ring-0 Hypervisor • Undetected',
       products: [
         {
-          id: 'wd-crusader',
-          name: 'Crusader',
-          edition: 'Internal Combat Suite',
-          tag: 'Most Popular',
-          features: ['Precision Smooth Aimbot', '3D Box & Distance ESP', 'Streamproof Capture Mode', 'Recoil Compensator'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
+          id: 'wd-ancient',
+          name: 'Ancient',
+          edition: 'Private Ring-0 Elite',
+          tag: 'Private Slots',
+          productId: 886592,
+          features: ['Private Cryptographic Binary', 'Dynamic FOV & Bone Target', 'Full Item & Equipment ESP', 'Built-in HWID Spoofer'],
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 886592, variantId: 1727920 },
+            '7d': { name: '7 Days', price: 29.99, productId: 886592, variantId: 1727921 },
+            '30d': { name: '30 Days', price: 59.99, productId: 886592, variantId: 1727922 }
+          }
         },
         {
           id: 'wd-krush',
           name: 'Krush',
           edition: 'Kernel Hypervisor V2',
           tag: 'Kernel V2',
+          productId: 886596,
           features: ['Kernel Driver Stealth', 'Target Lock & Prediction', 'Visible Check Color Swapping', 'Threat Radar Mini-Map'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 27.99 }, '30d': { name: '30 Days', price: 54.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 886596, variantId: 1727932 },
+            '7d': { name: '7 Days', price: 29.99, productId: 886596, variantId: 1727933 },
+            '30d': { name: '30 Days', price: 59.99, productId: 886596, variantId: 1727934 }
+          }
         },
         {
           id: 'wd-unnamed',
           name: 'Unnamed',
           edition: 'External DMA / Streamproof',
           tag: 'DMA Ready',
+          productId: 887809,
           features: ['Hardware DMA Protocol', 'Overlay Stream Shield', 'Loot & Player Tracers', 'Read-Only Integrity'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
-        },
-        {
-          id: 'wd-ancient',
-          name: 'Ancient',
-          edition: 'Private Ring-0 Elite',
-          tag: 'Private Slots',
-          features: ['Private Cryptographic Binary', 'Dynamic FOV & Bone Target', 'Full Item & Equipment ESP', 'Built-in HWID Spoofer'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 159.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 9.99, productId: 887809, variantId: 1736059 },
+            '7d': { name: '7 Days', price: 39.99, productId: 887809, variantId: 1736060 },
+            '30d': { name: '30 Days', price: 69.99, productId: 887809, variantId: 1736061 }
+          }
         }
       ]
     },
@@ -316,36 +305,43 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'EAC Ring-0 Undetected',
       products: [
         {
-          id: 'apex-crusader',
-          name: 'Crusader',
-          edition: 'Internal Combat Suite',
-          tag: 'Most Popular',
-          features: ['Smooth Humanized Aimbot', 'Glow & Skeleton ESP', 'Shield & Health Bars', 'No Sway & No Recoil'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
-        },
-        {
-          id: 'apex-krush',
-          name: 'Krush',
-          edition: 'Kernel Hypervisor V2',
-          tag: 'Kernel V2',
-          features: ['Silent Aim with Drop/Speed Comp', 'Loot ESP with Tier Colors', 'Spectator Warning System', 'Auto Superglide & Bunny Hop'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 27.99 }, '30d': { name: '30 Days', price: 54.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
-        },
-        {
-          id: 'apex-unnamed',
-          name: 'Unnamed',
-          edition: 'External DMA / Streamproof',
-          tag: 'DMA Ready',
-          features: ['2nd PC DMA Hardware Mode', 'Web Radar for Mobile/Tablet', 'Streamer Mode Overlay', 'Zero Memory Writing'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
-        },
-        {
           id: 'apex-ancient',
           name: 'Ancient',
           edition: 'Private Ring-0 Elite',
           tag: 'Private Slots',
+          productId: 886659,
           features: ['Private Slot Architecture', 'Instant Target Switch & Curve', 'Full Distance & Legend Tag ESP', 'Integrated Clean HWID Spoofer'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 159.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 886659, variantId: 1728097 },
+            '7d': { name: '7 Days', price: 29.99, productId: 886659, variantId: 1728098 },
+            '30d': { name: '30 Days', price: 59.99, productId: 886659, variantId: 1728099 }
+          }
+        },
+        {
+          id: 'apex-internal',
+          name: 'Unnamed Internal',
+          edition: 'Internal Combat Suite',
+          tag: 'Most Popular',
+          productId: 887852,
+          features: ['Smooth Humanized Aimbot', 'Glow & Skeleton ESP', 'Shield & Health Bars', 'No Sway & No Recoil'],
+          plans: {
+            '1d': { name: '1 Day', price: 9.99, productId: 887852, variantId: 1736149 },
+            '7d': { name: '7 Days', price: 39.99, productId: 887852, variantId: 1736150 },
+            '30d': { name: '30 Days', price: 69.99, productId: 887852, variantId: 1736151 }
+          }
+        },
+        {
+          id: 'apex-external',
+          name: 'Unnamed External',
+          edition: 'External DMA / Streamproof',
+          tag: 'DMA Ready',
+          productId: 887853,
+          features: ['2nd PC DMA Hardware Mode', 'Web Radar for Mobile/Tablet', 'Streamer Mode Overlay', 'Zero Memory Writing'],
+          plans: {
+            '1d': { name: '1 Day', price: 8.99, productId: 887853, variantId: 1736152 },
+            '7d': { name: '7 Days', price: 34.99, productId: 887853, variantId: 1736153 },
+            '30d': { name: '30 Days', price: 64.99, productId: 887853, variantId: 1736154 }
+          }
         }
       ]
     },
@@ -355,75 +351,30 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'BattlEye & EAC Bypass Undetected',
       products: [
         {
-          id: 'fn-crusader',
-          name: 'Crusader',
+          id: 'fn-internal',
+          name: 'Unnamed Internal',
           edition: 'Internal Combat Suite',
           tag: 'Most Popular',
+          productId: 887815,
           features: ['Memory Silent Aim & Triggerbot', 'Player Box & Skeleton ESP', 'Loot Chest & Rarity ESP', '100% Streamproof'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 9.99, productId: 887815, variantId: 1736071 },
+            '7d': { name: '7 Days', price: 39.99, productId: 887815, variantId: 1736072 },
+            '30d': { name: '30 Days', price: 69.99, productId: 887815, variantId: 1736073 }
+          }
         },
         {
-          id: 'fn-krush',
-          name: 'Krush',
-          edition: 'Kernel Hypervisor V2',
-          tag: 'Kernel V2',
-          features: ['Kernel Driver Injection', 'Weak Point Aim & Instant Reset', 'Vehicle & Supply Drop ESP', 'Radar & Visible Check'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 27.99 }, '30d': { name: '30 Days', price: 54.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
-        },
-        {
-          id: 'fn-unnamed',
-          name: 'Unnamed',
+          id: 'fn-external',
+          name: 'Unnamed External',
           edition: 'External DMA / Streamproof',
           tag: 'DMA Ready',
+          productId: 887820,
           features: ['External DMA 2nd PC Support', 'Phone Browser Mini-Map', 'No Memory Modifications', 'Streamer Protected Mode'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
-        },
-        {
-          id: 'fn-ancient',
-          name: 'Ancient',
-          edition: 'Private Ring-0 Elite',
-          tag: 'Private Slots',
-          features: ['Private Build per Customer', 'Unmatched Smoothing & FOV', 'Snaplines & Directional Arrows', 'Hardware Spoofer Included'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 159.99 } }
-        }
-      ]
-    },
-    cod: {
-      title: 'BO7 & Warzone',
-      image: 'assets/images/games/cod.png',
-      status: 'Ricochet Kernel Undetected',
-      products: [
-        {
-          id: 'cod-crusader',
-          name: 'Crusader',
-          edition: 'Internal Combat Suite',
-          tag: 'Most Popular',
-          features: ['Ricochet Safe Silent Aim', 'Bone Skeleton & Box ESP', 'Full Streamproof OBS', 'Controller & KBM Support'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
-        },
-        {
-          id: 'cod-krush',
-          name: 'Krush',
-          edition: 'Kernel Hypervisor V2',
-          tag: 'Kernel V2',
-          features: ['Hypervisor Stealth Driver', 'Auto Prediction & Velocity', 'Loot & Killstreak ESP', 'Constant UAV Radar'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 27.99 }, '30d': { name: '30 Days', price: 54.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
-        },
-        {
-          id: 'cod-unnamed',
-          name: 'Unnamed',
-          edition: 'External DMA / Streamproof',
-          tag: 'DMA Ready',
-          features: ['Hardware DMA Reading', 'External Browser Radar', 'Zero In-Memory Footprint', 'Shadowplay & Discord Safe'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
-        },
-        {
-          id: 'cod-ancient',
-          name: 'Ancient',
-          edition: 'Private Ring-0 Elite',
-          tag: 'Private Slots',
-          features: ['Private Ring-0 Kernel Slot', 'Humanized Aim Accelerations', 'Gun & Equipment ESP', 'Built-in Permanent Spoofer'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 159.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 8.99, productId: 887820, variantId: 1736080 },
+            '7d': { name: '7 Days', price: 34.99, productId: 887820, variantId: 1736081 },
+            '30d': { name: '30 Days', price: 64.99, productId: 887820, variantId: 1736082 }
+          }
         }
       ]
     },
@@ -433,36 +384,50 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'Vanguard Ring-0 Undetected',
       products: [
         {
-          id: 'val-crusader',
-          name: 'Crusader',
-          edition: 'Internal Combat Suite',
-          tag: 'Most Popular',
-          features: ['Hyper-Safe Visible Aimbot', 'Player Box & Health Bar', 'Streamproof Capture', 'Triggerbot with Delay'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
-        },
-        {
-          id: 'val-krush',
-          name: 'Krush',
-          edition: 'Kernel Hypervisor V2',
-          tag: 'Kernel V2',
-          features: ['Hypervisor Vanguard Bypass', 'RCS Recoil Control System', 'Spike & Ability Timer ESP', 'Chams with Visible Check'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 27.99 }, '30d': { name: '30 Days', price: 54.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
-        },
-        {
           id: 'val-unnamed',
           name: 'Unnamed',
-          edition: 'External DMA / Streamproof',
-          tag: 'DMA Ready',
-          features: ['DMA Hardware Card Capable', 'Secondary PC Display Only', 'Zero Anti-Cheat Interception', 'Full Streamproof Protection'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
+          edition: 'Hyper-Safe Vanguard Ring-0',
+          tag: 'Vanguard Safe',
+          productId: 887352,
+          features: ['Hyper-Safe Visible Aimbot', 'Player Box & Health Bar', 'Streamproof Capture', 'Triggerbot with Delay'],
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 887352, variantId: 1731692 },
+            '7d': { name: '7 Days', price: 29.99, productId: 887352, variantId: 1731693 },
+            '30d': { name: '30 Days', price: 59.99, productId: 887352, variantId: 1731694 }
+          }
+        }
+      ]
+    },
+    delta_force: {
+      title: 'Delta Force',
+      image: 'assets/images/games/delta_force.png',
+      status: 'Ring-0 Driver • ACE Bypass Undetected',
+      products: [
+        {
+          id: 'df-ancient',
+          name: 'Ancient',
+          edition: 'Combat & Tactical ESP',
+          tag: 'Most Popular',
+          productId: 887840,
+          features: ['3D Bounding Box & Bone Skeleton', 'Adaptive Smoothing Aimbot', 'Vehicle & Helo Tracker', 'Custom FOV & Triggerbot'],
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 887840, variantId: 1736126 },
+            '7d': { name: '7 Days', price: 29.99, productId: 887840, variantId: 1736127 },
+            '30d': { name: '30 Days', price: 59.99, productId: 887840, variantId: 1736128 }
+          }
         },
         {
-          id: 'val-ancient',
-          name: 'Ancient',
-          edition: 'Private Ring-0 Elite',
-          tag: 'Private Slots',
-          features: ['Invite/Private Slot Only', 'Human Curve Mouse Smoothing', 'Agent Name & Weapon ESP', 'TPM 2.0 / SecureBoot Spoofer'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 159.99 } }
+          id: 'df-unnamed',
+          name: 'Unnamed',
+          edition: 'Tournament Edition',
+          tag: 'Streamproof',
+          productId: 887830,
+          features: ['Hardware DMA Direct Link', 'OBS & Discord Streamproof', 'No Recoil & Sway Removal', 'Loot & Extraction Locator'],
+          plans: {
+            '1d': { name: '1 Day', price: 9.99, productId: 887830, variantId: 1736104 },
+            '7d': { name: '7 Days', price: 39.99, productId: 887830, variantId: 1736105 },
+            '30d': { name: '30 Days', price: 59.99, productId: 887830, variantId: 1736106 }
+          }
         }
       ]
     },
@@ -476,39 +441,26 @@ document.addEventListener('DOMContentLoaded', () => {
           name: 'Crusader',
           edition: 'Full Internal Suite',
           tag: 'Most Popular',
+          productId: 887845,
           features: ['Loot & Item Value ESP', 'Aimbot with Silent Aim & Recoil Control', 'Player & Scav Distance ESP', 'Extract Points & Grenade ESP'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 149.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 9.99, productId: 887845, variantId: 1736135 },
+            '7d': { name: '7 Days', price: 39.99, productId: 887845, variantId: 1736136 },
+            '30d': { name: '30 Days', price: 69.99, productId: 887845, variantId: 1736137 }
+          }
         },
         {
-          id: 'eft-ancient',
-          name: 'Ancient',
-          edition: 'Private DMA & Streamproof',
+          id: 'eft-unnamed',
+          name: 'Unnamed',
+          edition: 'External & Streamproof',
           tag: 'DMA / Streamproof',
+          productId: 887834,
           features: ['Secondary PC Web Radar', 'Zero BattlEye Memory Footprint', 'Container & Corpse Filter', 'Instant Bullet & Speed Modifier'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 169.99 } }
-        }
-      ]
-    },
-    delta_force: {
-      title: 'Delta Force',
-      image: 'assets/images/games/delta_force.png',
-      status: 'Ring-0 Driver • ACE Bypass Undetected',
-      products: [
-        {
-          id: 'df-crusader',
-          name: 'Crusader',
-          edition: 'Combat & Tactical ESP',
-          tag: 'Most Popular',
-          features: ['3D Bounding Box & Bone Skeleton', 'Adaptive Smoothing Aimbot', 'Vehicle & Helo Tracker', 'Custom FOV & Triggerbot'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
-        },
-        {
-          id: 'df-krush',
-          name: 'Krush',
-          edition: 'Tournament DMA Edition',
-          tag: 'Streamproof',
-          features: ['Hardware DMA Direct Link', 'OBS & Discord Streamproof', 'No Recoil & Sway Removal', 'Loot & Extraction Locator'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 887834, variantId: 1736111 },
+            '7d': { name: '7 Days', price: 29.99, productId: 887834, variantId: 1736112 },
+            '30d': { name: '30 Days', price: 59.99, productId: 887834, variantId: 1736113 }
+          }
         }
       ]
     },
@@ -519,11 +471,36 @@ document.addEventListener('DOMContentLoaded', () => {
       products: [
         {
           id: 'mr-crusader',
-          name: 'Crusader',
+          name: 'Predator',
           edition: 'Hero Mastery Internal',
           tag: 'Top Rated',
+          productId: 887840,
           features: ['Hero Skill Cooldown ESP', 'Projectile Prediction Aimbot', 'Ultimate Ability Tracker', 'Team Health & Barrier Visuals'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 887840, variantId: 1736126 },
+            '7d': { name: '7 Days', price: 29.99, productId: 887840, variantId: 1736127 },
+            '30d': { name: '30 Days', price: 59.99, productId: 887840, variantId: 1736128 }
+          }
+        }
+      ]
+    },
+    cod: {
+      title: 'BO7 & Warzone',
+      image: 'assets/images/games/cod.png',
+      status: 'Ricochet Kernel Undetected',
+      products: [
+        {
+          id: 'cod-crusader',
+          name: 'Crusader',
+          edition: 'Internal Combat Suite',
+          tag: 'Most Popular',
+          productId: 884587,
+          features: ['Ricochet Safe Silent Aim', 'Bone Skeleton & Box ESP', 'Full Streamproof OBS', 'Controller & KBM Support'],
+          plans: {
+            '1d': { name: '1 Day', price: 7.99, productId: 884587, variantId: 1714586 },
+            '7d': { name: '7 Days', price: 29.99, productId: 884587, variantId: 1714587 },
+            '30d': { name: '30 Days', price: 59.99, productId: 884587, variantId: 1714588 }
+          }
         }
       ]
     }
@@ -549,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
       data.products.forEach(prod => {
         const card = document.createElement('div');
         card.className = 'cheat-card-item';
-        let currentPlanKey = '30d';
+        let currentPlanKey = prod.plans['30d'] ? '30d' : Object.keys(prod.plans)[0];
         let currentPlan = prod.plans[currentPlanKey];
 
         const durationButtonsHtml = Object.keys(prod.plans).map(key => {
@@ -630,6 +607,8 @@ document.addEventListener('DOMContentLoaded', () => {
               durationKey: currentPlanKey,
               durationName: currentPlan.name,
               price: currentPlan.price,
+              productId: currentPlan.productId || prod.productId || 856084,
+              variantId: currentPlan.variantId || 1532957,
               image: data.image
             });
             closeCheatsModal();
@@ -659,9 +638,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const gameCards = document.querySelectorAll('.game-card');
   gameCards.forEach(card => {
     const key = card.getAttribute('data-game-key');
-    const btn = card.querySelector('button.game-card-btn');
+    const btn = card.querySelector('.game-card-btn');
     if (btn && key) {
-      btn.addEventListener('click', () => openCheatsModal(key));
+      btn.addEventListener('click', (e) => {
+        const href = btn.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('javascript:')) {
+          e.preventDefault();
+          openCheatsModal(key);
+        }
+      });
+    }
+  });
+
+  const searchRows = document.querySelectorAll('.search-result-row[data-game-key]');
+  searchRows.forEach(row => {
+    const key = row.getAttribute('data-game-key');
+    if (key && CHEATS_CATALOG[key]) {
+      row.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeSearch();
+        openCheatsModal(key);
+      });
     }
   });
 
@@ -885,14 +882,143 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const SELLAUTH_CONFIG = {
+    shopId: '269719',
+    apiKey: '6169583|m657Xdip6yxBI1ZRo5B3jhQMVvNvrOtciCP43hM90fc3b021',
+    apiEndpoint: 'https://api.sellauth.com',
+    storeUrl: 'https://madcheats.net'
+  };
+
+  function resolveSellAuthItem(item) {
+    if (item.productId && item.variantId) {
+      return { productId: Number(item.productId), variantId: Number(item.variantId) };
+    }
+    if (item.gameKey && CHEATS_CATALOG[item.gameKey]) {
+      const cat = CHEATS_CATALOG[item.gameKey];
+      for (const prod of cat.products) {
+        if (prod.plans) {
+          for (const key of Object.keys(prod.plans)) {
+            const plan = prod.plans[key];
+            if (item.durationKey === key || item.durationName === plan.name) {
+              return { productId: Number(plan.productId || prod.productId), variantId: Number(plan.variantId) };
+            }
+          }
+        }
+      }
+      if (cat.products[0] && cat.products[0].plans) {
+        const firstPlan = Object.values(cat.products[0].plans)[0];
+        if (firstPlan && firstPlan.variantId) {
+          return { productId: Number(firstPlan.productId || cat.products[0].productId), variantId: Number(firstPlan.variantId) };
+        }
+      }
+    }
+    return { productId: 884587, variantId: 1714586 };
+  }
+
+  async function initiateSellAuthCheckout(btnEl) {
+    const cart = getCart();
+    if (!cart || cart.length === 0) return;
+
+    if (btnEl) {
+      btnEl.disabled = true;
+      btnEl.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Connecting to Checkout...</span>';
+    }
+
+    const sellAuthCart = cart.map(item => {
+      const resolved = resolveSellAuthItem(item);
+      return {
+        productId: resolved.productId,
+        variantId: resolved.variantId,
+        quantity: Number(item.qty) || 1
+      };
+    });
+
+    const payload = {
+      cart: sellAuthCart,
+      currency: 'USD',
+      shopId: String(SELLAUTH_CONFIG.shopId),
+      source: 'storefront'
+    };
+
+    try {
+      const response = await fetch(`${SELLAUTH_CONFIG.apiEndpoint}/v1/shops/${SELLAUTH_CONFIG.shopId}/checkout`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${SELLAUTH_CONFIG.apiKey}`,
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const resData = await response.json().catch(() => null);
+
+      if (resData && (resData.url || resData.invoice_url)) {
+        localStorage.removeItem('madcheats_cart_items');
+        window.location.href = resData.url || resData.invoice_url;
+        return;
+      }
+    } catch (err) {
+      console.warn('[SellAuth] Shop Checkout API fallback:', err);
+    }
+
+    try {
+      const response2 = await fetch(`https://api-internal-3.sellauth.com/v1/checkout`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const resData2 = await response2.json().catch(() => null);
+
+      if (resData2 && (resData2.url || resData2.invoice_url)) {
+        localStorage.removeItem('madcheats_cart_items');
+        window.location.href = resData2.url || resData2.invoice_url;
+        return;
+      }
+    } catch (err2) {
+      console.warn('[SellAuth] Internal checkout error:', err2);
+    }
+
+    // Direct fallback to product page on MadCheats SellAuth store
+    const firstItem = cart[0];
+    const targetUrl = firstItem && firstItem.productId
+      ? `${SELLAUTH_CONFIG.storeUrl}/product/${firstItem.productId}?variant=${firstItem.variantId || ''}`
+      : `${SELLAUTH_CONFIG.storeUrl}/checkout`;
+
+    if (btnEl) {
+      btnEl.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Redirecting...</span>';
+    }
+
+    setTimeout(() => {
+      localStorage.removeItem('madcheats_cart_items');
+      window.location.href = targetUrl;
+    }, 400);
+  }
+
+  async function fetchSellAuthProducts() {
+    try {
+      const res = await fetch(`${SELLAUTH_CONFIG.apiEndpoint}/v1/shops/${SELLAUTH_CONFIG.shopId}/products`, {
+        headers: {
+          'Authorization': `Bearer ${SELLAUTH_CONFIG.apiKey}`,
+          'Accept': 'application/json'
+        }
+      });
+      if (res.ok) {
+        return await res.json();
+      }
+    } catch (e) {
+      console.warn('[SellAuth] Could not fetch products directly from browser:', e);
+    }
+    return null;
+  }
+
   if (cartCheckoutBtn) {
     cartCheckoutBtn.addEventListener('click', () => {
-      const cart = getCart();
-      if (cart.length === 0) return;
-      closeCart();
-      openCheckoutSuccess();
-      localStorage.removeItem('madcheats_cart_items');
-      updateCartUI();
+      initiateSellAuthCheckout(cartCheckoutBtn);
     });
   }
 
@@ -927,7 +1053,14 @@ document.addEventListener('DOMContentLoaded', () => {
     openCart,
     closeCart,
     openCheckoutSuccess,
-    closeCheckoutSuccess
+    closeCheckoutSuccess,
+    checkout: initiateSellAuthCheckout
+  };
+
+  window.SellAuthIntegration = {
+    config: SELLAUTH_CONFIG,
+    initiateCheckout: initiateSellAuthCheckout,
+    fetchProducts: fetchSellAuthProducts
   };
 
   const loaderNavBtns = document.querySelectorAll('.loader-nav-btn');

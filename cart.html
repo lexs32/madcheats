@@ -446,9 +446,13 @@
         cartPageCheckoutBtn.addEventListener('click', () => {
           const cart = getCart();
           if (cart.length === 0) return;
-          openSuccessModal();
-          localStorage.removeItem('madcheats_cart_items');
-          renderCart();
+          if (window.MadCheatsCart && window.MadCheatsCart.checkout) {
+            window.MadCheatsCart.checkout(cartPageCheckoutBtn);
+          } else {
+            openSuccessModal();
+            localStorage.removeItem('madcheats_cart_items');
+            renderCart();
+          }
         });
       }
 

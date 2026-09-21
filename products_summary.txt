@@ -1,0 +1,99 @@
+﻿==================================================
+SELLAUTH STORE: Mad Cheats (Shop ID: 269719)
+Total Products Found: 19
+==================================================
+
+PRODUCT: Crusader-R6S (ID: 884587)
+   - Variant: 1 Day Key | Variant ID: 1714586 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1714587 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1714588 | Price: 59.99 USD
+
+PRODUCT: KRUSH - RUST (ID: 884610)
+   - Variant: 1 Day Key | Variant ID: 1714641 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1714642 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1714643 | Price: 59.99 USD
+
+PRODUCT: Ancient - ARC Raiders (ID: 884622)
+   - Variant: 1 Day Key | Variant ID: 1714657 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1714658 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1714659 | Price: 59.99 USD
+
+PRODUCT: Ancient-R6S (ID: 886184)
+   - Variant: 1 Day Key | Variant ID: 1724894 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1724895 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1724896 | Price: 59.99 USD
+
+PRODUCT: Ancient-Wardogs (ID: 886592)
+   - Variant: 1 Day Key | Variant ID: 1727920 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1727921 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1727922 | Price: 59.99 USD
+
+PRODUCT: KRUSH-Wardogs (ID: 886596)
+   - Variant: 1 Day Key | Variant ID: 1727932 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1727933 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1727934 | Price: 59.99 USD
+
+PRODUCT: KRUSH-ARC Raiders (ID: 886600)
+   - Variant: 1 Day Key | Variant ID: 1727939 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1727940 | Price: 34.99 USD
+   - Variant: 30 Days | Variant ID: 1727941 | Price: 69.99 USD
+
+PRODUCT: Ancient-Rust (ID: 886602)
+   - Variant: 1 Day Key | Variant ID: 1727943 | Price: 9.99 USD
+   - Variant: 7 Days | Variant ID: 1727944 | Price: 39.99 USD
+   - Variant: 30 Days | Variant ID: 1727945 | Price: 69.99 USD
+
+PRODUCT: Ancient-Apex (ID: 886659)
+   - Variant: 1 Day Key | Variant ID: 1728097 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1728098 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1728099 | Price: 59.99 USD
+
+PRODUCT: Unnamed-Valorant (ID: 887352)
+   - Variant: 1 Day Key | Variant ID: 1731692 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1731693 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1731694 | Price: 59.99 USD
+
+PRODUCT: Unamed-Wardogs (ID: 887809)
+   - Variant: 1 Day Key | Variant ID: 1736059 | Price: 9.99 USD
+   - Variant: 7 Days | Variant ID: 1736060 | Price: 39.99 USD
+   - Variant: 30 Days | Variant ID: 1736061 | Price: 69.99 USD
+
+PRODUCT: Unnamed Internal-Fortnite (ID: 887815)
+   - Variant: 1 Day Key | Variant ID: 1736071 | Price: 9.99 USD
+   - Variant: 7 Days | Variant ID: 1736072 | Price: 39.99 USD
+   - Variant: 30 Days | Variant ID: 1736073 | Price: 69.99 USD
+
+PRODUCT: Unnamed-Fortnite External (ID: 887820)
+   - Variant: 1 Day Key | Variant ID: 1736080 | Price: 8.99 USD
+   - Variant: 7 Days | Variant ID: 1736081 | Price: 34.99 USD
+   - Variant: 30 Days | Variant ID: 1736082 | Price: 64.99 USD
+
+PRODUCT: Unnamed-Delta Forces (ID: 887830)
+   - Variant: 1 Day Key | Variant ID: 1736104 | Price: 9.99 USD
+   - Variant: 7 Days | Variant ID: 1736105 | Price: 39.99 USD
+   - Variant: 30 Days | Variant ID: 1736106 | Price: 59.99 USD
+
+PRODUCT: Unnamed-EFT (ID: 887834)
+   - Variant: 1 Day Key | Variant ID: 1736111 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1736112 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1736113 | Price: 59.99 USD
+
+PRODUCT: Ancient-Delta Forces (ID: 887840)
+   - Variant: 1 Day Key | Variant ID: 1736126 | Price: 7.99 USD
+   - Variant: 7 Days | Variant ID: 1736127 | Price: 29.99 USD
+   - Variant: 30 Days | Variant ID: 1736128 | Price: 59.99 USD
+
+PRODUCT: Crusader-EFT (ID: 887845)
+   - Variant: 1 Day Key | Variant ID: 1736135 | Price: 9.99 USD
+   - Variant: 7 Days | Variant ID: 1736136 | Price: 39.99 USD
+   - Variant: 30 Days | Variant ID: 1736137 | Price: 69.99 USD
+
+PRODUCT: Unnamed-Apex Internal (ID: 887852)
+   - Variant: 1 Day Key | Variant ID: 1736149 | Price: 9.99 USD
+   - Variant: 7 Days | Variant ID: 1736150 | Price: 39.99 USD
+   - Variant: 30 Days | Variant ID: 1736151 | Price: 69.99 USD
+
+PRODUCT: Unnamed-Apex External (ID: 887853)
+   - Variant: 1 Day Key | Variant ID: 1736152 | Price: 8.99 USD
+   - Variant: 7 Days | Variant ID: 1736153 | Price: 34.99 USD
+   - Variant: 30 Days | Variant ID: 1736154 | Price: 64.99 USD

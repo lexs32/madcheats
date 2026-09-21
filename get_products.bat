@@ -1,17 +1,17 @@
 @echo off
 setlocal
 cd /d "%~dp0"
+title SellAuth Product Fetcher
+
 echo ========================================================
-echo   MADCHEATS - DEPLOYING TO GITHUB ^& VERCEL
+echo   MADCHEATS - FETCHING SELLAUTH PRODUCTS ^& VARIANTS
 echo ========================================================
 echo.
 
-git add .
-git commit -m "Wire up live SellAuth products, shop 269719, and automated checkout"
-git push origin master
+powershell -NoProfile -ExecutionPolicy Bypass -File "get_products.ps1"
 
 echo.
 echo ========================================================
-echo Code pushed to GitHub! Vercel will auto-deploy in ~30s.
+echo Finished! Check the list above or open products_summary.txt.
 echo ========================================================
 pause
