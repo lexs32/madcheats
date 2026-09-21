@@ -463,46 +463,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       ]
-    },
-    marvel_rivals: {
-      title: 'Marvel Rivals',
-      image: 'assets/images/games/marvel_rivals.png',
-      status: 'Kernel Hypervisor • Vanguard/ACE Safe',
-      products: [
-        {
-          id: 'mr-crusader',
-          name: 'Predator',
-          edition: 'Hero Mastery Internal',
-          tag: 'Top Rated',
-          productId: 887840,
-          features: ['Hero Skill Cooldown ESP', 'Projectile Prediction Aimbot', 'Ultimate Ability Tracker', 'Team Health & Barrier Visuals'],
-          plans: {
-            '1d': { name: '1 Day', price: 7.99, productId: 887840, variantId: 1736126 },
-            '7d': { name: '7 Days', price: 29.99, productId: 887840, variantId: 1736127 },
-            '30d': { name: '30 Days', price: 59.99, productId: 887840, variantId: 1736128 }
-          }
-        }
-      ]
-    },
-    cod: {
-      title: 'BO7 & Warzone',
-      image: 'assets/images/games/cod.png',
-      status: 'Ricochet Kernel Undetected',
-      products: [
-        {
-          id: 'cod-crusader',
-          name: 'Crusader',
-          edition: 'Internal Combat Suite',
-          tag: 'Most Popular',
-          productId: 884587,
-          features: ['Ricochet Safe Silent Aim', 'Bone Skeleton & Box ESP', 'Full Streamproof OBS', 'Controller & KBM Support'],
-          plans: {
-            '1d': { name: '1 Day', price: 7.99, productId: 884587, variantId: 1714586 },
-            '7d': { name: '7 Days', price: 29.99, productId: 884587, variantId: 1714587 },
-            '30d': { name: '30 Days', price: 59.99, productId: 884587, variantId: 1714588 }
-          }
-        }
-      ]
     }
   };
 
@@ -885,135 +845,143 @@ document.addEventListener('DOMContentLoaded', () => {
   const SELLAUTH_CONFIG = {
     shopId: '269719',
     apiKey: '6169583|m657Xdip6yxBI1ZRo5B3jhQMVvNvrOtciCP43hM90fc3b021',
-    apiEndpoint: 'https://api.sellauth.com',
-    storeUrl: 'https://madcheats.net'
+    subdomainUrl: 'https://mad-cheats.mysellauth.com',
+    storeUrl: 'https://mad-cheats.mysellauth.com'
   };
 
   function resolveSellAuthItem(item) {
     if (item.productId && item.variantId) {
       return { productId: Number(item.productId), variantId: Number(item.variantId) };
     }
-    if (item.gameKey && CHEATS_CATALOG[item.gameKey]) {
-      const cat = CHEATS_CATALOG[item.gameKey];
-      for (const prod of cat.products) {
-        if (prod.plans) {
-          for (const key of Object.keys(prod.plans)) {
-            const plan = prod.plans[key];
-            if (item.durationKey === key || item.durationName === plan.name) {
-              return { productId: Number(plan.productId || prod.productId), variantId: Number(plan.variantId) };
+    const cleanStr = s => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const cleanKey = cleanStr(item.durationKey || item.durationName);
+
+    let gKey = item.gameKey;
+    if (gKey === 'r6') gKey = 'r6s';
+    if (gKey === 'deltaforce') gKey = 'delta_force';
+    if (gKey === 'tarkov') gKey = 'eft';
+
+    if (gKey && CHEATS_CATALOG[gKey]) {
+      const cat = CHEATS_CATALOG[gKey];
+      let matchedProd = cat.products.find(p => {
+        if (item.id && (item.id === p.id || item.id.includes(p.id) || p.id.includes(item.id))) return true;
+        if (item.cheatName && (cleanStr(item.cheatName).includes(cleanStr(p.name)) || cleanStr(p.name).includes(cleanStr(item.cheatName)))) return true;
+        return false;
+      }) || cat.products[0];
+
+      if (matchedProd && matchedProd.plans) {
+        if (matchedProd.plans[item.durationKey]) {
+          const plan = matchedProd.plans[item.durationKey];
+          return { productId: Number(plan.productId || matchedProd.productId), variantId: Number(plan.variantId) };
+        }
+        for (const [k, plan] of Object.entries(matchedProd.plans)) {
+          const planClean = cleanStr(plan.name);
+          if (cleanKey === k || cleanKey.includes(k) || cleanKey.includes(planClean) || planClean.includes(cleanKey)) {
+            return { productId: Number(plan.productId || matchedProd.productId), variantId: Number(plan.variantId) };
+          }
+        }
+        if (item.price) {
+          const itemP = Number(item.price);
+          for (const plan of Object.values(matchedProd.plans)) {
+            if (Math.abs(plan.price - itemP) < 0.05) {
+              return { productId: Number(plan.productId || matchedProd.productId), variantId: Number(plan.variantId) };
             }
           }
         }
-      }
-      if (cat.products[0] && cat.products[0].plans) {
-        const firstPlan = Object.values(cat.products[0].plans)[0];
-        if (firstPlan && firstPlan.variantId) {
-          return { productId: Number(firstPlan.productId || cat.products[0].productId), variantId: Number(firstPlan.variantId) };
+        const firstPlan = Object.values(matchedProd.plans)[0];
+        if (firstPlan) {
+          return { productId: Number(firstPlan.productId || matchedProd.productId), variantId: Number(firstPlan.variantId) };
         }
       }
     }
-    return { productId: 884587, variantId: 1714586 };
+    return { productId: 884622, variantId: 1714657 };
   }
 
-  async function initiateSellAuthCheckout(btnEl) {
+  function ensureSellAuthScript(callback) {
+    if (window.sellAuth && typeof window.sellAuth.open === 'function') {
+      callback();
+      return;
+    }
+    const existing = document.querySelector('script[src*="sellauth.com/embed"]');
+    if (!existing) {
+      const script = document.createElement('script');
+      script.src = 'https://static.sellauth.com/embed/v3.min.js';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+    let count = 0;
+    const interval = setInterval(() => {
+      count++;
+      if (window.sellAuth && typeof window.sellAuth.open === 'function') {
+        clearInterval(interval);
+        callback();
+      } else if (count >= 12) {
+        clearInterval(interval);
+        callback();
+      }
+    }, 50);
+  }
+
+  function initiateSellAuthCheckout(btnEl) {
     const cart = getCart();
     if (!cart || cart.length === 0) return;
 
     if (btnEl) {
       btnEl.disabled = true;
+      if (!btnEl.dataset.origText) btnEl.dataset.origText = btnEl.innerHTML;
       btnEl.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Connecting to Checkout...</span>';
     }
+
+    const restoreBtn = () => {
+      if (btnEl) {
+        btnEl.disabled = false;
+        if (btnEl.dataset.origText) btnEl.innerHTML = btnEl.dataset.origText;
+      }
+    };
 
     const sellAuthCart = cart.map(item => {
       const resolved = resolveSellAuthItem(item);
       return {
         productId: resolved.productId,
         variantId: resolved.variantId,
-        quantity: Number(item.qty) || 1
+        quantity: Math.max(1, Number(item.qty) || 1)
       };
     });
 
-    const payload = {
-      cart: sellAuthCart,
-      currency: 'USD',
-      shopId: String(SELLAUTH_CONFIG.shopId),
-      source: 'storefront'
-    };
+    const cartParam = sellAuthCart.map(it => `${it.productId}:${it.variantId || ''}:${it.quantity}`).join(',');
+    const checkoutUrl = `${SELLAUTH_CONFIG.subdomainUrl}/checkout/init?shopId=${SELLAUTH_CONFIG.shopId}&cart=${encodeURIComponent(cartParam)}&v=3&mode=page`;
 
-    try {
-      const response = await fetch(`${SELLAUTH_CONFIG.apiEndpoint}/v1/shops/${SELLAUTH_CONFIG.shopId}/checkout`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${SELLAUTH_CONFIG.apiKey}`,
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-
-      const resData = await response.json().catch(() => null);
-
-      if (resData && (resData.url || resData.invoice_url)) {
-        localStorage.removeItem('madcheats_cart_items');
-        window.location.href = resData.url || resData.invoice_url;
-        return;
-      }
-    } catch (err) {
-      console.warn('[SellAuth] Shop Checkout API fallback:', err);
-    }
-
-    try {
-      const response2 = await fetch(`https://api-internal-3.sellauth.com/v1/checkout`, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-
-      const resData2 = await response2.json().catch(() => null);
-
-      if (resData2 && (resData2.url || resData2.invoice_url)) {
-        localStorage.removeItem('madcheats_cart_items');
-        window.location.href = resData2.url || resData2.invoice_url;
-        return;
-      }
-    } catch (err2) {
-      console.warn('[SellAuth] Internal checkout error:', err2);
-    }
-
-    // Direct fallback to product page on MadCheats SellAuth store
-    const firstItem = cart[0];
-    const targetUrl = firstItem && firstItem.productId
-      ? `${SELLAUTH_CONFIG.storeUrl}/product/${firstItem.productId}?variant=${firstItem.variantId || ''}`
-      : `${SELLAUTH_CONFIG.storeUrl}/checkout`;
-
-    if (btnEl) {
-      btnEl.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Redirecting...</span>';
-    }
-
-    setTimeout(() => {
-      localStorage.removeItem('madcheats_cart_items');
-      window.location.href = targetUrl;
-    }, 400);
-  }
-
-  async function fetchSellAuthProducts() {
-    try {
-      const res = await fetch(`${SELLAUTH_CONFIG.apiEndpoint}/v1/shops/${SELLAUTH_CONFIG.shopId}/products`, {
-        headers: {
-          'Authorization': `Bearer ${SELLAUTH_CONFIG.apiKey}`,
-          'Accept': 'application/json'
+    ensureSellAuthScript(() => {
+      if (window.sellAuth && typeof window.sellAuth.open === 'function') {
+        try {
+          window.sellAuth.open({
+            shopId: Number(SELLAUTH_CONFIG.shopId),
+            shopUrl: SELLAUTH_CONFIG.subdomainUrl,
+            cart: sellAuthCart,
+            modal: true,
+            theme: 'dark',
+            onClose: () => restoreBtn(),
+            onError: () => {
+              window.location.href = checkoutUrl;
+            }
+          });
+          setTimeout(() => {
+            const host = document.getElementById('sellauth-embed-host');
+            if (!host) {
+              window.location.href = checkoutUrl;
+            } else {
+              restoreBtn();
+            }
+          }, 800);
+          return;
+        } catch (e) {
+          console.warn('[SellAuth] Open modal exception:', e);
+          window.location.href = checkoutUrl;
+          return;
         }
-      });
-      if (res.ok) {
-        return await res.json();
       }
-    } catch (e) {
-      console.warn('[SellAuth] Could not fetch products directly from browser:', e);
-    }
-    return null;
+      window.location.href = checkoutUrl;
+    });
   }
 
   if (cartCheckoutBtn) {
@@ -1264,20 +1232,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3200);
   }
 
-  if (getCart().length === 0 && !localStorage.getItem('madcheats_cart_initialized')) {
-    localStorage.setItem('madcheats_cart_initialized', 'true');
-    addToCart({
-      id: 'arc-crusader',
-      gameKey: 'arc',
-      gameTitle: 'Arc Raiders',
-      cheatName: 'Crusader',
-      edition: 'Internal Combat Suite',
-      durationKey: '30d',
-      durationName: '30 Days',
-      price: 49.99,
-      image: 'assets/images/games/arc_raiders.png'
-    });
-  } else {
-    updateCartUI();
-  }
+  updateCartUI();
 });

@@ -109,7 +109,7 @@
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$5.99</span>
+                <span class="bc-from-price">$7.99</span>
               </div>
               <div class="bc-undetected-badge">
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
@@ -128,7 +128,7 @@
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$6.00</span>
+                <span class="bc-from-price">$7.99</span>
               </div>
               <div class="bc-undetected-badge">
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
@@ -166,7 +166,7 @@
             <div class="bc-row-total-qty">
               <div class="bc-total-group">
                 <span class="bc-subhead">Total</span>
-                <span class="bc-total-val" id="bcTotalAmount">$6.00</span>
+                <span class="bc-total-val" id="bcTotalAmount">$7.99</span>
               </div>
               <div class="bc-qty-group">
                 <span class="bc-subhead">Quantity</span>
@@ -465,72 +465,18 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const CHEATS = {
-        krush: {
-          key: 'krush',
-          id: 'krush-arc',
-          title: 'KRUSH - ARC RAIDERS',
-          shortTitle: 'Krush - Arc Raiders',
-          image: 'assets/images/bearcheats/1103383.webp',
-          fallbackImage: 'https://bearcheats.net/storage/images/1103383.webp',
-          variants: [
-            { name: '1 DAY KEY', stock: 'IN STOCK ∞', price: 6.00 },
-            { name: '7 DAY KEY', stock: 'IN STOCK ∞', price: 30.00 },
-            { name: '30 DAY KEY', stock: 'IN STOCK ∞', price: 60.00 }
-          ],
-          requirements: [
-            'Supported CPU: Intel & AMD',
-            'Supported OS: Windows 10–11 (All Builds)',
-            'Anti-Cheat Status: UNDETECTED'
-          ],
-          features: [
-            {
-              title: 'AIMBOT & COMBAT',
-              desc: 'Precision targeting logic with humanized smoothing.',
-              bullets: [
-                'Enable Aimbot',
-                'Smooth (slider)',
-                'Draw FOV',
-                'Prediction Dot',
-                'Vischeck',
-                'Target Bones: Head / Neck / Chest'
-              ]
-            },
-            {
-              title: 'VISUALS & ESP',
-              desc: 'Customizable overlays with complete field information.',
-              bullets: [
-                'Player Box (2D/Corner)',
-                'Player Skeleton',
-                'Distance',
-                'Health Bar',
-                'Armor Bar',
-                'Radar with custom scale'
-              ]
-            },
-            {
-              title: 'WORLD & MISCELLANEOUS',
-              desc: 'Loot, environment alerts, and safe memory features.',
-              bullets: [
-                'Crates ESP',
-                'Drones ESP',
-                'Dropped Items',
-                'Supply Station',
-                'Battle Mode toggle'
-              ]
-            }
-          ]
-        },
         ancient: {
           key: 'ancient',
-          id: 'ancient-arc',
+          id: 'arc-ancient',
+          productId: 884622,
           title: 'ANCIENT - ARC RAIDERS',
           shortTitle: 'Arc Raiders',
           image: 'assets/images/bearcheats/1103375.webp',
           fallbackImage: 'https://bearcheats.net/storage/images/1103375.webp',
           variants: [
-            { name: '1 DAY KEY', stock: 'IN STOCK ∞', price: 5.99 },
-            { name: '7 DAY KEY', stock: 'IN STOCK ∞', price: 20.00 },
-            { name: '30 DAY KEY', stock: 'IN STOCK ∞', price: 40.00 }
+            { key: '1d', name: '1 DAY KEY', stock: 'IN STOCK ∞', price: 7.99, variantId: 1714657 },
+            { key: '7d', name: '7 DAY KEY', stock: 'IN STOCK ∞', price: 29.99, variantId: 1714658 },
+            { key: '30d', name: '30 DAY KEY', stock: 'IN STOCK ∞', price: 59.99, variantId: 1714659 }
           ],
           requirements: [
             'Supported CPU: Intel & AMD',
@@ -574,6 +520,62 @@
               ]
             }
           ]
+        },
+        krush: {
+          key: 'krush',
+          id: 'arc-krush',
+          productId: 886600,
+          title: 'KRUSH - ARC RAIDERS',
+          shortTitle: 'Krush - Arc Raiders',
+          image: 'assets/images/bearcheats/1103383.webp',
+          fallbackImage: 'https://bearcheats.net/storage/images/1103383.webp',
+          variants: [
+            { key: '1d', name: '1 DAY KEY', stock: 'IN STOCK ∞', price: 7.99, variantId: 1727939 },
+            { key: '7d', name: '7 DAY KEY', stock: 'IN STOCK ∞', price: 34.99, variantId: 1727940 },
+            { key: '30d', name: '30 DAY KEY', stock: 'IN STOCK ∞', price: 69.99, variantId: 1727941 }
+          ],
+          requirements: [
+            'Supported CPU: Intel & AMD',
+            'Supported OS: Windows 10–11 (All Builds)',
+            'Anti-Cheat Status: UNDETECTED'
+          ],
+          features: [
+            {
+              title: 'AIMBOT & COMBAT',
+              desc: 'Precision targeting logic with humanized smoothing.',
+              bullets: [
+                'Enable Aimbot',
+                'Smooth (slider)',
+                'Draw FOV',
+                'Prediction Dot',
+                'Vischeck',
+                'Target Bones: Head / Neck / Chest'
+              ]
+            },
+            {
+              title: 'VISUALS & ESP',
+              desc: 'Customizable overlays with complete field information.',
+              bullets: [
+                'Player Box (2D/Corner)',
+                'Player Skeleton',
+                'Distance',
+                'Health Bar',
+                'Armor Bar',
+                'Radar with custom scale'
+              ]
+            },
+            {
+              title: 'WORLD & MISCELLANEOUS',
+              desc: 'Loot, environment alerts, and safe memory features.',
+              bullets: [
+                'Crates ESP',
+                'Drones ESP',
+                'Dropped Items',
+                'Supply Station',
+                'Battle Mode toggle'
+              ]
+            }
+          ]
         }
       };
 
@@ -598,12 +600,12 @@
       const addToCartBtn = document.getElementById('bcAddToCartBtn');
       const buyNowBtn = document.getElementById('bcBuyNowBtn');
 
-      let currentCheat = CHEATS.krush;
+      let currentCheat = CHEATS.ancient;
       let selectedVariant = currentCheat.variants[0];
       let currentQty = 1;
 
       function renderProduct(cheatKey) {
-        currentCheat = CHEATS[cheatKey] || CHEATS.krush;
+        currentCheat = CHEATS[cheatKey] || CHEATS.ancient;
         selectedVariant = currentCheat.variants[0];
         currentQty = 1;
 
@@ -729,42 +731,49 @@
         });
       });
 
-      function addCurrentToCart(openDrawer = true) {
+      function addCurrentToCart(andCheckout = false) {
         if (!window.MadCheatsCart) return;
         for (let i = 0; i < currentQty; i++) {
           window.MadCheatsCart.addToCart({
-            id: `${currentCheat.id}-${selectedVariant.name.replace(/\s+/g, '-').toLowerCase()}`,
+            id: `${currentCheat.id}-${selectedVariant.key}`,
             gameKey: 'arc',
             gameTitle: 'Arc Raiders',
             cheatName: currentCheat.shortTitle,
             edition: 'Undetected Ring-0',
-            durationKey: selectedVariant.name,
+            durationKey: selectedVariant.key,
             durationName: selectedVariant.name,
             price: selectedVariant.price,
+            productId: currentCheat.productId,
+            variantId: selectedVariant.variantId,
             image: currentCheat.image
           });
         }
-        if (openDrawer && window.MadCheatsCart.openCart) {
-          window.MadCheatsCart.openCart();
+        if (andCheckout) {
+          if (window.MadCheatsCart && window.MadCheatsCart.checkout) {
+            window.MadCheatsCart.checkout(buyNowBtn);
+          } else {
+            window.location.href = 'cart.html?checkout=true';
+          }
+        } else {
+          window.location.href = 'cart.html';
         }
       }
 
       addToCartBtn.addEventListener('click', () => {
-        addCurrentToCart(true);
+        addCurrentToCart(false);
       });
 
       buyNowBtn.addEventListener('click', () => {
-        addCurrentToCart(false);
-        window.location.href = 'cart.html?checkout=true';
+        addCurrentToCart(true);
       });
 
       const hash = window.location.hash.replace('#', '').toLowerCase();
       if (hash === 'all' || hash === 'category') {
         showGrid();
-      } else if (hash === 'ancient') {
-        renderProduct('ancient');
-      } else {
+      } else if (hash === 'krush') {
         renderProduct('krush');
+      } else {
+        renderProduct('ancient');
       }
     });
   </script>

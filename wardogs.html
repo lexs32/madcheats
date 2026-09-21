@@ -101,34 +101,15 @@
 
       <div class="bc-grid-view hidden" id="bcGridView">
         <div class="bc-cards-grid">
-          <div class="bc-cheat-card js-card-select" data-cheat="crusader">
+          <div class="bc-cheat-card js-card-select" data-cheat="ancient">
             <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103383.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103383.webp'" alt="Wardogs Crusader Menu" loading="lazy">
+              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Wardogs Ancient Menu" loading="lazy">
             </div>
-            <div class="bc-card-title">Wardogs Crusader</div>
+            <div class="bc-card-title">Wardogs Ancient</div>
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
                 <span class="bc-from-price">$7.99</span>
-              </div>
-              <div class="bc-undetected-badge">
-                <i class="fa-regular fa-circle-check"></i> UNDETECTED
-              </div>
-            </div>
-            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="crusader">
-              <i class="fa-solid fa-bag-shopping"></i> Buy now
-            </button>
-          </div>
-
-          <div class="bc-cheat-card js-card-select" data-cheat="ancient">
-            <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Wardogs Ancient External Menu" loading="lazy">
-            </div>
-            <div class="bc-card-title">Wardogs Ancient External</div>
-            <div class="bc-card-meta">
-              <div class="bc-from-badge">
-                <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$6.99</span>
               </div>
               <div class="bc-undetected-badge">
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
@@ -139,21 +120,40 @@
             </button>
           </div>
 
-          <div class="bc-cheat-card js-card-select" data-cheat="inferno">
+          <div class="bc-cheat-card js-card-select" data-cheat="krush">
             <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103360.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103360.webp'" alt="Wardogs Inferno Suite Menu" loading="lazy">
+              <img src="assets/images/bearcheats/1103383.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103383.webp'" alt="Wardogs Krush Menu" loading="lazy">
             </div>
-            <div class="bc-card-title">Wardogs Inferno Suite</div>
+            <div class="bc-card-title">Wardogs Krush</div>
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$8.99</span>
+                <span class="bc-from-price">$7.99</span>
               </div>
               <div class="bc-undetected-badge">
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
               </div>
             </div>
-            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="inferno">
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="krush">
+              <i class="fa-solid fa-bag-shopping"></i> Buy now
+            </button>
+          </div>
+
+          <div class="bc-cheat-card js-card-select" data-cheat="unnamed">
+            <div class="bc-card-img-wrap">
+              <img src="assets/images/bearcheats/1103360.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103360.webp'" alt="Wardogs Unnamed Suite Menu" loading="lazy">
+            </div>
+            <div class="bc-card-title">Wardogs Unnamed</div>
+            <div class="bc-card-meta">
+              <div class="bc-from-badge">
+                <span class="bc-from-label">FROM</span>
+                <span class="bc-from-price">$9.99</span>
+              </div>
+              <div class="bc-undetected-badge">
+                <i class="fa-regular fa-circle-check"></i> UNDETECTED
+              </div>
+            </div>
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="unnamed">
               <i class="fa-solid fa-bag-shopping"></i> Buy now
             </button>
           </div>
@@ -299,11 +299,11 @@
           <li><a href="rust.html">Rust</a></li>
           <li><a href="r6.html">Rainbow Six Siege</a></li>
           <li><a href="wardogs.html">Wardogs</a></li>
-          <li><a href="valorant.html">Valorant</a></li>
-          <li><a href="fortnite.html">Fortnite</a></li>
-          <li><a href="cod.html">BO7 &amp; Warzone</a></li>
           <li><a href="apex.html">Apex Legends</a></li>
-          <li><a href="spoofer.html">HWID Spoofer</a></li>
+          <li><a href="fortnite.html">Fortnite</a></li>
+          <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="delta_force.html">Delta Force</a></li>
+          <li><a href="eft.html">Escape From Tarkov</a></li>
         </ul>
       </div>
 
@@ -340,66 +340,17 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const WARDOGS_CHEATS = {
-        crusader: {
-          id: 'wardogs-crusader',
-          key: 'crusader',
-          title: 'WARDOGS CRUSADER',
-          shortTitle: 'Crusader',
-          image: 'assets/images/bearcheats/1103383.webp',
-          variants: [
-            { name: '1 Day', price: 7.99, stock: 'In Stock' },
-            { name: '7 Days', price: 29.99, stock: 'In Stock' },
-            { name: '30 Days', price: 59.99, stock: 'In Stock' }
-          ],
-          requirements: [
-            'Supported CPU: Intel & AMD',
-            'Supported OS: Windows 10–11 (All Builds)',
-            'Anti-Cheat Status: UNDETECTED (EAC)',
-            'Streamproof: OBS & Discord Invisible'
-          ],
-          features: [
-            {
-              title: 'COMBAT & AIMBOT',
-              desc: 'Silent vector aimbot with direct mouse manipulation and customizable smoothing.',
-              bullets: [
-                'Silent Aimbot with Dual Actuation Keys',
-                'Dynamic Recoil Control System (RCS)',
-                'Head, Neck & Pelvis Target Prioritization',
-                'Visible Check & Wall Thickness Calculation'
-              ]
-            },
-            {
-              title: 'VISUALS & ESP',
-              desc: 'High-clarity player skeleton models and tactical status bars.',
-              bullets: [
-                '2D Box & Skeleton Bone ESP',
-                'Health, Armor & Ammo Displays',
-                'Contractor Distance Snaplines',
-                'Streamproof Direct Hook Rendering'
-              ]
-            },
-            {
-              title: 'SECURITY & STEALTH',
-              desc: 'Hypervisor-level memory isolation designed for Easy Anti-Cheat protection.',
-              bullets: [
-                'Ring-0 Hypervisor Driver',
-                'Polymorphic Binary Encryption',
-                'Zero Memory Injection Footprint',
-                'Instant Key Dispatch & 24/7 Support'
-              ]
-            }
-          ]
-        },
         ancient: {
-          id: 'wardogs-ancient',
+          id: 'wd-ancient',
           key: 'ancient',
-          title: 'WARDOGS ANCIENT EXTERNAL',
-          shortTitle: 'Ancient External',
+          productId: 886592,
+          title: 'WARDOGS ANCIENT',
+          shortTitle: 'Ancient Wardogs',
           image: 'assets/images/bearcheats/1103375.webp',
           variants: [
-            { name: '1 Day', price: 6.99, stock: 'In Stock' },
-            { name: '7 Days', price: 24.99, stock: 'In Stock' },
-            { name: '30 Days', price: 49.99, stock: 'In Stock' }
+            { key: '1d', name: '1 Day Key', price: 7.99, variantId: 1727920, stock: 'In Stock' },
+            { key: '7d', name: '7 Days', price: 29.99, variantId: 1727921, stock: 'In Stock' },
+            { key: '30d', name: '30 Days', price: 59.99, variantId: 1727922, stock: 'In Stock' }
           ],
           requirements: [
             'Supported CPU: Intel & AMD',
@@ -440,16 +391,68 @@
             }
           ]
         },
-        inferno: {
-          id: 'wardogs-inferno',
-          key: 'inferno',
-          title: 'WARDOGS INFERNO SUITE',
-          shortTitle: 'Inferno Suite',
+        krush: {
+          id: 'wd-krush',
+          key: 'krush',
+          productId: 886596,
+          title: 'WARDOGS KRUSH',
+          shortTitle: 'Krush Wardogs',
+          image: 'assets/images/bearcheats/1103383.webp',
+          variants: [
+            { key: '1d', name: '1 Day Key', price: 7.99, variantId: 1727932, stock: 'In Stock' },
+            { key: '7d', name: '7 Days', price: 29.99, variantId: 1727933, stock: 'In Stock' },
+            { key: '30d', name: '30 Days', price: 59.99, variantId: 1727934, stock: 'In Stock' }
+          ],
+          requirements: [
+            'Supported CPU: Intel & AMD',
+            'Supported OS: Windows 10–11 (All Builds)',
+            'Anti-Cheat Status: UNDETECTED (EAC)',
+            'Streamproof: OBS & Discord Invisible'
+          ],
+          features: [
+            {
+              title: 'COMBAT & AIMBOT',
+              desc: 'Silent vector aimbot with direct mouse manipulation and customizable smoothing.',
+              bullets: [
+                'Silent Aimbot with Dual Actuation Keys',
+                'Dynamic Recoil Control System (RCS)',
+                'Head, Neck & Pelvis Target Prioritization',
+                'Visible Check & Wall Thickness Calculation'
+              ]
+            },
+            {
+              title: 'VISUALS & ESP',
+              desc: 'High-clarity player skeleton models and tactical status bars.',
+              bullets: [
+                '2D Box & Skeleton Bone ESP',
+                'Health, Armor & Ammo Displays',
+                'Contractor Distance Snaplines',
+                'Streamproof Direct Hook Rendering'
+              ]
+            },
+            {
+              title: 'SECURITY & STEALTH',
+              desc: 'Hypervisor-level memory isolation designed for Easy Anti-Cheat protection.',
+              bullets: [
+                'Ring-0 Hypervisor Driver',
+                'Polymorphic Binary Encryption',
+                'Zero Memory Injection Footprint',
+                'Instant Key Dispatch & 24/7 Support'
+              ]
+            }
+          ]
+        },
+        unnamed: {
+          id: 'wd-unnamed',
+          key: 'unnamed',
+          productId: 887809,
+          title: 'WARDOGS UNNAMED DMA',
+          shortTitle: 'Unnamed Wardogs',
           image: 'assets/images/bearcheats/1103360.webp',
           variants: [
-            { name: '1 Day', price: 8.99, stock: 'In Stock' },
-            { name: '7 Days', price: 34.99, stock: 'In Stock' },
-            { name: '30 Days', price: 64.99, stock: 'In Stock' }
+            { key: '1d', name: '1 Day Key', price: 9.99, variantId: 1736059, stock: 'In Stock' },
+            { key: '7d', name: '7 Days', price: 39.99, variantId: 1736060, stock: 'In Stock' },
+            { key: '30d', name: '30 Days', price: 69.99, variantId: 1736061, stock: 'In Stock' }
           ],
           requirements: [
             'Supported CPU: Intel & AMD',
@@ -479,10 +482,10 @@
               ]
             },
             {
-              title: 'PRIVATE SLOTS',
-              desc: 'Polymorphic build per customer with integrated hardware cleaner.',
+              title: 'DMA & PRIVATE SLOTS',
+              desc: 'Polymorphic build per customer with hardware DMA mode.',
               bullets: [
-                'Custom Polymorphic Driver',
+                'Hardware DMA Protocol Support',
                 'Built-in HWID Spoofer',
                 'Zero Ban Record on EAC',
                 'VIP Discord Priority Channel'
@@ -492,7 +495,7 @@
         }
       };
 
-      let currentCheat = WARDOGS_CHEATS.crusader;
+      let currentCheat = WARDOGS_CHEATS.ancient;
       let selectedVariant = currentCheat.variants[0];
       let currentQty = 1;
 
@@ -519,7 +522,7 @@
       const mascotBtn = document.getElementById('mascotCtaBtn');
 
       function renderProduct(cheatKey) {
-        currentCheat = WARDOGS_CHEATS[cheatKey] || WARDOGS_CHEATS.crusader;
+        currentCheat = WARDOGS_CHEATS[cheatKey] || WARDOGS_CHEATS.ancient;
         selectedVariant = currentCheat.variants[0];
         currentQty = 1;
 
@@ -649,44 +652,51 @@
         });
       });
 
-      function addCurrentToCart(redirectToCart = true) {
+      function addCurrentToCart(andCheckout = false) {
         if (!window.MadCheatsCart) return;
         for (let i = 0; i < currentQty; i++) {
           window.MadCheatsCart.addToCart({
-            id: `${currentCheat.id}-${selectedVariant.name.replace(/\s+/g, '-').toLowerCase()}`,
+            id: `${currentCheat.id}-${selectedVariant.key}`,
             gameKey: 'wardogs',
             gameTitle: 'Wardogs',
             cheatName: currentCheat.shortTitle,
             edition: 'Undetected Ring-0',
-            durationKey: selectedVariant.name,
+            durationKey: selectedVariant.key,
             durationName: selectedVariant.name,
             price: selectedVariant.price,
+            productId: currentCheat.productId,
+            variantId: selectedVariant.variantId,
             image: currentCheat.image
           });
         }
-        if (redirectToCart) {
+        if (andCheckout) {
+          if (window.MadCheatsCart && window.MadCheatsCart.checkout) {
+            window.MadCheatsCart.checkout(buyNowBtn);
+          } else {
+            window.location.href = 'cart.html?checkout=true';
+          }
+        } else {
           window.location.href = 'cart.html';
         }
       }
 
       addToCartBtn.addEventListener('click', () => {
-        addCurrentToCart(true);
+        addCurrentToCart(false);
       });
 
       buyNowBtn.addEventListener('click', () => {
-        addCurrentToCart(false);
-        window.location.href = 'cart.html?checkout=true';
+        addCurrentToCart(true);
       });
 
       const hash = window.location.hash.replace('#', '').toLowerCase();
       if (hash === 'all' || hash === 'category') {
         showGrid();
-      } else if (hash === 'ancient') {
-        renderProduct('ancient');
-      } else if (hash === 'inferno') {
-        renderProduct('inferno');
+      } else if (hash === 'krush') {
+        renderProduct('krush');
+      } else if (hash === 'unnamed') {
+        renderProduct('unnamed');
       } else {
-        renderProduct('crusader');
+        renderProduct('ancient');
       }
     });
   </script>

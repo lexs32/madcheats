@@ -101,40 +101,40 @@
 
       <div class="bc-grid-view hidden" id="bcGridView">
         <div class="bc-cards-grid">
-          <div class="bc-cheat-card js-card-select" data-cheat="nebula">
+          <div class="bc-cheat-card js-card-select" data-cheat="unnamed_internal">
             <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103364.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103364.webp'" alt="Nebula - Fortnite External Menu" loading="lazy">
+              <img src="assets/images/bearcheats/1103364.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103364.webp'" alt="Unnamed - Fortnite Internal" loading="lazy">
             </div>
-            <div class="bc-card-title">Nebula - Fortnite External</div>
+            <div class="bc-card-title">Unnamed - Fortnite Internal</div>
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$10.00</span>
+                <span class="bc-from-price">$9.99</span>
               </div>
               <div class="bc-undetected-badge">
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
               </div>
             </div>
-            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="nebula">
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="unnamed_internal">
               <i class="fa-solid fa-bag-shopping"></i> Buy now
             </button>
           </div>
 
-          <div class="bc-cheat-card js-card-select" data-cheat="ancient">
+          <div class="bc-cheat-card js-card-select" data-cheat="unnamed_external">
             <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Ancient - Fortnite Private Menu" loading="lazy">
+              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Unnamed - Fortnite External" loading="lazy">
             </div>
-            <div class="bc-card-title">Ancient - Fortnite Private</div>
+            <div class="bc-card-title">Unnamed - Fortnite External</div>
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$14.99</span>
+                <span class="bc-from-price">$8.99</span>
               </div>
               <div class="bc-undetected-badge">
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
               </div>
             </div>
-            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="ancient">
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="unnamed_external">
               <i class="fa-solid fa-bag-shopping"></i> Buy now
             </button>
           </div>
@@ -280,11 +280,11 @@
           <li><a href="rust.html">Rust</a></li>
           <li><a href="r6.html">Rainbow Six Siege</a></li>
           <li><a href="wardogs.html">Wardogs</a></li>
-          <li><a href="valorant.html">Valorant</a></li>
-          <li><a href="fortnite.html">Fortnite</a></li>
-          <li><a href="cod.html">BO7 &amp; Warzone</a></li>
           <li><a href="apex.html">Apex Legends</a></li>
-          <li><a href="spoofer.html">HWID Spoofer</a></li>
+          <li><a href="fortnite.html">Fortnite</a></li>
+          <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="delta_force.html">Delta Force</a></li>
+          <li><a href="eft.html">Escape From Tarkov</a></li>
         </ul>
       </div>
 
@@ -321,28 +321,27 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const FORTNITE_CHEATS = {
-        nebula: {
-          id: 'nebula-fortnite-external',
-          key: 'nebula',
-          title: 'NEBULA - FORTNITE EXTERNAL',
-          shortTitle: 'Nebula External',
+        unnamed_internal: {
+          id: 'fortnite-unnamed-internal',
+          key: 'unnamed_internal',
+          productId: 887815,
+          title: 'UNNAMED - FORTNITE INTERNAL',
+          shortTitle: 'Unnamed Internal',
           image: 'assets/images/bearcheats/1103364.webp',
           variants: [
-            { name: '1 Day', price: 10.00, stock: 'In Stock' },
-            { name: '3 Days', price: 20.00, stock: 'In Stock' },
-            { name: '7 Days', price: 35.00, stock: 'In Stock' },
-            { name: '30 Days', price: 65.00, stock: 'In Stock' },
-            { name: 'Lifetime', price: 300.00, stock: 'In Stock' }
+            { name: '1 Day Key', price: 9.99, variantId: 1736071, stock: 'In Stock' },
+            { name: '7 Days', price: 39.99, variantId: 1736072, stock: 'In Stock' },
+            { name: '30 Days', price: 69.99, variantId: 1736073, stock: 'In Stock' }
           ],
           requirements: [
             'Supported CPU: Intel & AMD',
             'Supported OS: Windows 10–11 (All Builds)',
-            'Anti-Cheat Status: UNDETECTED (EAC & BE)',
+            'Anti-Cheat Status: UNDETECTED (EAC & BE Bypass)',
             'Streamproof: OBS & Discord Invisible'
           ],
           features: [
             {
-              title: 'EXTERNAL COMBAT',
+              title: 'INTERNAL COMBAT & AIMBOT',
               desc: 'Vector aimbot with ballistic prediction and dynamic recoil compensation.',
               bullets: [
                 'Silent Aim & Target Snapping',
@@ -373,27 +372,28 @@
             }
           ]
         },
-        ancient: {
-          id: 'ancient-fortnite',
-          key: 'ancient',
-          title: 'ANCIENT - FORTNITE PRIVATE',
-          shortTitle: 'Ancient Private',
+        unnamed_external: {
+          id: 'fortnite-unnamed-external',
+          key: 'unnamed_external',
+          productId: 887820,
+          title: 'UNNAMED - FORTNITE EXTERNAL',
+          shortTitle: 'Unnamed External',
           image: 'assets/images/bearcheats/1103375.webp',
           variants: [
-            { name: '1 Day', price: 14.99, stock: 'In Stock' },
-            { name: '7 Days', price: 44.99, stock: 'In Stock' },
-            { name: '30 Days', price: 89.99, stock: 'In Stock' }
+            { name: '1 Day Key', price: 8.99, variantId: 1736080, stock: 'In Stock' },
+            { name: '7 Days', price: 34.99, variantId: 1736081, stock: 'In Stock' },
+            { name: '30 Days', price: 64.99, variantId: 1736082, stock: 'In Stock' }
           ],
           requirements: [
             'Supported CPU: Intel & AMD',
             'Supported OS: Windows 10–11 (All Builds)',
-            'Anti-Cheat Status: UNDETECTED (Private Slots)',
+            'Anti-Cheat Status: UNDETECTED (Read-Only DMA/Kernel)',
             'Streamproof: OBS & Discord Invisible'
           ],
           features: [
             {
-              title: 'PRIVATE TOURNAMENT',
-              desc: 'Custom compiled build per user with humanized aim curves.',
+              title: 'EXTERNAL READ-ONLY COMBAT',
+              desc: 'Zero memory writes for absolute stability and safety.',
               bullets: [
                 'Projectile Bullet Drop Compensation',
                 'Directional Snaplines & Arrows',
@@ -425,7 +425,7 @@
         }
       };
 
-      let currentCheat = FORTNITE_CHEATS.nebula;
+      let currentCheat = FORTNITE_CHEATS.unnamed_internal;
       let selectedVariant = currentCheat.variants[0];
       let currentQty = 1;
 
@@ -452,7 +452,7 @@
       const mascotBtn = document.getElementById('mascotCtaBtn');
 
       function renderProduct(cheatKey) {
-        currentCheat = FORTNITE_CHEATS[cheatKey] || FORTNITE_CHEATS.nebula;
+        currentCheat = FORTNITE_CHEATS[cheatKey] || FORTNITE_CHEATS.unnamed_internal;
         selectedVariant = currentCheat.variants[0];
         currentQty = 1;
 
@@ -586,7 +586,9 @@
         if (!window.MadCheatsCart) return;
         for (let i = 0; i < currentQty; i++) {
           window.MadCheatsCart.addToCart({
-            id: `${currentCheat.id}-${selectedVariant.name.replace(/\s+/g, '-').toLowerCase()}`,
+            id: `${currentCheat.productId}-${selectedVariant.variantId}`,
+            productId: currentCheat.productId,
+            variantId: selectedVariant.variantId,
             gameKey: 'fortnite',
             gameTitle: 'Fortnite',
             cheatName: currentCheat.shortTitle,
@@ -608,16 +610,20 @@
 
       buyNowBtn.addEventListener('click', () => {
         addCurrentToCart(false);
-        window.location.href = 'cart.html?checkout=true';
+        if (window.MadCheatsCart && typeof window.MadCheatsCart.checkout === 'function') {
+          window.MadCheatsCart.checkout(buyNowBtn);
+        } else {
+          window.location.href = 'cart.html?checkout=true';
+        }
       });
 
       const hash = window.location.hash.replace('#', '').toLowerCase();
       if (hash === 'all' || hash === 'category') {
         showGrid();
-      } else if (hash === 'ancient') {
-        renderProduct('ancient');
+      } else if (hash === 'unnamed_external' || hash === 'unnamed-external') {
+        renderProduct('unnamed_external');
       } else {
-        renderProduct('nebula');
+        renderProduct('unnamed_internal');
       }
     });
   </script>

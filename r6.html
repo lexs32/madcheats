@@ -101,53 +101,34 @@
 
       <div class="bc-grid-view hidden" id="bcGridView">
         <div class="bc-cards-grid">
-          <div class="bc-cheat-card js-card-select" data-cheat="inferno">
+          <div class="bc-cheat-card js-card-select" data-cheat="crusader">
             <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103360.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103360.webp'" alt="Inferno - R6 Full Menu" loading="lazy">
+              <img src="assets/images/bearcheats/1103360.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103360.webp'" alt="Crusader - R6S Menu" loading="lazy">
             </div>
-            <div class="bc-card-title">Inferno - R6 Full</div>
+            <div class="bc-card-title">Crusader - R6S</div>
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$6.00</span>
+                <span class="bc-from-price">$7.99</span>
               </div>
               <div class="bc-undetected-badge">
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
               </div>
             </div>
-            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="inferno">
-              <i class="fa-solid fa-bag-shopping"></i> Buy now
-            </button>
-          </div>
-
-          <div class="bc-cheat-card js-card-select" data-cheat="exodus">
-            <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103405.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103405.webp'" alt="Exodus - R6S Menu" loading="lazy">
-            </div>
-            <div class="bc-card-title">Exodus - R6S</div>
-            <div class="bc-card-meta">
-              <div class="bc-from-badge">
-                <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$5.00</span>
-              </div>
-              <div class="bc-undetected-badge">
-                <i class="fa-regular fa-circle-check"></i> UNDETECTED
-              </div>
-            </div>
-            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="exodus">
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="crusader">
               <i class="fa-solid fa-bag-shopping"></i> Buy now
             </button>
           </div>
 
           <div class="bc-cheat-card js-card-select" data-cheat="ancient">
             <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Ancient - R6S External Menu" loading="lazy">
+              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Ancient - R6S Cheat Menu" loading="lazy">
             </div>
-            <div class="bc-card-title">Ancient - R6S External</div>
+            <div class="bc-card-title">Ancient - R6S</div>
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$9.99</span>
+                <span class="bc-from-price">$7.99</span>
               </div>
               <div class="bc-undetected-badge">
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
@@ -299,11 +280,11 @@
           <li><a href="rust.html">Rust</a></li>
           <li><a href="r6.html">Rainbow Six Siege</a></li>
           <li><a href="wardogs.html">Wardogs</a></li>
-          <li><a href="valorant.html">Valorant</a></li>
-          <li><a href="fortnite.html">Fortnite</a></li>
-          <li><a href="cod.html">BO7 &amp; Warzone</a></li>
           <li><a href="apex.html">Apex Legends</a></li>
-          <li><a href="spoofer.html">HWID Spoofer</a></li>
+          <li><a href="fortnite.html">Fortnite</a></li>
+          <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="delta_force.html">Delta Force</a></li>
+          <li><a href="eft.html">Escape From Tarkov</a></li>
         </ul>
       </div>
 
@@ -340,16 +321,17 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const R6_CHEATS = {
-        inferno: {
-          id: 'inferno-r6-full',
-          key: 'inferno',
-          title: 'INFERNO - R6 FULL',
-          shortTitle: 'Inferno Full',
+        crusader: {
+          id: 'r6s-crusader',
+          key: 'crusader',
+          productId: 884587,
+          title: 'CRUSADER - R6S',
+          shortTitle: 'Crusader R6S',
           image: 'assets/images/bearcheats/1103360.webp',
           variants: [
-            { name: '1 Day', price: 6.00, stock: 'In Stock' },
-            { name: '7 Days', price: 30.00, stock: 'In Stock' },
-            { name: '30 Days', price: 60.00, stock: 'In Stock' }
+            { key: '1d', name: '1 Day Key', price: 7.99, variantId: 1714586, stock: 'In Stock' },
+            { key: '7d', name: '7 Days', price: 29.99, variantId: 1714587, stock: 'In Stock' },
+            { key: '30d', name: '30 Days', price: 59.99, variantId: 1714588, stock: 'In Stock' }
           ],
           requirements: [
             'Supported CPU: Intel & AMD',
@@ -390,66 +372,17 @@
             }
           ]
         },
-        exodus: {
-          id: 'exodus-r6s',
-          key: 'exodus',
-          title: 'EXODUS - R6S',
-          shortTitle: 'Exodus R6S',
-          image: 'assets/images/bearcheats/1103405.webp',
-          variants: [
-            { name: '1 Day', price: 5.00, stock: 'In Stock' },
-            { name: '7 Days', price: 25.00, stock: 'In Stock' },
-            { name: '30 Days', price: 50.00, stock: 'In Stock' }
-          ],
-          requirements: [
-            'Supported CPU: Intel & AMD',
-            'Supported OS: Windows 10–11 (All Builds)',
-            'Anti-Cheat Status: UNDETECTED',
-            'Streamproof: OBS & Discord Invisible'
-          ],
-          features: [
-            {
-              title: 'PLAYER ESP',
-              desc: 'Tactical player tracking for complete positional dominance.',
-              bullets: [
-                'Player Skeleton & Distance Snaplines',
-                'Real-Time Health & Armor Gauges',
-                'Operator Name & Weapon in Hand',
-                'Custom Distance Capping'
-              ]
-            },
-            {
-              title: 'GADGET & TRAP ESP',
-              desc: 'Full visibility on every defender gadget and attacker deployable.',
-              bullets: [
-                'Drone & Camera Live Markers',
-                'Claymores & Proximity Alarms',
-                'Hard Breach Device Detection',
-                'Bulletproof Cam & Valkyrie Eye ESP'
-              ]
-            },
-            {
-              title: 'PERFORMANCE & SAFETY',
-              desc: 'Ultra-lightweight rendering engine with zero frame drops.',
-              bullets: [
-                'Zero Frame Rate Impact',
-                'Streamproof Capture Shield',
-                'Kernel Driver Isolation',
-                'Immediate Activation Key'
-              ]
-            }
-          ]
-        },
         ancient: {
-          id: 'ancient-r6s-external',
+          id: 'r6s-ancient',
           key: 'ancient',
-          title: 'ANCIENT - R6S EXTERNAL',
-          shortTitle: 'Ancient External',
+          productId: 886184,
+          title: 'ANCIENT - R6S',
+          shortTitle: 'Ancient R6S',
           image: 'assets/images/bearcheats/1103375.webp',
           variants: [
-            { name: '1 Day', price: 9.99, stock: 'In Stock' },
-            { name: '7 Days', price: 34.99, stock: 'In Stock' },
-            { name: '30 Days', price: 69.99, stock: 'In Stock' }
+            { key: '1d', name: '1 Day Key', price: 7.99, variantId: 1724894, stock: 'In Stock' },
+            { key: '7d', name: '7 Days', price: 29.99, variantId: 1724895, stock: 'In Stock' },
+            { key: '30d', name: '30 Days', price: 59.99, variantId: 1724896, stock: 'In Stock' }
           ],
           requirements: [
             'Supported CPU: Intel & AMD',
@@ -492,7 +425,7 @@
         }
       };
 
-      let currentCheat = R6_CHEATS.inferno;
+      let currentCheat = R6_CHEATS.crusader;
       let selectedVariant = currentCheat.variants[0];
       let currentQty = 1;
 
@@ -519,7 +452,7 @@
       const mascotBtn = document.getElementById('mascotCtaBtn');
 
       function renderProduct(cheatKey) {
-        currentCheat = R6_CHEATS[cheatKey] || R6_CHEATS.inferno;
+        currentCheat = R6_CHEATS[cheatKey] || R6_CHEATS.crusader;
         selectedVariant = currentCheat.variants[0];
         currentQty = 1;
 
@@ -649,44 +582,49 @@
         });
       });
 
-      function addCurrentToCart(redirectToCart = true) {
+      function addCurrentToCart(andCheckout = false) {
         if (!window.MadCheatsCart) return;
         for (let i = 0; i < currentQty; i++) {
           window.MadCheatsCart.addToCart({
-            id: `${currentCheat.id}-${selectedVariant.name.replace(/\s+/g, '-').toLowerCase()}`,
+            id: `${currentCheat.id}-${selectedVariant.key}`,
             gameKey: 'r6s',
             gameTitle: 'Rainbow Six Siege',
             cheatName: currentCheat.shortTitle,
             edition: 'Undetected Ring-0',
-            durationKey: selectedVariant.name,
+            durationKey: selectedVariant.key,
             durationName: selectedVariant.name,
             price: selectedVariant.price,
+            productId: currentCheat.productId,
+            variantId: selectedVariant.variantId,
             image: currentCheat.image
           });
         }
-        if (redirectToCart) {
+        if (andCheckout) {
+          if (window.MadCheatsCart && window.MadCheatsCart.checkout) {
+            window.MadCheatsCart.checkout(buyNowBtn);
+          } else {
+            window.location.href = 'cart.html?checkout=true';
+          }
+        } else {
           window.location.href = 'cart.html';
         }
       }
 
       addToCartBtn.addEventListener('click', () => {
-        addCurrentToCart(true);
+        addCurrentToCart(false);
       });
 
       buyNowBtn.addEventListener('click', () => {
-        addCurrentToCart(false);
-        window.location.href = 'cart.html?checkout=true';
+        addCurrentToCart(true);
       });
 
       const hash = window.location.hash.replace('#', '').toLowerCase();
       if (hash === 'all' || hash === 'category') {
         showGrid();
-      } else if (hash === 'exodus') {
-        renderProduct('exodus');
       } else if (hash === 'ancient') {
         renderProduct('ancient');
       } else {
-        renderProduct('inferno');
+        renderProduct('crusader');
       }
     });
   </script>

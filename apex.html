@@ -94,37 +94,37 @@
           <span class="bc-crumb-current" id="bcCrumbCheatTitle">Krush - Apex Legends</span>
         </div>
         <div class="bc-top-actions">
-          <button type="button" class="bc-view-toggle-btn" id="bcViewGridBtn"><i class="fa-solid fa-border-all"></i> Cheats (2)</button>
+          <button type="button" class="bc-view-toggle-btn" id="bcViewGridBtn"><i class="fa-solid fa-border-all"></i> Cheats (3)</button>
           <button type="button" class="bc-view-toggle-btn active" id="bcViewProductBtn"><i class="fa-solid fa-sliders"></i> Product View</button>
         </div>
       </div>
 
       <div class="bc-grid-view hidden" id="bcGridView">
         <div class="bc-cards-grid">
-          <div class="bc-cheat-card js-card-select" data-cheat="krush">
+          <div class="bc-cheat-card js-card-select" data-cheat="ancient">
             <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103383.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103383.webp'" alt="Krush - Apex Legends Menu" loading="lazy">
+              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Ancient - Apex Legends Private Menu" loading="lazy">
             </div>
-            <div class="bc-card-title">Krush - Apex Legends</div>
+            <div class="bc-card-title">Ancient - Apex</div>
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
-                <span class="bc-from-price">$6.00</span>
+                <span class="bc-from-price">$7.99</span>
               </div>
               <div class="bc-undetected-badge">
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
               </div>
             </div>
-            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="krush">
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="ancient">
               <i class="fa-solid fa-bag-shopping"></i> Buy now
             </button>
           </div>
 
-          <div class="bc-cheat-card js-card-select" data-cheat="ancient">
+          <div class="bc-cheat-card js-card-select" data-cheat="unnamed_internal">
             <div class="bc-card-img-wrap">
-              <img src="assets/images/bearcheats/1103375.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103375.webp'" alt="Ancient - Apex Legends Private Menu" loading="lazy">
+              <img src="assets/images/bearcheats/1103383.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103383.webp'" alt="Unnamed - Apex Internal" loading="lazy">
             </div>
-            <div class="bc-card-title">Ancient - Apex Legends Private</div>
+            <div class="bc-card-title">Unnamed - Apex Internal</div>
             <div class="bc-card-meta">
               <div class="bc-from-badge">
                 <span class="bc-from-label">FROM</span>
@@ -134,7 +134,26 @@
                 <i class="fa-regular fa-circle-check"></i> UNDETECTED
               </div>
             </div>
-            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="ancient">
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="unnamed_internal">
+              <i class="fa-solid fa-bag-shopping"></i> Buy now
+            </button>
+          </div>
+
+          <div class="bc-cheat-card js-card-select" data-cheat="unnamed_external">
+            <div class="bc-card-img-wrap">
+              <img src="assets/images/bearcheats/1103383.webp" onerror="this.onerror=null;this.src='https://bearcheats.net/storage/images/1103383.webp'" alt="Unnamed - Apex External" loading="lazy">
+            </div>
+            <div class="bc-card-title">Unnamed - Apex External</div>
+            <div class="bc-card-meta">
+              <div class="bc-from-badge">
+                <span class="bc-from-label">FROM</span>
+                <span class="bc-from-price">$8.99</span>
+              </div>
+              <div class="bc-undetected-badge">
+                <i class="fa-regular fa-circle-check"></i> UNDETECTED
+              </div>
+            </div>
+            <button type="button" class="bc-card-buy-btn js-buy-from-grid" data-cheat="unnamed_external">
               <i class="fa-solid fa-bag-shopping"></i> Buy now
             </button>
           </div>
@@ -280,11 +299,11 @@
           <li><a href="rust.html">Rust</a></li>
           <li><a href="r6.html">Rainbow Six Siege</a></li>
           <li><a href="wardogs.html">Wardogs</a></li>
-          <li><a href="valorant.html">Valorant</a></li>
-          <li><a href="fortnite.html">Fortnite</a></li>
-          <li><a href="cod.html">BO7 &amp; Warzone</a></li>
           <li><a href="apex.html">Apex Legends</a></li>
-          <li><a href="spoofer.html">HWID Spoofer</a></li>
+          <li><a href="fortnite.html">Fortnite</a></li>
+          <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="delta_force.html">Delta Force</a></li>
+          <li><a href="eft.html">Escape From Tarkov</a></li>
         </ul>
       </div>
 
@@ -321,26 +340,27 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const APEX_CHEATS = {
-        krush: {
-          id: 'krush-apex-legends',
-          key: 'krush',
-          title: 'KRUSH - APEX LEGENDS',
-          shortTitle: 'Krush Apex',
-          image: 'assets/images/bearcheats/1103383.webp',
+        ancient: {
+          id: 'apex-ancient',
+          key: 'ancient',
+          productId: 886659,
+          title: 'ANCIENT - APEX LEGENDS',
+          shortTitle: 'Ancient Apex',
+          image: 'assets/images/bearcheats/1103375.webp',
           variants: [
-            { name: '1 Day', price: 6.00, stock: 'In Stock' },
-            { name: '7 Days', price: 20.00, stock: 'In Stock' },
-            { name: '30 Days', price: 40.00, stock: 'In Stock' }
+            { name: '1 Day Key', price: 7.99, variantId: 1728097, stock: 'In Stock' },
+            { name: '7 Days', price: 29.99, variantId: 1728098, stock: 'In Stock' },
+            { name: '30 Days', price: 59.99, variantId: 1728099, stock: 'In Stock' }
           ],
           requirements: [
             'Supported CPU: Intel & AMD',
             'Supported OS: Windows 10–11 (All Builds)',
-            'Anti-Cheat Status: UNDETECTED (EAC)',
+            'Anti-Cheat Status: UNDETECTED (EAC Private)',
             'Streamproof: OBS & Discord Invisible'
           ],
           features: [
             {
-              title: 'COMBAT & AIMBOT',
+              title: 'PREDATOR COMBAT',
               desc: 'Vector tracking with bullet velocity compensation and customizable smoothing.',
               bullets: [
                 'Ballistic Bullet Drop & Speed Lead',
@@ -371,59 +391,111 @@
             }
           ]
         },
-        ancient: {
-          id: 'ancient-apex',
-          key: 'ancient',
-          title: 'ANCIENT - APEX LEGENDS PRIVATE',
-          shortTitle: 'Ancient Apex',
-          image: 'assets/images/bearcheats/1103375.webp',
+        unnamed_internal: {
+          id: 'apex-unnamed-internal',
+          key: 'unnamed_internal',
+          productId: 887852,
+          title: 'UNNAMED - APEX INTERNAL',
+          shortTitle: 'Unnamed Internal',
+          image: 'assets/images/bearcheats/1103383.webp',
           variants: [
-            { name: '1 Day', price: 9.99, stock: 'In Stock' },
-            { name: '7 Days', price: 34.99, stock: 'In Stock' },
-            { name: '30 Days', price: 69.99, stock: 'In Stock' }
+            { name: '1 Day Key', price: 9.99, variantId: 1736149, stock: 'In Stock' },
+            { name: '7 Days', price: 39.99, variantId: 1736150, stock: 'In Stock' },
+            { name: '30 Days', price: 69.99, variantId: 1736151, stock: 'In Stock' }
           ],
           requirements: [
             'Supported CPU: Intel & AMD',
             'Supported OS: Windows 10–11 (All Builds)',
-            'Anti-Cheat Status: UNDETECTED (Private Slots)',
+            'Anti-Cheat Status: UNDETECTED (EAC Bypass)',
             'Streamproof: OBS & Discord Invisible'
           ],
           features: [
             {
-              title: 'PREDATOR COMBAT',
-              desc: 'Exclusive private slot build with spectator alert and movement macros.',
+              title: 'INTERNAL MEMORY AIMBOT',
+              desc: 'Ultra-low latency direct memory write aimbot with silent aim.',
               bullets: [
-                'Spectator Warning Alert System',
-                'Auto Superglide & Bunny Hop Macro',
-                'Instant Target Switch & Curve',
-                'Zero Recoil & Zero Sway'
+                'Silent Aim & Instant Hit Registration',
+                'Target Priority Bone Selector',
+                'Adjustable Smoothing & FOV Circle',
+                'Recoil & Spread Compensation'
               ]
             },
             {
-              title: 'RADAR & LOOT',
-              desc: 'Full distance tracking and standalone 2D radar mini-map HUD.',
+              title: 'CHAMS & CORNER ESP',
+              desc: 'Direct DirectX internal hook for highest frame-rate glow and boxes.',
               bullets: [
-                'Death Box Loot & Tier Scanner',
-                'Standalone Mini-Map Radar HUD',
-                'Legend Identification & Weapon Status',
-                'Enemy Line-of-Sight Tracers'
+                'Visible / Occluded Dynamic Chams',
+                'Corner Boxes & Player Skeleton',
+                'Distance & Health Armor Bars',
+                'Item & Loot Weapon ESP'
               ]
             },
             {
-              title: 'PRIVATE SLOTS',
-              desc: 'Unique cryptographic polymorphic binary with hardware spoofer included.',
+              title: 'INTERNAL PROTECTION',
+              desc: 'Kernel DKOM and thread hiding to run seamlessly beneath EAC scans.',
               bullets: [
-                'Private Unique Binary Build',
-                'Built-in Hardware Spoofer',
-                'Zero Ban Record Across All Ranked Splits',
-                'VIP Discord Priority Channel'
+                'Thread Context Spoofing',
+                'Encrypted Kernel Virtual Allocations',
+                'Clean Unload on Game Exit',
+                'Instant Key Dispatch'
+              ]
+            }
+          ]
+        },
+        unnamed_external: {
+          id: 'apex-unnamed-external',
+          key: 'unnamed_external',
+          productId: 887853,
+          title: 'UNNAMED - APEX EXTERNAL',
+          shortTitle: 'Unnamed External',
+          image: 'assets/images/bearcheats/1103383.webp',
+          variants: [
+            { name: '1 Day Key', price: 8.99, variantId: 1736152, stock: 'In Stock' },
+            { name: '7 Days', price: 34.99, variantId: 1736153, stock: 'In Stock' },
+            { name: '30 Days', price: 64.99, variantId: 1736154, stock: 'In Stock' }
+          ],
+          requirements: [
+            'Supported CPU: Intel & AMD',
+            'Supported OS: Windows 10–11 (All Builds)',
+            'Anti-Cheat Status: UNDETECTED (Read-Only DMA/Kernel)',
+            'Streamproof: OBS & Discord Invisible'
+          ],
+          features: [
+            {
+              title: 'EXTERNAL READ-ONLY COMBAT',
+              desc: 'Zero game memory write operations. Maximum safety with smooth mouse emulation.',
+              bullets: [
+                'Read-Only Memory Architecture',
+                'Synthesized Mouse Event Tracking',
+                'Custom Smoothing Curves',
+                'Auto Fire & Triggerbot'
+              ]
+            },
+            {
+              title: 'OVERLAY VISUALS',
+              desc: 'Hardware accelerated overlay with crisp player boxes and glow.',
+              bullets: [
+                '2D Box & Skeleton ESP',
+                'Player Distance & Name Tags',
+                'Death Box & Loot Filter',
+                'Clean 144Hz+ Rendering'
+              ]
+            },
+            {
+              title: 'EXTERNAL STEALTH',
+              desc: 'Complete separation between software and game process.',
+              bullets: [
+                'No In-Process DLL Injected',
+                'Safe for Main Accounts',
+                'HWID Locked Session Security',
+                '24/7 Discord Support'
               ]
             }
           ]
         }
       };
 
-      let currentCheat = APEX_CHEATS.krush;
+      let currentCheat = APEX_CHEATS.ancient;
       let selectedVariant = currentCheat.variants[0];
       let currentQty = 1;
 
@@ -450,7 +522,7 @@
       const mascotBtn = document.getElementById('mascotCtaBtn');
 
       function renderProduct(cheatKey) {
-        currentCheat = APEX_CHEATS[cheatKey] || APEX_CHEATS.krush;
+        currentCheat = APEX_CHEATS[cheatKey] || APEX_CHEATS.ancient;
         selectedVariant = currentCheat.variants[0];
         currentQty = 1;
 
@@ -584,7 +656,9 @@
         if (!window.MadCheatsCart) return;
         for (let i = 0; i < currentQty; i++) {
           window.MadCheatsCart.addToCart({
-            id: `${currentCheat.id}-${selectedVariant.name.replace(/\s+/g, '-').toLowerCase()}`,
+            id: `${currentCheat.productId}-${selectedVariant.variantId}`,
+            productId: currentCheat.productId,
+            variantId: selectedVariant.variantId,
             gameKey: 'apex',
             gameTitle: 'Apex Legends',
             cheatName: currentCheat.shortTitle,
@@ -606,16 +680,22 @@
 
       buyNowBtn.addEventListener('click', () => {
         addCurrentToCart(false);
-        window.location.href = 'cart.html?checkout=true';
+        if (window.MadCheatsCart && typeof window.MadCheatsCart.checkout === 'function') {
+          window.MadCheatsCart.checkout(buyNowBtn);
+        } else {
+          window.location.href = 'cart.html?checkout=true';
+        }
       });
 
       const hash = window.location.hash.replace('#', '').toLowerCase();
       if (hash === 'all' || hash === 'category') {
         showGrid();
-      } else if (hash === 'ancient') {
-        renderProduct('ancient');
+      } else if (hash === 'unnamed_internal' || hash === 'unnamed-internal') {
+        renderProduct('unnamed_internal');
+      } else if (hash === 'unnamed_external' || hash === 'unnamed-external') {
+        renderProduct('unnamed_external');
       } else {
-        renderProduct('krush');
+        renderProduct('ancient');
       }
     });
   </script>

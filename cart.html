@@ -201,11 +201,11 @@
           <li><a href="rust.html">Rust</a></li>
           <li><a href="r6.html">Rainbow Six Siege</a></li>
           <li><a href="wardogs.html">Wardogs</a></li>
-          <li><a href="valorant.html">Valorant</a></li>
-          <li><a href="fortnite.html">Fortnite</a></li>
-          <li><a href="cod.html">BO7 &amp; Warzone</a></li>
           <li><a href="apex.html">Apex Legends</a></li>
-          <li><a href="spoofer.html">HWID Spoofer</a></li>
+          <li><a href="fortnite.html">Fortnite</a></li>
+          <li><a href="valorant.html">Valorant</a></li>
+          <li><a href="delta_force.html">Delta Force</a></li>
+          <li><a href="eft.html">Escape From Tarkov</a></li>
         </ul>
       </div>
 
@@ -283,6 +283,7 @@
     </div>
   </div>
 
+  <script src="https://static.sellauth.com/embed/v3.min.js" defer></script>
   <script src="js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -298,16 +299,14 @@
       const cartCouponBtn = document.getElementById('cartCouponBtn');
       const cartCouponMsg = document.getElementById('cartCouponMsg');
       const cartPageCheckoutBtn = document.getElementById('cartPageCheckoutBtn');
-      const checkoutSuccessModal = document.getElementById('checkoutSuccessModal');
-      const closeCheckoutSuccessBackdrop = document.getElementById('closeCheckoutSuccessBackdrop');
-      const generatedLicenseKey = document.getElementById('generatedLicenseKey');
-      const copyLicenseBtn = document.getElementById('copyLicenseBtn');
+      const cartBadge = document.querySelector('.cart-badge');
 
       let discountPercent = 0;
 
       function getCart() {
         try {
-          return JSON.parse(localStorage.getItem('madcheats_cart_items')) || [];
+          const raw = localStorage.getItem('madcheats_cart_items');
+          return raw ? JSON.parse(raw) : [];
         } catch {
           return [];
         }
@@ -321,73 +320,78 @@
         }
       }
 
+      function updateCartQuantity(index, delta) {
+        const cart = getCart();
+        if (!cart[index]) return;
+        const currentQty = Math.max(1, Number(cart[index].qty) || 1);
+        const newQty = currentQty + delta;
+        if (newQty <= 0) {
+          cart.splice(index, 1);
+        } else {
+          cart[index].qty = Math.min(50, newQty);
+        }
+        saveCart(cart);
+      }
+
+      function removeCartItem(index) {
+        const cart = getCart();
+        if (!cart[index]) return;
+        cart.splice(index, 1);
+        saveCart(cart);
+      }
+
       function renderCart() {
         const cart = getCart();
-        const totalItemsCount = cart.reduce((acc, it) => acc + (it.qty || 1), 0);
+        const totalItemsCount = cart.reduce((acc, it) => acc + (Math.max(1, Number(it.qty) || 1)), 0);
+
+        if (cartBadge) {
+          cartBadge.textContent = totalItemsCount;
+          cartBadge.style.display = totalItemsCount > 0 ? 'flex' : 'none';
+        }
 
         if (cart.length === 0) {
-          cartActiveState.style.display = 'none';
-          cartEmptyState.style.display = 'flex';
-          cartCountHeader.textContent = '0 items';
+          if (cartActiveState) cartActiveState.style.display = 'none';
+          if (cartEmptyState) cartEmptyState.style.display = 'flex';
+          if (cartCountHeader) cartCountHeader.textContent = '0 items';
           return;
         }
 
-        cartActiveState.style.display = 'block';
-        cartEmptyState.style.display = 'none';
-        cartCountHeader.textContent = `${totalItemsCount} ${totalItemsCount === 1 ? 'item' : 'items'}`;
+        if (cartActiveState) cartActiveState.style.display = 'block';
+        if (cartEmptyState) cartEmptyState.style.display = 'none';
+        if (cartCountHeader) cartCountHeader.textContent = `${totalItemsCount} ${totalItemsCount === 1 ? 'item' : 'items'}`;
 
+        if (!cartPageList) return;
         cartPageList.innerHTML = '';
         let subtotal = 0;
 
         cart.forEach((item, index) => {
-          const itemQty = item.qty || 1;
-          const itemSub = item.price * itemQty;
+          const itemQty = Math.max(1, Number(item.qty) || 1);
+          const itemPrice = Math.max(0, Number(item.price) || 0);
+          const itemSub = itemPrice * itemQty;
           subtotal += itemSub;
 
           const card = document.createElement('div');
           card.className = 'cart-card-item';
           card.innerHTML = `
-            <img src="${item.image}" alt="${item.gameTitle}" class="cart-item-img">
+            <img src="${item.image || 'assets/images/games/arc_raiders.png'}" alt="${item.gameTitle || 'Software'}" class="cart-item-img">
             <div class="cart-item-details">
-              <div class="cart-item-title">${item.cheatName} &bull; ${item.gameTitle}</div>
+              <div class="cart-item-title">${item.cheatName || 'Cheat'} &bull; ${item.gameTitle || ''}</div>
               <div class="cart-item-variant">
                 <span class="variant-badge">${item.durationName || 'Standard'}</span>
                 <span>${item.edition || 'Ring-0 Undetected'}</span>
               </div>
-              <div class="cart-item-unit-price">$${item.price.toFixed(2)} each</div>
+              <div class="cart-item-unit-price">$${itemPrice.toFixed(2)} each</div>
             </div>
             <div class="cart-qty-stepper">
-              <button type="button" class="cart-qty-btn js-minus" aria-label="Decrease quantity">-</button>
+              <button type="button" class="cart-qty-btn js-minus" data-index="${index}" aria-label="Decrease quantity">-</button>
               <span class="cart-qty-count">${itemQty}</span>
-              <button type="button" class="cart-qty-btn js-plus" aria-label="Increase quantity">+</button>
+              <button type="button" class="cart-qty-btn js-plus" data-index="${index}" aria-label="Increase quantity">+</button>
             </div>
             <div class="cart-item-subtotal">$${itemSub.toFixed(2)}</div>
-            <button type="button" class="cart-item-remove-btn js-remove" aria-label="Remove item">
+            <button type="button" class="cart-item-remove-btn js-remove" data-index="${index}" aria-label="Remove item">
               <i class="fa-solid fa-trash-can"></i>
             </button>
           `;
-
-          card.querySelector('.js-minus').addEventListener('click', () => {
-            if (itemQty > 1) {
-              cart[index].qty = itemQty - 1;
-              saveCart(cart);
-            } else {
-              cart.splice(index, 1);
-              saveCart(cart);
-            }
-          });
-
-          card.querySelector('.js-plus').addEventListener('click', () => {
-            if (itemQty < 50) {
-              cart[index].qty = itemQty + 1;
-              saveCart(cart);
-            }
-          });
-
-          card.querySelector('.js-remove').addEventListener('click', () => {
-            cart.splice(index, 1);
-            saveCart(cart);
-          });
 
           cartPageList.appendChild(card);
         });
@@ -395,14 +399,38 @@
         const discountAmount = subtotal * discountPercent;
         const finalTotal = Math.max(0, subtotal - discountAmount);
 
-        summarySubtotal.textContent = `$${subtotal.toFixed(2)}`;
-        if (discountPercent > 0) {
-          summaryDiscountRow.style.display = 'flex';
-          summaryDiscount.textContent = `-$${discountAmount.toFixed(2)}`;
-        } else {
-          summaryDiscountRow.style.display = 'none';
+        if (summarySubtotal) summarySubtotal.textContent = `$${subtotal.toFixed(2)}`;
+        if (summaryDiscountRow && summaryDiscount) {
+          if (discountPercent > 0) {
+            summaryDiscountRow.style.display = 'flex';
+            summaryDiscount.textContent = `-$${discountAmount.toFixed(2)}`;
+          } else {
+            summaryDiscountRow.style.display = 'none';
+          }
         }
-        summaryTotal.textContent = `$${finalTotal.toFixed(2)}`;
+        if (summaryTotal) summaryTotal.textContent = `$${finalTotal.toFixed(2)}`;
+      }
+
+      if (cartPageList) {
+        cartPageList.addEventListener('click', (e) => {
+          const minusBtn = e.target.closest('.js-minus');
+          const plusBtn = e.target.closest('.js-plus');
+          const removeBtn = e.target.closest('.js-remove');
+
+          if (minusBtn) {
+            e.preventDefault();
+            const index = parseInt(minusBtn.dataset.index, 10);
+            updateCartQuantity(index, -1);
+          } else if (plusBtn) {
+            e.preventDefault();
+            const index = parseInt(plusBtn.dataset.index, 10);
+            updateCartQuantity(index, 1);
+          } else if (removeBtn) {
+            e.preventDefault();
+            const index = parseInt(removeBtn.dataset.index, 10);
+            removeCartItem(index);
+          }
+        });
       }
 
       if (cartCouponBtn && cartCouponInput) {
@@ -410,66 +438,40 @@
           const code = cartCouponInput.value.trim().toUpperCase();
           if (code === 'MAD10' || code === 'ARCTIC' || code === 'PROMO') {
             discountPercent = 0.10;
-            cartCouponMsg.className = 'cart-coupon-msg success';
-            cartCouponMsg.textContent = '10% discount applied to your order!';
+            if (cartCouponMsg) {
+              cartCouponMsg.className = 'cart-coupon-msg success';
+              cartCouponMsg.textContent = '10% discount applied to your order!';
+            }
           } else if (code.length === 0) {
             discountPercent = 0;
-            cartCouponMsg.className = 'cart-coupon-msg';
-            cartCouponMsg.textContent = '';
+            if (cartCouponMsg) {
+              cartCouponMsg.className = 'cart-coupon-msg';
+              cartCouponMsg.textContent = '';
+            }
           } else {
             discountPercent = 0;
-            cartCouponMsg.className = 'cart-coupon-msg error';
-            cartCouponMsg.textContent = 'Invalid promo code. Try MAD10';
+            if (cartCouponMsg) {
+              cartCouponMsg.className = 'cart-coupon-msg error';
+              cartCouponMsg.textContent = 'Invalid promo code. Try MAD10';
+            }
           }
           renderCart();
         });
       }
 
-      function openSuccessModal() {
-        const randomHex = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1).toUpperCase();
-        const key = `MAD-${randomHex()}-${randomHex()}-${randomHex()}-CRUSADER`;
-        if (generatedLicenseKey) generatedLicenseKey.textContent = key;
-        if (checkoutSuccessModal) {
-          checkoutSuccessModal.setAttribute('aria-hidden', 'false');
-          checkoutSuccessModal.classList.add('open');
-        }
-      }
-
-      function closeSuccessModal() {
-        if (checkoutSuccessModal) {
-          checkoutSuccessModal.setAttribute('aria-hidden', 'true');
-          checkoutSuccessModal.classList.remove('open');
+      function doCheckout() {
+        const cart = getCart();
+        if (cart.length === 0) return;
+        if (window.MadCheatsCart && window.MadCheatsCart.checkout) {
+          window.MadCheatsCart.checkout(cartPageCheckoutBtn);
+        } else {
+          const cartParam = cart.map(it => `${it.productId || 884622}:${it.variantId || 1714657}:${it.qty || 1}`).join(',');
+          window.location.href = `https://mad-cheats.mysellauth.com/checkout/init?shopId=269719&cart=${encodeURIComponent(cartParam)}&v=3&mode=page`;
         }
       }
 
       if (cartPageCheckoutBtn) {
-        cartPageCheckoutBtn.addEventListener('click', () => {
-          const cart = getCart();
-          if (cart.length === 0) return;
-          if (window.MadCheatsCart && window.MadCheatsCart.checkout) {
-            window.MadCheatsCart.checkout(cartPageCheckoutBtn);
-          } else {
-            openSuccessModal();
-            localStorage.removeItem('madcheats_cart_items');
-            renderCart();
-          }
-        });
-      }
-
-      if (closeCheckoutSuccessBackdrop) {
-        closeCheckoutSuccessBackdrop.addEventListener('click', closeSuccessModal);
-      }
-
-      if (copyLicenseBtn && generatedLicenseKey) {
-        copyLicenseBtn.addEventListener('click', () => {
-          const key = generatedLicenseKey.textContent;
-          navigator.clipboard.writeText(key).then(() => {
-            copyLicenseBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Copied!</span>';
-            setTimeout(() => {
-              copyLicenseBtn.innerHTML = '<i class="fa-regular fa-copy"></i> <span>Copy Key</span>';
-            }, 2000);
-          });
-        });
+        cartPageCheckoutBtn.addEventListener('click', doCheckout);
       }
 
       renderCart();
@@ -478,9 +480,7 @@
       if (urlParams.get('checkout') === 'true') {
         const cart = getCart();
         if (cart.length > 0) {
-          openSuccessModal();
-          localStorage.removeItem('madcheats_cart_items');
-          renderCart();
+          setTimeout(doCheckout, 350);
         }
       }
     });
