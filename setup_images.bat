@@ -8,5 +8,7 @@ copy /y "C:\Users\LexS\.gemini\antigravity\brain\ea7592da-19e4-468a-87c1-fdf92f4
 copy /y "C:\Users\LexS\.gemini\antigravity\brain\ea7592da-19e4-468a-87c1-fdf92f401d3f\.user_uploaded\media_1790012707566.jpg" "e:\stack\madcheats\assets\images\games\delta_force.webp"
 copy /y "C:\Users\LexS\.gemini\antigravity\brain\ea7592da-19e4-468a-87c1-fdf92f401d3f\.user_uploaded\media_1790012735385.jpg" "e:\stack\madcheats\assets\images\games\marvel_rivals.png"
 copy /y "C:\Users\LexS\.gemini\antigravity\brain\ea7592da-19e4-468a-87c1-fdf92f401d3f\.user_uploaded\media_1790012735385.jpg" "e:\stack\madcheats\assets\images\games\marvel_rivals.webp"
+copy /y "C:\Users\LexS\.gemini\antigravity\brain\ea7592da-19e4-468a-87c1-fdf92f401d3f\.user_uploaded\media_1790016462895.png" "e:\stack\madcheats\assets\images\games\eft_unnamed.png"
+copy /y "C:\Users\LexS\.gemini\antigravity\brain\ea7592da-19e4-468a-87c1-fdf92f401d3f\.user_uploaded\media_1790016462895.png" "e:\stack\madcheats\assets\images\bearcheats\1103383.webp"
 echo Images copied successfully.
 

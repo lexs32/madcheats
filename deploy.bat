@@ -6,8 +6,9 @@ echo   MADCHEATS - DEPLOYING TO GITHUB ^& VERCEL
 echo ========================================================
 echo.
 
+call setup_images.bat
 git add .
-git commit -m "Fix cart interactivity, button clickability, SellAuth checkout, and price updates"
+git commit -m "Fix loader interactivity, eliminate site lag and freezing, and swap EFT unnamed image"
 git push origin master
 
 echo.

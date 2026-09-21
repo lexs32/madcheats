@@ -12,13 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+  if (navbar) {
+    let isScrolled = false;
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 40;
+      if (scrolled !== isScrolled) {
+        isScrolled = scrolled;
+        navbar.classList.toggle('scrolled', isScrolled);
+      }
+    }, { passive: true });
+  }
 
   const searchTriggerBtn = document.getElementById('searchTriggerBtn');
   const searchModal = document.getElementById('searchModal');
@@ -85,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let height = (starCanvas.height = starCanvas.offsetHeight);
 
     const stars = [];
-    const starCount = 65;
+    const starCount = 50;
     for (let i = 0; i < starCount; i++) {
       stars.push({
         x: Math.random() * width,
@@ -102,9 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
       width = starCanvas.width = starCanvas.offsetWidth;
       height = starCanvas.height = starCanvas.offsetHeight;
-    });
+    }, { passive: true });
+
+    let starsAnimId = null;
+    let isStarsVisible = true;
 
     const animateStars = () => {
+      if (!isStarsVisible) return;
       ctx.clearRect(0, 0, width, height);
       stars.forEach(star => {
         star.x += star.speedX;
@@ -126,9 +133,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fill();
       });
       ctx.globalAlpha = 1;
-      requestAnimationFrame(animateStars);
+      starsAnimId = requestAnimationFrame(animateStars);
     };
-    animateStars();
+
+    if ('IntersectionObserver' in window) {
+      const starObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isStarsVisible = entry.isIntersecting;
+          if (isStarsVisible) {
+            cancelAnimationFrame(starsAnimId);
+            starsAnimId = requestAnimationFrame(animateStars);
+          } else {
+            cancelAnimationFrame(starsAnimId);
+          }
+        });
+      }, { threshold: 0.05 });
+      starObserver.observe(starCanvas);
+    } else {
+      animateStars();
+    }
   }
 
   const faqItems = document.querySelectorAll('.faq-item');
@@ -455,6 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
           edition: 'External & Streamproof',
           tag: 'DMA / Streamproof',
           productId: 887834,
+          image: 'assets/images/games/eft_unnamed.png',
           features: ['Secondary PC Web Radar', 'Zero BattlEye Memory Footprint', 'Container & Corpse Filter', 'Instant Bullet & Speed Modifier'],
           plans: {
             '1d': { name: '1 Day', price: 7.99, productId: 887834, variantId: 1736111 },
@@ -479,23 +503,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalGameThumb) modalGameThumb.src = data.image;
     if (modalGameThumb) modalGameThumb.alt = data.title;
     if (modalGameStatus) modalGameStatus.textContent = data.status;
-    if (cheatsModalTitle) cheatsModalTitle.textContent = `${data.title} Cheats`;
+    if (cheatsModalTitle) cheatsModalTitle.innerHTML = `<i class="fa-solid fa-gamepad" style="color: #ff4343;"></i> ${data.title} Cheats`;
 
     if (cheatsModalList) {
       cheatsModalList.innerHTML = '';
       data.products.forEach(prod => {
         const card = document.createElement('div');
         card.className = 'cheat-card-item';
-        let currentPlanKey = prod.plans['30d'] ? '30d' : Object.keys(prod.plans)[0];
+
+        const planKeys = Object.keys(prod.plans);
+        let currentPlanKey = planKeys[0];
         let currentPlan = prod.plans[currentPlanKey];
 
-        const durationButtonsHtml = Object.keys(prod.plans).map(key => {
-          const p = prod.plans[key];
-          const activeClass = key === currentPlanKey ? 'active' : '';
+        const durationButtonsHtml = planKeys.map((key, idx) => {
+          const plan = prod.plans[key];
+          const activeClass = idx === 0 ? 'active' : '';
           return `
             <button type="button" class="duration-btn ${activeClass}" data-key="${key}">
-              <span class="duration-name">${p.name}</span>
-              <span class="duration-price">$${p.price.toFixed(2)}</span>
+              ${plan.name}
             </button>
           `;
         }).join('');
@@ -569,7 +594,7 @@ document.addEventListener('DOMContentLoaded', () => {
               price: currentPlan.price,
               productId: currentPlan.productId || prod.productId || 856084,
               variantId: currentPlan.variantId || 1532957,
-              image: data.image
+              image: prod.image || data.image
             });
             closeCheatsModal();
             openCart();
@@ -590,10 +615,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (closeCheatsModalBtn) closeCheatsModalBtn.addEventListener('click', closeCheatsModal);
   if (closeCheatsModalBackdrop) closeCheatsModalBackdrop.addEventListener('click', closeCheatsModal);
 
-  const heroVideos = document.querySelectorAll('video.hero-game-video');
-  heroVideos.forEach(v => {
-    v.play().catch(() => {});
-  });
+  const heroVideos = document.querySelectorAll('video.hero-game-video, video.hero-bg-video');
+  if ('IntersectionObserver' in window && heroVideos.length > 0) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { threshold: 0.1 });
+    heroVideos.forEach(v => videoObserver.observe(v));
+  } else {
+    heroVideos.forEach(v => {
+      v.play().catch(() => {});
+    });
+  }
 
   const gameCards = document.querySelectorAll('.game-card');
   gameCards.forEach(card => {
@@ -1031,6 +1069,9 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProducts: fetchSellAuthProducts
   };
 
+  // ==========================================
+  // NEXT-GEN CLIENT LOADER INTERACTION ENGINE
+  // ==========================================
   const loaderNavBtns = document.querySelectorAll('.loader-nav-btn');
   const loaderPanels = document.querySelectorAll('.loader-panel');
   const loaderSubtabs = document.getElementById('loaderSubtabs');
@@ -1054,9 +1095,11 @@ document.addEventListener('DOMContentLoaded', () => {
     misc: { cat: 'Utilities', title: 'Misc' }
   };
 
+  // 1. Navigation Tabs
   if (loaderNavBtns.length > 0) {
     loaderNavBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
         const tab = btn.getAttribute('data-tab');
         loaderNavBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -1092,8 +1135,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 2. Subtabs (Silent Aim vs Aimbot)
   if (loaderSubtabSilent && loaderSubtabAimbot) {
-    loaderSubtabSilent.addEventListener('click', () => {
+    loaderSubtabSilent.addEventListener('click', (e) => {
+      e.preventDefault();
       loaderSubtabAimbot.classList.remove('active');
       loaderSubtabSilent.classList.add('active');
       if (loaderCrumbActive) loaderCrumbActive.textContent = 'Silent Aim';
@@ -1101,7 +1146,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (panelSilent) panelSilent.classList.add('active');
     });
 
-    loaderSubtabAimbot.addEventListener('click', () => {
+    loaderSubtabAimbot.addEventListener('click', (e) => {
+      e.preventDefault();
       loaderSubtabSilent.classList.remove('active');
       loaderSubtabAimbot.classList.add('active');
       if (loaderCrumbActive) loaderCrumbActive.textContent = 'Aimbot';
@@ -1110,6 +1156,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 3. Interactive Range Sliders with Live Value & Dynamic Progress Gradient
+  const updateRangeProgress = (slider, valEl, suffix = '') => {
+    if (!slider) return;
+    const min = parseFloat(slider.min) || 0;
+    const max = parseFloat(slider.max) || 100;
+    const val = parseFloat(slider.value) || 0;
+    const pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
+    slider.style.background = `linear-gradient(to right, #ff4343 0%, #ff4343 ${pct}%, #181d2e ${pct}%, #181d2e 100%)`;
+    if (valEl) valEl.textContent = `${slider.value}${suffix}`;
+  };
+
+  const sliderConfigs = [
+    { id: 'fovSlider', valId: 'fovVal', suffix: 'px' },
+    { id: 'smoothSlider', valId: 'smoothVal', suffix: '' },
+    { id: 'silentFovSlider', valId: 'silentFovVal', suffix: 'px' },
+    { id: 'silentHitSlider', valId: 'silentHitVal', suffix: '%' },
+    { id: 'arrowSizeSlider', valId: 'arrowSizeVal', suffix: 'px' }
+  ];
+
+  sliderConfigs.forEach(({ id, valId, suffix }) => {
+    const slider = document.getElementById(id);
+    const valEl = document.getElementById(valId);
+    if (slider) {
+      updateRangeProgress(slider, valEl, suffix);
+      slider.addEventListener('input', () => updateRangeProgress(slider, valEl, suffix));
+      slider.addEventListener('change', () => updateRangeProgress(slider, valEl, suffix));
+    }
+  });
+
+  // 4. Interactive Checkboxes & Feature Items Sync
+  const allLoaderCheckboxes = document.querySelectorAll('.loader-card input[type="checkbox"]');
+  allLoaderCheckboxes.forEach(cb => {
+    const featItem = cb.closest('.loader-feature-item');
+    if (featItem) {
+      featItem.classList.toggle('highlighted', cb.checked);
+    }
+    cb.addEventListener('change', () => {
+      if (featItem) {
+        featItem.classList.toggle('highlighted', cb.checked);
+      }
+    });
+  });
+
+  // 5. Row Click Delegation (Allows clicking anywhere on row or header to toggle switch)
   const loaderClickRows = document.querySelectorAll('.loader-toggle-row, .loader-feature-item, .loader-box-header');
   loaderClickRows.forEach(row => {
     row.addEventListener('click', (e) => {
@@ -1119,75 +1209,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const cb = row.querySelector('input[type="checkbox"]');
       if (cb) {
         cb.checked = !cb.checked;
-        cb.dispatchEvent(new Event('change'));
+        cb.dispatchEvent(new Event('change', { bubbles: true }));
       }
     });
   });
 
-  const featureCheckboxes = document.querySelectorAll('.loader-feature-item input[type="checkbox"]');
-  featureCheckboxes.forEach(cb => {
-    cb.addEventListener('change', () => {
-      const item = cb.closest('.loader-feature-item');
-      if (item) {
-        if (cb.checked) {
-          item.classList.add('highlighted');
-        } else {
-          item.classList.remove('highlighted');
-        }
-      }
-    });
-  });
-
+  // 6. Select Menus Border Flash Feedback
   const loaderSelects = document.querySelectorAll('.loader-select');
   loaderSelects.forEach(sel => {
     sel.addEventListener('change', () => {
       sel.style.borderColor = '#ff4343';
       setTimeout(() => {
         sel.style.borderColor = '';
-      }, 600);
+      }, 500);
     });
   });
 
-  const fovSlider = document.getElementById('fovSlider');
-  const fovVal = document.getElementById('fovVal');
-  if (fovSlider && fovVal) {
-    fovSlider.addEventListener('input', () => {
-      fovVal.textContent = `${fovSlider.value}px`;
-    });
-  }
-
-  const smoothSlider = document.getElementById('smoothSlider');
-  const smoothVal = document.getElementById('smoothVal');
-  if (smoothSlider && smoothVal) {
-    smoothSlider.addEventListener('input', () => {
-      smoothVal.textContent = smoothSlider.value;
-    });
-  }
-
-  const silentFovSlider = document.getElementById('silentFovSlider');
-  const silentFovVal = document.getElementById('silentFovVal');
-  if (silentFovSlider && silentFovVal) {
-    silentFovSlider.addEventListener('input', () => {
-      silentFovVal.textContent = `${silentFovSlider.value}px`;
-    });
-  }
-
-  const silentHitSlider = document.getElementById('silentHitSlider');
-  const silentHitVal = document.getElementById('silentHitVal');
-  if (silentHitSlider && silentHitVal) {
-    silentHitSlider.addEventListener('input', () => {
-      silentHitVal.textContent = `${silentHitSlider.value}%`;
-    });
-  }
-
-  const arrowSizeSlider = document.getElementById('arrowSizeSlider');
-  const arrowSizeVal = document.getElementById('arrowSizeVal');
-  if (arrowSizeSlider && arrowSizeVal) {
-    arrowSizeSlider.addEventListener('input', () => {
-      arrowSizeVal.textContent = `${arrowSizeSlider.value}px`;
-    });
-  }
-
+  // 7. Minimize / Maximize Loader Controls
   function toggleLoaderMinimize() {
     if (!loaderCard) return;
     loaderCard.classList.toggle('is-minimized');
@@ -1208,6 +1246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 8. Interactive Pill Status
   const loaderPill = document.querySelector('.loader-pill-status');
   if (loaderPill) {
     loaderPill.style.cursor = 'pointer';
@@ -1217,20 +1256,22 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         loaderPill.style.borderColor = '';
         loaderPill.style.color = '';
-      }, 700);
+      }, 600);
     });
   }
 
+  // 9. Simulated Ping / FPS Fluctuations
   const pingEl = document.querySelector('.loader-footer-meta strong.text-green');
   const fpsEl = document.querySelector('.loader-footer-meta strong.text-white');
   if (pingEl && fpsEl) {
     setInterval(() => {
-      const ping = Math.floor(Math.random() * 5) + 22;
-      const fps = Math.random() > 0.25 ? 144 : 143;
+      const ping = Math.floor(Math.random() * 4) + 21;
+      const fps = Math.random() > 0.15 ? 144 : 143;
       pingEl.textContent = `${ping}ms`;
       fpsEl.textContent = `${fps}`;
-    }, 3200);
+    }, 3500);
   }
 
   updateCartUI();
 });
+
