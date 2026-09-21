@@ -466,42 +466,64 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       ]
     },
-    spoofer: {
-      title: 'HWID Spoofer',
-      image: 'assets/images/games/spoofer.png',
-      status: 'Kernel Virtualizer • EAC/BE/Ricochet/Vanguard Safe',
+    eft: {
+      title: 'Escape From Tarkov',
+      image: 'assets/images/games/eft.png',
+      status: 'Ring-0 Kernel Hypervisor • BattleEye Undetected',
       products: [
         {
-          id: 'sp-crusader',
+          id: 'eft-crusader',
           name: 'Crusader',
-          edition: 'Temp & Perm Spoofer',
+          edition: 'Full Internal Suite',
           tag: 'Most Popular',
-          features: ['Disk & Volume Serial Randomizer', 'NIC MAC Address Cloaking', 'Motherboard BIOS Spoof', 'Single-Click Spoof'],
-          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
+          features: ['Loot & Item Value ESP', 'Aimbot with Silent Aim & Recoil Control', 'Player & Scav Distance ESP', 'Extract Points & Grenade ESP'],
+          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 149.99 } }
         },
         {
-          id: 'sp-krush',
-          name: 'Krush',
-          edition: 'Kernel Virtualizer V2',
-          tag: 'Kernel V2',
-          features: ['Ring-0 Hardware Emulation', 'Registry & Trace Cleaner', 'Monitor Serial Number Spoof', 'Automatic Windows Clean'],
-          plans: { '1d': { name: '1 Day', price: 7.99 }, '7d': { name: '7 Days', price: 27.99 }, '30d': { name: '30 Days', price: 54.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
-        },
-        {
-          id: 'sp-unnamed',
-          name: 'Unnamed',
-          edition: 'DMA Hardware Virtualizer',
-          tag: 'DMA Ready',
-          features: ['DMA PCIe Device ID Spoof', 'Flashable Firmware Safe', 'Network Adapter Virtualization', 'Tournament Mode'],
-          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
-        },
-        {
-          id: 'sp-ancient',
+          id: 'eft-ancient',
           name: 'Ancient',
-          edition: 'Permanent Ring-0 Elite Spoofer',
-          tag: 'Private Slots',
-          features: ['Permanent BIOS & SMBIOS Rewrite', 'TPM 2.0 & SecureBoot Cloak', 'ARP & IP Routing Shield', 'Zero Ban Reversal Record'],
-          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 159.99 } }
+          edition: 'Private DMA & Streamproof',
+          tag: 'DMA / Streamproof',
+          features: ['Secondary PC Web Radar', 'Zero BattlEye Memory Footprint', 'Container & Corpse Filter', 'Instant Bullet & Speed Modifier'],
+          plans: { '1d': { name: '1 Day', price: 9.99 }, '7d': { name: '7 Days', price: 34.99 }, '30d': { name: '30 Days', price: 69.99 }, 'life': { name: 'Lifetime', price: 169.99 } }
+        }
+      ]
+    },
+    delta_force: {
+      title: 'Delta Force',
+      image: 'assets/images/games/delta_force.png',
+      status: 'Ring-0 Driver • ACE Bypass Undetected',
+      products: [
+        {
+          id: 'df-crusader',
+          name: 'Crusader',
+          edition: 'Combat & Tactical ESP',
+          tag: 'Most Popular',
+          features: ['3D Bounding Box & Bone Skeleton', 'Adaptive Smoothing Aimbot', 'Vehicle & Helo Tracker', 'Custom FOV & Triggerbot'],
+          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 129.99 } }
+        },
+        {
+          id: 'df-krush',
+          name: 'Krush',
+          edition: 'Tournament DMA Edition',
+          tag: 'Streamproof',
+          features: ['Hardware DMA Direct Link', 'OBS & Discord Streamproof', 'No Recoil & Sway Removal', 'Loot & Extraction Locator'],
+          plans: { '1d': { name: '1 Day', price: 8.99 }, '7d': { name: '7 Days', price: 29.99 }, '30d': { name: '30 Days', price: 59.99 }, 'life': { name: 'Lifetime', price: 139.99 } }
+        }
+      ]
+    },
+    marvel_rivals: {
+      title: 'Marvel Rivals',
+      image: 'assets/images/games/marvel_rivals.png',
+      status: 'Kernel Hypervisor • Vanguard/ACE Safe',
+      products: [
+        {
+          id: 'mr-crusader',
+          name: 'Crusader',
+          edition: 'Hero Mastery Internal',
+          tag: 'Top Rated',
+          features: ['Hero Skill Cooldown ESP', 'Projectile Prediction Aimbot', 'Ultimate Ability Tracker', 'Team Health & Barrier Visuals'],
+          plans: { '1d': { name: '1 Day', price: 6.99 }, '7d': { name: '7 Days', price: 24.99 }, '30d': { name: '30 Days', price: 49.99 }, 'life': { name: 'Lifetime', price: 119.99 } }
         }
       ]
     }
