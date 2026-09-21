@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
           productId: 884622,
           features: ['Unique Polymorphic Binary', 'Custom Driver Per User', 'Humanized Aim Curve', 'Integrated HWID Spoofer'],
           plans: {
-            '1d': { name: '1 Day', price: 7.99, productId: 884622, variantId: 1714657 },
+            '1d': { name: '1 Day', price: 15.99, productId: 884622, variantId: 1714657 },
             '7d': { name: '7 Days', price: 29.99, productId: 884622, variantId: 1714658 },
             '30d': { name: '30 Days', price: 59.99, productId: 884622, variantId: 1714659 }
           }

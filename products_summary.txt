@@ -1,4 +1,4 @@
-﻿==================================================
+==================================================
 SELLAUTH STORE: Mad Cheats (Shop ID: 269719)
 Total Products Found: 19
 ==================================================
@@ -14,7 +14,7 @@ PRODUCT: KRUSH - RUST (ID: 884610)
    - Variant: 30 Days | Variant ID: 1714643 | Price: 59.99 USD
 
 PRODUCT: Ancient - ARC Raiders (ID: 884622)
-   - Variant: 1 Day Key | Variant ID: 1714657 | Price: 7.99 USD
+   - Variant: 1 Day Key | Variant ID: 1714657 | Price: 15.99 USD
    - Variant: 7 Days | Variant ID: 1714658 | Price: 29.99 USD
    - Variant: 30 Days | Variant ID: 1714659 | Price: 59.99 USD
 

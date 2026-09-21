@@ -7,11 +7,12 @@ echo ========================================================
 echo.
 
 git add .
-git commit -m "Wire up live SellAuth products, shop 269719, and automated checkout"
+git commit -m "Fix cart interactivity, button clickability, SellAuth checkout, and price updates"
 git push origin master
 
 echo.
 echo ========================================================
-echo Code pushed to GitHub! Vercel will auto-deploy in ~30s.
+echo  Deploy complete! Pushed to GitHub (origin/master).
+echo  Vercel will automatically build and deploy in ~30s.
 echo ========================================================
 pause

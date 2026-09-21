@@ -2047,35 +2047,52 @@ video.hero-game-video {
 }
 
 .checkout-modal-wrap,
+.checkout-modal-overlay,
 .checkout-success-modal {
   position: fixed;
   inset: 0;
   z-index: 10001;
-  display: none;
+  display: none !important;
   align-items: center;
   justify-content: center;
   padding: 20px;
   background: rgba(4, 5, 8, 0.88);
   backdrop-filter: blur(10px);
+  pointer-events: none !important;
 }
 
 .checkout-modal-wrap.open,
+.checkout-modal-overlay.open,
 .checkout-success-modal.open {
   display: flex !important;
+  pointer-events: auto !important;
 }
 
+.checkout-modal-wrap[aria-hidden="true"],
+.checkout-modal-overlay[aria-hidden="true"],
 .checkout-success-modal[aria-hidden="true"] {
   display: none !important;
+  pointer-events: none !important;
 }
 
-.checkout-success-modal.open[aria-hidden="true"] {
+.checkout-modal-wrap.open[aria-hidden="false"],
+.checkout-modal-overlay.open[aria-hidden="false"],
+.checkout-success-modal.open[aria-hidden="false"] {
   display: flex !important;
+  pointer-events: auto !important;
 }
 
 .checkout-modal-backdrop {
   position: absolute;
   inset: 0;
   background: transparent;
+  pointer-events: auto;
+}
+
+:not(.open) > .checkout-modal-backdrop,
+[aria-hidden="true"] .checkout-modal-backdrop {
+  display: none !important;
+  pointer-events: none !important;
 }
 
 .checkout-modal-box,
@@ -3761,26 +3778,42 @@ video.hero-game-video {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   padding: 4px 6px;
+  position: relative;
+  z-index: 5;
 }
 
 .cart-qty-btn {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
   background: #191d29;
   color: #fff;
   border: none;
-  cursor: pointer;
-  transition: background 0.15s ease;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+  z-index: 6;
+  transition: background 0.15s ease, transform 0.1s ease;
 }
 
 .cart-qty-btn:hover {
   background: #252b3d;
+}
+
+.cart-qty-btn:active {
+  transform: scale(0.92);
+}
+
+.cart-qty-btn * {
+  pointer-events: none !important;
 }
 
 .cart-qty-count {
@@ -3789,6 +3822,7 @@ video.hero-game-video {
   color: #fff;
   min-width: 24px;
   text-align: center;
+  user-select: none;
 }
 
 .cart-item-subtotal {
@@ -3811,14 +3845,28 @@ video.hero-game-video {
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  cursor: pointer;
-  transition: all 0.15s ease;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+  z-index: 6;
+  transition: all 0.15s ease, transform 0.1s ease;
 }
 
 .cart-item-remove-btn:hover {
   background: #ff4343;
   color: #fff;
   border-color: #ff4343;
+}
+
+.cart-item-remove-btn:active {
+  transform: scale(0.92);
+}
+
+.cart-item-remove-btn * {
+  pointer-events: none !important;
 }
 
 .cart-summary-card {
@@ -3893,12 +3941,21 @@ video.hero-game-video {
   border-radius: 7px;
   font-size: 13px;
   font-weight: 700;
-  cursor: pointer;
-  transition: background 0.15s ease;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  user-select: none;
+  position: relative;
+  z-index: 6;
+  transition: background 0.15s ease, transform 0.1s ease;
 }
 
 .cart-coupon-btn:hover {
   background: #282f42;
+}
+
+.cart-coupon-btn:active {
+  transform: scale(0.96);
 }
 
 .cart-coupon-msg {
@@ -3948,16 +4005,29 @@ video.hero-game-video {
   border-radius: 8px;
   font-size: 15px;
   font-weight: 800;
-  cursor: pointer;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  user-select: none;
+  position: relative;
+  z-index: 6;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform 0.1s ease;
 }
 
 .cart-checkout-btn:hover {
   background: #ff5959;
+}
+
+.cart-checkout-btn:active {
+  transform: scale(0.98);
+}
+
+.cart-checkout-btn * {
+  pointer-events: none !important;
 }
 
 .cart-trust-list {
