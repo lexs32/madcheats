@@ -4935,16 +4935,125 @@ video.hero-game-video {
   color: #10b981;
 }
 
-.loader-footer-meta strong.text-white {
+.loader-footer-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+  background: #111420;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  user-select: none;
+  touch-action: manipulation;
+  transition: all 0.15s ease;
+}
+
+.loader-footer-key:hover {
+  background: rgba(255, 67, 67, 0.14);
+  border-color: rgba(255, 67, 67, 0.35);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.loader-footer-key:active {
+  transform: translateY(0);
+}
+
+.loader-preset-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.loader-btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #141826;
+  color: #e2e8f0;
+  transition: all 0.15s ease;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.loader-btn-action:hover {
+  background: #1c2237;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.loader-btn-action:active {
+  transform: translateY(1px);
+}
+
+.loader-btn-action.primary {
+  background: #ff4343;
+  border-color: #ff4343;
   color: #fff;
 }
 
-.loader-footer-key {
+.loader-btn-action.primary:hover {
+  background: #ff5959;
+  box-shadow: 0 0 14px rgba(255, 67, 67, 0.45);
+}
+
+.loader-btn-action.danger {
+  background: rgba(239, 68, 68, 0.14);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.loader-btn-action.danger:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+}
+
+.loader-btn-action.ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.08);
   color: #94a3b8;
-  background: #111420;
-  padding: 3px 8px;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.loader-btn-action.ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.loader-status-notify {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  color: #34d399;
+  font-size: 11.5px;
+  font-weight: 700;
+  animation: fadeInNotify 0.2s ease-out;
+}
+
+@keyframes fadeInNotify {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 900px) {

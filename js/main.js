@@ -1063,6 +1063,16 @@ document.addEventListener('DOMContentLoaded', () => {
     checkout: initiateSellAuthCheckout
   };
 
+  async function fetchSellAuthProducts() {
+    try {
+      const res = await fetch('products.json');
+      if (res.ok) return await res.json();
+    } catch (e) {
+      console.warn('Could not fetch products.json', e);
+    }
+    return null;
+  }
+
   window.SellAuthIntegration = {
     config: SELLAUTH_CONFIG,
     initiateCheckout: initiateSellAuthCheckout,
@@ -1157,14 +1167,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 3. Interactive Range Sliders with Live Value & Dynamic Progress Gradient
-  const updateRangeProgress = (slider, valEl, suffix = '') => {
+  const updateRangeProgress = (slider, valEl, suffix = '', transform = null) => {
     if (!slider) return;
     const min = parseFloat(slider.min) || 0;
     const max = parseFloat(slider.max) || 100;
     const val = parseFloat(slider.value) || 0;
     const pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
     slider.style.background = `linear-gradient(to right, #ff4343 0%, #ff4343 ${pct}%, #181d2e ${pct}%, #181d2e 100%)`;
-    if (valEl) valEl.textContent = `${slider.value}${suffix}`;
+    if (valEl) {
+      const displayVal = transform ? transform(val) : val;
+      valEl.textContent = `${displayVal}${suffix}`;
+    }
   };
 
   const sliderConfigs = [
@@ -1172,16 +1185,21 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'smoothSlider', valId: 'smoothVal', suffix: '' },
     { id: 'silentFovSlider', valId: 'silentFovVal', suffix: 'px' },
     { id: 'silentHitSlider', valId: 'silentHitVal', suffix: '%' },
-    { id: 'arrowSizeSlider', valId: 'arrowSizeVal', suffix: 'px' }
+    { id: 'arrowSizeSlider', valId: 'arrowSizeVal', suffix: 'px' },
+    { id: 'playerDistSlider', valId: 'playerDistVal', suffix: 'm' },
+    { id: 'npcDistSlider', valId: 'npcDistVal', suffix: 'm' },
+    { id: 'worldDistSlider', valId: 'worldDistVal', suffix: 'm' },
+    { id: 'recoilCompSlider', valId: 'recoilCompVal', suffix: '%' },
+    { id: 'rapidMultSlider', valId: 'rapidMultVal', suffix: 'x', transform: (v) => (v / 10).toFixed(1) }
   ];
 
-  sliderConfigs.forEach(({ id, valId, suffix }) => {
+  sliderConfigs.forEach(({ id, valId, suffix, transform }) => {
     const slider = document.getElementById(id);
     const valEl = document.getElementById(valId);
     if (slider) {
-      updateRangeProgress(slider, valEl, suffix);
-      slider.addEventListener('input', () => updateRangeProgress(slider, valEl, suffix));
-      slider.addEventListener('change', () => updateRangeProgress(slider, valEl, suffix));
+      updateRangeProgress(slider, valEl, suffix, transform);
+      slider.addEventListener('input', () => updateRangeProgress(slider, valEl, suffix, transform));
+      slider.addEventListener('change', () => updateRangeProgress(slider, valEl, suffix, transform));
     }
   });
 
@@ -1203,7 +1221,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const loaderClickRows = document.querySelectorAll('.loader-toggle-row, .loader-feature-item, .loader-box-header');
   loaderClickRows.forEach(row => {
     row.addEventListener('click', (e) => {
-      if (e.target.tagName === 'INPUT' || e.target.closest('.loader-switch') || e.target.tagName === 'SELECT' || e.target.closest('.loader-select-wrap')) {
+      if (e.target.tagName === 'INPUT' || e.target.closest('.loader-switch') || e.target.tagName === 'SELECT' || e.target.closest('.loader-select-wrap') || e.target.closest('button')) {
         return;
       }
       const cb = row.querySelector('input[type="checkbox"]');
@@ -1225,32 +1243,179 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. Minimize / Maximize Loader Controls
+  // 7. Tactile Click Sound Engine (Web Audio API)
+  let loaderAudioCtx = null;
+  function playTactileClick() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      if (!loaderAudioCtx) loaderAudioCtx = new AudioCtx();
+      if (loaderAudioCtx.state === 'suspended') loaderAudioCtx.resume();
+      const osc = loaderAudioCtx.createOscillator();
+      const gain = loaderAudioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(900, loaderAudioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(300, loaderAudioCtx.currentTime + 0.02);
+      gain.gain.setValueAtTime(0.03, loaderAudioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, loaderAudioCtx.currentTime + 0.02);
+      osc.connect(gain);
+      gain.connect(loaderAudioCtx.destination);
+      osc.start();
+      osc.stop(loaderAudioCtx.currentTime + 0.02);
+    } catch (e) {}
+  }
+
+  loaderNavBtns.forEach(b => b.addEventListener('click', () => playTactileClick()));
+  if (loaderSubtabSilent) loaderSubtabSilent.addEventListener('click', () => playTactileClick());
+  if (loaderSubtabAimbot) loaderSubtabAimbot.addEventListener('click', () => playTactileClick());
+  allLoaderCheckboxes.forEach(cb => cb.addEventListener('change', () => playTactileClick()));
+
+  // 8. Minimize / Maximize Loader Controls
   function toggleLoaderMinimize() {
     if (!loaderCard) return;
     loaderCard.classList.toggle('is-minimized');
   }
 
-  if (loaderFooterKey) {
-    loaderFooterKey.style.cursor = 'pointer';
-    loaderFooterKey.addEventListener('click', toggleLoaderMinimize);
-  }
+  const hideBtns = document.querySelectorAll('.loader-hide-btn, #loaderHideBtn');
+  hideBtns.forEach(btn => {
+    btn.style.cursor = 'pointer';
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playTactileClick();
+      toggleLoaderMinimize();
+    });
+  });
 
-  if (loaderRestoreBar) {
-    loaderRestoreBar.addEventListener('click', toggleLoaderMinimize);
-  }
+  const restoreElements = document.querySelectorAll('#loaderRestoreBar, #loaderRestoreBtn');
+  restoreElements.forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', () => {
+      playTactileClick();
+      toggleLoaderMinimize();
+    });
+  });
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Insert') {
+      playTactileClick();
       toggleLoaderMinimize();
     }
   });
 
-  // 8. Interactive Pill Status
+  // 9. Profile Presets & Action Buttons
+  const btnPresetLegit = document.getElementById('btnPresetLegit');
+  const btnPresetRage = document.getElementById('btnPresetRage');
+  const btnSaveConfig = document.getElementById('btnSaveConfig');
+  const btnResetConfig = document.getElementById('btnResetConfig');
+  const loaderNotifyBar = document.getElementById('loaderNotifyBar');
+  const loaderNotifyText = document.getElementById('loaderNotifyText');
+
+  let notifyTimer = null;
+  function showLoaderNotification(text, isDanger = false) {
+    if (!loaderNotifyBar || !loaderNotifyText) return;
+    loaderNotifyText.textContent = text;
+    loaderNotifyBar.style.display = 'flex';
+    loaderNotifyBar.style.borderColor = isDanger ? 'rgba(239, 68, 68, 0.4)' : 'rgba(16, 185, 129, 0.4)';
+    loaderNotifyBar.style.background = isDanger ? 'rgba(239, 68, 68, 0.12)' : 'rgba(16, 185, 129, 0.12)';
+    loaderNotifyBar.style.color = isDanger ? '#f87171' : '#34d399';
+    const icon = loaderNotifyBar.querySelector('i');
+    if (icon) {
+      icon.className = isDanger ? 'fa-solid fa-triangle-exclamation' : 'fa-solid fa-check';
+    }
+    clearTimeout(notifyTimer);
+    notifyTimer = setTimeout(() => {
+      loaderNotifyBar.style.display = 'none';
+    }, 3200);
+  }
+
+  function setSliderVal(id, val) {
+    const s = document.getElementById(id);
+    if (!s) return;
+    s.value = val;
+    s.dispatchEvent(new Event('input', { bubbles: true }));
+    s.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  function setCbVal(id, checked) {
+    const cb = document.getElementById(id);
+    if (!cb) return;
+    cb.checked = checked;
+    cb.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  if (btnPresetLegit) {
+    btnPresetLegit.addEventListener('click', () => {
+      playTactileClick();
+      setCbVal('aimbotEnabledToggle', true);
+      setSliderVal('fovSlider', 22);
+      setSliderVal('smoothSlider', 8);
+      setCbVal('onlyVisibleToggle', true);
+      setCbVal('predictionToggle', true);
+      setCbVal('showFovToggle', true);
+      setCbVal('showLineToggle', false);
+      setCbVal('exploitMagicToggle', false);
+      setCbVal('exploitRapidToggle', false);
+      setCbVal('exploitBhopToggle', true);
+      setSliderVal('recoilCompSlider', 75);
+      showLoaderNotification('Loaded Legit Preset (Humanized Smoothing & Anti-Recoil)');
+    });
+  }
+
+  if (btnPresetRage) {
+    btnPresetRage.addEventListener('click', () => {
+      playTactileClick();
+      setCbVal('aimbotEnabledToggle', true);
+      setSliderVal('fovSlider', 180);
+      setSliderVal('smoothSlider', 1);
+      setCbVal('onlyVisibleToggle', false);
+      setCbVal('predictionToggle', true);
+      setCbVal('showFovToggle', true);
+      setCbVal('showLineToggle', true);
+      setCbVal('exploitMagicToggle', true);
+      setCbVal('exploitRapidToggle', true);
+      setCbVal('exploitBhopToggle', true);
+      setSliderVal('recoilCompSlider', 100);
+      setSliderVal('rapidMultSlider', 25);
+      showLoaderNotification('Loaded RAGE Preset (Max Angular FOV & Penetration)', true);
+    });
+  }
+
+  if (btnSaveConfig) {
+    btnSaveConfig.addEventListener('click', () => {
+      playTactileClick();
+      btnSaveConfig.innerHTML = '<i class="fa-solid fa-check"></i> <span>Saved!</span>';
+      showLoaderNotification('Configuration profile saved to active slot #1');
+      setTimeout(() => {
+        btnSaveConfig.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> <span>Save Config</span>';
+      }, 1500);
+    });
+  }
+
+  if (btnResetConfig) {
+    btnResetConfig.addEventListener('click', () => {
+      playTactileClick();
+      setCbVal('aimbotEnabledToggle', true);
+      setSliderVal('fovSlider', 52);
+      setSliderVal('smoothSlider', 1);
+      setCbVal('onlyVisibleToggle', false);
+      setCbVal('predictionToggle', true);
+      setCbVal('showFovToggle', true);
+      setCbVal('showLineToggle', true);
+      setSliderVal('recoilCompSlider', 100);
+      setSliderVal('rapidMultSlider', 15);
+      setSliderVal('playerDistSlider', 400);
+      setSliderVal('npcDistSlider', 250);
+      setSliderVal('worldDistSlider', 800);
+      showLoaderNotification('Default configuration restored');
+    });
+  }
+
+  // 10. Interactive Pill Status
   const loaderPill = document.querySelector('.loader-pill-status');
   if (loaderPill) {
     loaderPill.style.cursor = 'pointer';
     loaderPill.addEventListener('click', () => {
+      playTactileClick();
       loaderPill.style.borderColor = '#ff4343';
       loaderPill.style.color = '#fff';
       setTimeout(() => {
@@ -1260,7 +1425,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. Simulated Ping / FPS Fluctuations
+  // 11. Simulated Ping / FPS Fluctuations
   const pingEl = document.querySelector('.loader-footer-meta strong.text-green');
   const fpsEl = document.querySelector('.loader-footer-meta strong.text-white');
   if (pingEl && fpsEl) {

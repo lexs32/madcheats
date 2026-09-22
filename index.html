@@ -376,7 +376,7 @@
                 <span class="loader-live-dot"></span>
                 <span>MADCHEATS CLIENT MINIMIZED</span>
               </div>
-              <span class="loader-footer-key"><i class="fa-solid fa-arrow-up-right-from-square"></i> Press INSERT or Click to Show</span>
+              <button type="button" class="loader-footer-key" id="loaderRestoreBtn"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Press INSERT or Click to Show</span></button>
             </div>
             <aside class="loader-sidebar">
               <div class="loader-brand">
@@ -654,32 +654,51 @@
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Player 2D/3D Box</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="playerBoxToggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-control-group">
+                        <label class="loader-label">Box Style</label>
+                        <div class="loader-select-wrap">
+                          <select class="loader-select" id="playerBoxSelect">
+                            <option value="corner">2D Corner Box</option>
+                            <option value="bounding">2D Full Bounding Box</option>
+                            <option value="wireframe">3D Wireframe Box</option>
+                            <option value="chams">Solid Chams Glow</option>
+                          </select>
+                          <i class="fa-solid fa-ellipsis loader-select-icon"></i>
+                        </div>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Health Bar &amp; Number</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="playerHealthToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Player Skeleton</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="playerSkeletonToggle"><span class="loader-slider-track"></span></label>
                       </div>
                     </div>
                     <div class="loader-card-box">
                       <div class="loader-box-header">
                         <span class="loader-box-title">Distance &amp; Snaplines</span>
                       </div>
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">Max ESP Distance</span>
+                          <span class="loader-range-value" id="playerDistVal">400m</span>
+                        </div>
+                        <input type="range" min="50" max="1000" value="400" step="25" class="loader-range-slider" id="playerDistSlider">
+                      </div>
                       <div class="loader-toggle-row">
-                        <span class="loader-label">Player Distance (m)</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <span class="loader-label">Player Distance Label</span>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="playerDistToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Snaplines to Target</span>
-                        <label class="loader-switch"><input type="checkbox" class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" class="loader-toggle" id="playerSnaplinesToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Weapon &amp; Ammo Display</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="playerWeaponToggle"><span class="loader-slider-track"></span></label>
                       </div>
                     </div>
                   </div>
@@ -693,24 +712,42 @@
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Boss &amp; Elite ESP</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="npcBossToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Loot Tier Filter</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="npcLootToggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-control-group">
+                        <label class="loader-label">Minimum Loot Quality</label>
+                        <div class="loader-select-wrap">
+                          <select class="loader-select" id="npcLootSelect">
+                            <option value="all">All Drops &amp; Materials</option>
+                            <option value="rare" selected>Rare &amp; Epic Only</option>
+                            <option value="legendary">Legendary &amp; Boss Items ($100k+)</option>
+                          </select>
+                          <i class="fa-solid fa-ellipsis loader-select-icon"></i>
+                        </div>
                       </div>
                     </div>
                     <div class="loader-card-box">
                       <div class="loader-box-header">
                         <span class="loader-box-title">Tactical Indicators</span>
                       </div>
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">NPC Detection Distance</span>
+                          <span class="loader-range-value" id="npcDistVal">250m</span>
+                        </div>
+                        <input type="range" min="50" max="600" value="250" step="25" class="loader-range-slider" id="npcDistSlider">
+                      </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Drop Rate Visualizer</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="npcDropToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Aggro Proximity Ring</span>
-                        <label class="loader-switch"><input type="checkbox" class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" class="loader-toggle" id="npcAggroToggle"><span class="loader-slider-track"></span></label>
                       </div>
                     </div>
                   </div>
@@ -724,24 +761,42 @@
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Supply Drops &amp; Crates</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="worldDropsToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Vehicles &amp; Transports</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="worldVehiclesToggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-control-group">
+                        <label class="loader-label">World Object Filter</label>
+                        <div class="loader-select-wrap">
+                          <select class="loader-select" id="worldFilterSelect">
+                            <option value="all">Display All Interactive World Items</option>
+                            <option value="high" selected>Locked Safes &amp; Airdrops Only</option>
+                            <option value="exits">Extraction Zones Only</option>
+                          </select>
+                          <i class="fa-solid fa-ellipsis loader-select-icon"></i>
+                        </div>
                       </div>
                     </div>
                     <div class="loader-card-box">
                       <div class="loader-box-header">
                         <span class="loader-box-title">Waypoints &amp; Exits</span>
                       </div>
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">World Render Distance</span>
+                          <span class="loader-range-value" id="worldDistVal">800m</span>
+                        </div>
+                        <input type="range" min="100" max="2500" value="800" step="50" class="loader-range-slider" id="worldDistSlider">
+                      </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Extraction Points</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="worldExtractToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Traps &amp; Turrets</span>
-                        <label class="loader-switch"><input type="checkbox" class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" class="loader-toggle" id="worldTrapsToggle"><span class="loader-slider-track"></span></label>
                       </div>
                     </div>
                   </div>
@@ -755,11 +810,22 @@
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">OOF Arrow Indicators</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="oofArrowsToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Proximity Threat Warning</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="oofThreatToggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-control-group">
+                        <label class="loader-label">Indicator Style</label>
+                        <div class="loader-select-wrap">
+                          <select class="loader-select" id="oofStyleSelect">
+                            <option value="pulse" selected>Dynamic Pulse on Proximity</option>
+                            <option value="static">Static Arrow + Distance</option>
+                            <option value="flash">Flash on Enemy Aiming at You</option>
+                          </select>
+                          <i class="fa-solid fa-ellipsis loader-select-icon"></i>
+                        </div>
                       </div>
                     </div>
                     <div class="loader-card-box">
@@ -768,14 +834,14 @@
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Behind Warning Flash</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="oofBehindToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-control-group">
                         <div class="loader-range-header">
                           <span class="loader-label">Indicator Size</span>
                           <span class="loader-range-value" id="arrowSizeVal">14px</span>
                         </div>
-                        <input type="range" min="8" max="24" value="14" class="loader-range-slider" id="arrowSizeSlider">
+                        <input type="range" min="8" max="28" value="14" class="loader-range-slider" id="arrowSizeSlider">
                       </div>
                     </div>
                   </div>
@@ -789,11 +855,18 @@
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">100% No Recoil Control</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="exploitRecoilToggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">Recoil Compensation</span>
+                          <span class="loader-range-value" id="recoilCompVal">100%</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="100" class="loader-range-slider" id="recoilCompSlider">
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Instant Hit / Magic Bullet</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="exploitMagicToggle"><span class="loader-slider-track"></span></label>
                       </div>
                     </div>
                     <div class="loader-card-box">
@@ -802,11 +875,18 @@
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Rapid Fire Acceleration</span>
-                        <label class="loader-switch"><input type="checkbox" class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" class="loader-toggle" id="exploitRapidToggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-control-group">
+                        <div class="loader-range-header">
+                          <span class="loader-label">Fire-Rate Multiplier</span>
+                          <span class="loader-range-value" id="rapidMultVal">1.5x</span>
+                        </div>
+                        <input type="range" min="10" max="30" value="15" class="loader-range-slider" id="rapidMultSlider">
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Bunnyhop Auto-Jumper</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="exploitBhopToggle"><span class="loader-slider-track"></span></label>
                       </div>
                     </div>
                   </div>
@@ -820,24 +900,58 @@
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">External Streamproof Solution</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="miscStreamproofToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Custom Crosshair Overlay</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="miscCrosshairToggle"><span class="loader-slider-track"></span></label>
+                      </div>
+                      <div class="loader-control-group">
+                        <label class="loader-label">Crosshair Reticle Type</label>
+                        <div class="loader-select-wrap">
+                          <select class="loader-select" id="crosshairSelect">
+                            <option value="dot">Dynamic Micro Dot</option>
+                            <option value="tactical" selected>Tactical CS-Style Gap Cross</option>
+                            <option value="circle">Center FOV Ring</option>
+                            <option value="tshape">T-Reticle Minimal</option>
+                          </select>
+                          <i class="fa-solid fa-ellipsis loader-select-icon"></i>
+                        </div>
                       </div>
                     </div>
                     <div class="loader-card-box">
                       <div class="loader-box-header">
-                        <span class="loader-box-title">Diagnostics</span>
+                        <span class="loader-box-title">Configuration Profiles</span>
+                      </div>
+                      <div class="loader-preset-actions">
+                        <button type="button" class="loader-btn-action" id="btnPresetLegit">
+                          <i class="fa-solid fa-shield-heart"></i>
+                          <span>Load Legit</span>
+                        </button>
+                        <button type="button" class="loader-btn-action danger" id="btnPresetRage">
+                          <i class="fa-solid fa-skull"></i>
+                          <span>Load Rage</span>
+                        </button>
+                        <button type="button" class="loader-btn-action primary" id="btnSaveConfig">
+                          <i class="fa-solid fa-floppy-disk"></i>
+                          <span>Save Config</span>
+                        </button>
+                        <button type="button" class="loader-btn-action ghost" id="btnResetConfig">
+                          <i class="fa-solid fa-rotate-left"></i>
+                          <span>Reset</span>
+                        </button>
+                      </div>
+                      <div class="loader-status-notify" id="loaderNotifyBar" style="display: none;">
+                        <i class="fa-solid fa-check"></i>
+                        <span id="loaderNotifyText">Config saved successfully.</span>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">FPS / Latency Watermark</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="miscFpsToggle"><span class="loader-slider-track"></span></label>
                       </div>
                       <div class="loader-toggle-row">
                         <span class="loader-label">Panic Key (F11 Killswitch)</span>
-                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle"><span class="loader-slider-track"></span></label>
+                        <label class="loader-switch"><input type="checkbox" checked class="loader-toggle" id="miscPanicToggle"><span class="loader-slider-track"></span></label>
                       </div>
                     </div>
                   </div>
@@ -855,7 +969,7 @@
                 <div class="loader-footer-right">
                   <span class="loader-footer-meta">Ping: <strong class="text-green">24ms</strong></span>
                   <span class="loader-footer-meta">FPS: <strong class="text-white">144</strong></span>
-                  <span class="loader-footer-key">INSERT to hide</span>
+                  <button type="button" class="loader-footer-key loader-hide-btn" id="loaderHideBtn"><i class="fa-solid fa-window-minimize"></i> <span>INSERT to hide</span></button>
                 </div>
               </div>
             </div>
